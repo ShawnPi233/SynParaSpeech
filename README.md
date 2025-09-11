@@ -1,7 +1,16 @@
-# SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding
-
-**[📄 Paper]** | **[🌐 Demos](https://github.com/ShawnPi233/SynParaSpeech)** | **[🤗 Dataset Access](https://github.com/ShawnPi233/SynParaSpeech)**
-
+<div align="center">
+    <h1>
+    SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding
+    </h1>
+    <p>
+    <!-- 若有logo可添加：<img src="path/to/logo.png" alt="SynParaSpeech Logo" width="300"> -->
+    </p>
+    <a href="#" ><img src="https://img.shields.io/badge/Paper-Coming%20Soon-orange" alt="Paper"></a>
+    <a href="https://github.com/ShawnPi233/SynParaSpeech"><img src="https://img.shields.io/badge/Demos-🌐-blue" alt="Demos"></a>
+    <a href="https://github.com/ShawnPi233/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20Access-Download-purple" alt="Dataset Access"></a>
+    <a href="README_zh.md"><img src="https://img.shields.io/badge/语言-简体中文-green" alt="简体中文"></a>
+    <a href="#"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="License"></a>
+</div>
 **SynParaSpeech** is the **first automated framework** for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and robust speech understanding. It addresses critical gaps in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, coughing) that are aligned with speech, text, and precise timestamps.
 
 Unlike traditional datasets limited by privacy, incomplete annotations, or poor realism, **SynParaSpeech** unifies:
