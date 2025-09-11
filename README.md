@@ -106,4 +106,4 @@ We thank the open-source communities behind [CosyVoice](https://github.com/FunAu
 
 ## 🪪 License
 
-The dataset and code are licensed under **CC BY 4.0** to encourage open research and collaboration.
+The dataset and code are licensed under **CC BY-NC-ND 4.0** to encourage open research and collaboration.
