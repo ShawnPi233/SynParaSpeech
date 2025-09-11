@@ -22,7 +22,7 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 
 ## 📊 Pipeline Overview
 
-![SynParaSpeech Pipeline](https://github.com/ShawnPi233/SynParaSpeech/blob/main/fig1.png)  
+![SynParaSpeech Pipeline](statics/figs/synparaspeech.png)  
 *The pipeline includes 5 stages: labeled text synthesis, audio synthesis, manual verification, paralinguistic speech generation, and paralinguistic speech understanding.*
 
 
