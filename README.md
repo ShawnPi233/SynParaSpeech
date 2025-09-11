@@ -37,7 +37,7 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 
 ## 🗞 News
 
-- **[2026-XX-XX]** 🎉 Initial release of SynParaSpeech:
+- **[2026-09-17]** 🎉 Initial release of SynParaSpeech:
   - 📄 Paper submitted to ICASSP 2026
   - 🎧 [Dataset & audio samples](https://github.com/ShawnPi233/SynParaSpeech)
   - 📊 Benchmark results for TTS and event detection tasks
