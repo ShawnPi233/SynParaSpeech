@@ -18,7 +18,6 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 - 🎧 **120 hours of data** with 100k clips, including precise timestamp annotations for paralinguistic events.  
 - 🎤 Enhances TTS models (CosyVoice2, F5-TTS) via fine-tuning for more natural paralinguistic speech generation.  
 - 🔍 Improves paralinguistic event detection (Gemini 2.5 Pro, Qwen 2.5 Omni, Kimi Audio) through prompt tuning.  
-- �公开资源：开源数据集、音频样本及技术细节，促进副语言语音研究标准化。  
 
 
 ## 📊 Pipeline Overview
