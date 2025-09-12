@@ -1,17 +1,16 @@
 <div align="center">
     <h1>
-    SynParaSpeech: 面向语音生成与理解的副语言数据集自动化构建
+    SynParaSpeech: 面向语音生成与理解的副语言数据集自动化构建方法
     </h1>
     <p>
     <!-- 若有logo可添加：<img src="path/to/logo.png" alt="SynParaSpeech Logo" width="300"> -->
     </p>
-    <a href="#" ><img src="https://img.shields.io/badge/论文-即将发布-orange" alt="论文"></a>
-    <a href="https://github.com/ShawnPi233/SynParaSpeech"><img src="https://img.shields.io/badge/演示-🌐-blue" alt="演示"></a>
-    <a href="https://github.com/ShawnPi233/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20数据集-下载-purple" alt="数据集获取"></a>
-    <a href="README.md"><img src="https://img.shields.io/badge/语言-English-red" alt="英文版本"></a>
-    <a href="#"><img src="https://img.shields.io/badge/许可证-CC%20BY%204.0-blue.svg" alt="许可证"></a>
+    <a href="https://arxiv.org/abs/2406.05692"><img src="https://img.shields.io/badge/arXiv-2406.05692-red?logo=arxiv&logoColor=white" alt="arXiv:2406.05692"></a>
+    <a href="https://shawnpi233.github.io/SynParaSpeech"><img src="https://img.shields.io/badge/Demos-🌐-blue" alt="Demos"></a>
+    <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20Access-Download-orange" alt="Dataset Access"></a>
+    <a href="README_zh.md"><img src="https://img.shields.io/badge/语言-简体中文-green" alt="简体中文"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-blue.svg" alt="License: CC BY-NC-ND 4.0"></a>
 </div>
-
 SynParaSpeech是首个大规模副语言数据集自动化构建框架，可支持更逼真的语音合成与更鲁棒的语音理解研究。它通过生成高质量数据（包含笑声、咳嗽等副语言声音，并与语音、文本及精确时间戳对齐），解决了现有资源的关键缺陷。
 
 与受限于隐私、标注不完整或真实性不足的传统数据集不同，**SynParaSpeech** 实现了多维度统一：
