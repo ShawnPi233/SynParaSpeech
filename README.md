@@ -1,15 +1,27 @@
-<div align="center">
+<div align="center" style="display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap;">
     <h1>
     SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding
     </h1>
     <p>
     <!-- 若有logo可添加：<img src="path/to/logo.png" alt="SynParaSpeech Logo" width="300"> -->
     </p>
-    <a href="#" ><img src="https://img.shields.io/badge/Paper-Coming%20Soon-orange" alt="Paper"></a>
-    <a href="https://shawnpi233.github.io/SynParaSpeech"><img src="https://img.shields.io/badge/Demos-🌐-blue" alt="Demos"></a>
-    <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20Access-Download-purple" alt="Dataset Access"></a>
-    <a href="README_zh.md"><img src="https://img.shields.io/badge/语言-简体中文-green" alt="简体中文"></a>
-    <a href="#"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="License"></a>
+    <!-- 统一设置徽章高度为22px，去除链接下划线和边框 -->
+    <a href="https://arxiv.org/abs/2406.05692" style="text-decoration: none;">
+        <img src="https://img.shields.io/badge/arXiv-2406.05692-red?logo=arxiv&logoColor=white&style=flat" 
+             alt="arXiv:2406.05692" height="22">
+    </a>
+    <a href="https://shawnpi233.github.io/SynParaSpeech" style="text-decoration: none;">
+        <img src="https://img.shields.io/badge/Demos-🌐-blue?style=flat" alt="Demos" height="22">
+    </a>
+    <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech" style="text-decoration: none;">
+        <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20Access-Download-orange?style=flat" alt="Dataset Access" height="22">
+    </a>
+    <a href="README_zh.md" style="text-decoration: none;">
+        <img src="https://img.shields.io/badge/语言-简体中文-green?style=flat" alt="简体中文" height="22">
+    </a>
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="text-decoration: none;">
+        <img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-blue.svg?style=flat" alt="License: CC BY-NC-ND 4.0" height="22">
+    </a>
 </div>
 SynParaSpeech is the first automated framework for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and robust speech understanding. It addresses critical gaps in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, coughing) that are aligned with speech, text, and precise timestamps.
 
