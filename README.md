@@ -5,7 +5,7 @@
     <p>
     <!-- 若有logo可添加：<img src="path/to/logo.png" alt="SynParaSpeech Logo" width="300"> -->
     </p>
-    <a href="https://arxiv.org/abs/2406.05692"><img src="https://img.shields.io/badge/arXiv-2406.05692-red?logo=arxiv&logoColor=white" alt="arXiv:2406.05692"></a>
+    <a href="https://arxiv.org/abs/2406.05692"><img src="https://img.shields.io/badge/arXiv-2406.05692-b31b1b.svg?logo=arxiv&logoColor=white" alt="arXiv:2406.05692"></a>
     <a href="https://shawnpi233.github.io/SynParaSpeech"><img src="https://img.shields.io/badge/Demos-🌐-blue" alt="Demos"></a>
     <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20Access-Download-orange" alt="Dataset Access"></a>
     <a href="README_zh.md"><img src="https://img.shields.io/badge/语言-简体中文-green" alt="简体中文"></a>
