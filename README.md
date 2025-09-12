@@ -39,8 +39,9 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 
 - **[2026-09-17]** 🎉 Initial release of SynParaSpeech:
   - 📄 Paper submitted to ICASSP 2026
-  - 🎧 [Dataset & audio samples](https://github.com/ShawnPi233/SynParaSpeech)
-  - 📊 Benchmark results for TTS and event detection tasks
+  - 📊 [Dataset](https://huggingface.co/datasets/shawnpi/SynParaSpeech)
+  - 🎧 [Audio Samples](https://shawnpi233.github.io/SynParaSpeech)
+  -  Benchmark results for TTS and event detection tasks
 
 ### 📅 Release Plan
 
