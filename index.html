@@ -2,37 +2,23 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners -->
-  <meta name="description" content="QinYu: A Family of High-Fidelity Zero-Shot TTS with High Naturalness, Spontaneous Colloquialism, and Emotional Control">
-  <meta property="og:title" content="QinYu: A Family of High-Fidelity Zero-Shot TTS with High Naturalness, Spontaneous Colloquialism, and Emotional Control"/>
-  <meta property="og:description" content="QinYu: A Family of High-Fidelity Zero-Shot TTS with High Naturalness, Spontaneous Colloquialism, and Emotional Control"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <meta property="og:image" content="static/image/logo.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-  <meta name="twitter:title" content="QinYu: A Family of High-Fidelity Zero-Shot TTS with High Naturalness, Spontaneous Colloquialism, and Emotional Control">
-  <meta name="twitter:description" content="QinYu: A Family of High-Fidelity Zero-Shot TTS with High Naturalness, Spontaneous Colloquialism, and Emotional Control">
-  <meta name="twitter:image" content="static/images/logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <!-- Keywords -->
-  <meta name="keywords" content="QinYu, Text-to-Speech, TTS, Speech Generation, Flow Matching Models, Zero-shot Learning, Emotion Control, TME">
+  <meta name="description" content="SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding">
+  <meta property="og:title" content="SynParaSpeech: A Large-Scale Bilingual Paralinguistic Dataset"/>
+  <meta property="og:description" content="118.87 hours of Chinese speech with 6 paralinguistic categories and precise timestamps"/>
+  <meta property="og:url" content="https://github.com/ShawnPi233/SynParaSpeech"/>
+  <meta name="twitter:title" content="SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding">
+  <meta name="twitter:description" content="Automated synthesis framework for laughter, sighs, throat clearing, gasps, tsk, and pause sounds">
+  <meta name="keywords" content="paralinguistic, speech synthesis, speech understanding, dataset">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>QinYu: A Family of High-Fidelity Zero-Shot TTS with High Naturalness, Spontaneous Colloquialism, and Emotional Control</title>
-  <link rel="icon" type="image/x-icon" href="static/images/logo.ico">
+  <title>SynParaSpeech: Automated Synthesis of Paralinguistic Datasets</title>
+  <link rel="icon" type="image/x-icon" href="statics/images/logo.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-  <!-- 样式文件引入（确保路径正确） -->
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="statics/css/bulma.min.css">
+  <link rel="stylesheet" href="statics/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="statics/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="statics/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <!-- 自定义样式（统一表格和控件样式） -->
+  <link rel="stylesheet" href="statics/css/index.css">
   <style>
     .shadow-card {
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -41,8 +27,8 @@
       padding: 2rem;
       margin-bottom: 2rem;
       overflow-x: auto;
-      width: 100% !important; 
-      max-width: 100% !important; 
+      width: 100% !important;
+      max-width: 100% !important;
       margin-left: auto !important;
       margin-right: auto !important;
     }
@@ -54,38 +40,26 @@
     }
     .table th, .table td {
       padding: 0.75rem;
-      text-align: center !important; /* 单元格内容居中 */
+      text-align: center !important;
       vertical-align: middle;
       border: 1px solid #e0e0e0;
-      word-break: break-all; /* 解决长文本溢出问题，替换原white-space: nowrap */
+      word-break: break-all;
       min-width: 150px;
     }
-    /* 文本列样式（加宽以容纳长文本） */
-    .table th:first-child, 
-    .table td:first-child {
+    .table th:first-child, .table td:first-child {
       min-width: 300px;
     }
-    /* 表头样式（统一蓝色背景，覆盖原f5f5f5） */
     .table th {
       background-color: #3498db !important;
       color: white !important;
       font-weight: 600;
     }
-    /* 音频控件样式（确保居中且不溢出） */
     audio {
       width: 100%;
-      max-width: 170px; 
+      max-width: 170px;
       box-sizing: border-box;
-      margin: 0 auto; /* 水平居中 */
+      margin: 0 auto;
       display: block;
-    }
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-    .table-responsive {
-      width: 100%;
-      overflow-x: auto; /* 移动端横向滚动 */
     }
     .container-wider {
       width: 100%;
@@ -94,81 +68,66 @@
       margin-right: auto;
       margin-left: auto;
     }
-    /* 响应式容器宽度 */
     @media screen and (min-width: 1024px) {
-      .container-wider {
-        max-width: 1440px;
-      }
+      .container-wider { max-width: 1440px; }
     }
     @media screen and (min-width: 1216px) {
-      .container-wider {
-        max-width: 1600px;
-      }
+      .container-wider { max-width: 1600px; }
     }
     @media screen and (max-width: 1023px) {
-      .container-wider {
-        max-width: 90%;
-      }
+      .container-wider { max-width: 90%; }
     }
-    #BibTeX pre {
-    font-size: 20px; /* 调整为需要的字体大小 */
-  }
+    #BibTeX pre { font-size: 20px; }
   </style>
-
-  <!-- 脚本引入（jQuery需先引入，确保依赖正确） -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+  <script defer src="statics/js/fontawesome.all.min.js"></script>
+  <script src="statics/js/bulma-carousel.min.js"></script>
+  <script src="statics/js/bulma-slider.min.js"></script>
+  <script src="statics/js/index.js"></script>
 </head>
-<!-- 修复：移除嵌套的<body>标签，页面仅保留一个<body> -->
 <body>
-
-  <!-- Hero Section: Title & Authors -->
   <section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">QinYu: A Family of High-Fidelity Zero-Shot TTS with High Naturalness, Spontaneous Colloquialism, and Emotional Control</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">QinYu Team</span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">TME Lyra Lab</span>
-          </div>
-          <!-- 添加GitHub链接和图标 -->
-          <div class="mt-4">
-            <a href="https://github.com/TME-Lyra-Lab/tme-lyra-lab.github.io" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github" alt="GitHub Repository">
-            </a>
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SynParaSpeech</h1>
+            <h2 class="subtitle is-3">Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding</h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Bingsong Bai, Qihang Lu, Wenbing Yang, </span>
+              <span class="author-block">Zihan Sun, YueRan Hou, Peilei Jia, Songbai Pu, Ruibo Fu, Yingming Gao, Ya Li*, Jun Gao*</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Beijing University of Posts and Telecommunications & Hello Group Inc. & Chinese
+ Academy of Sciences</span>
+            </div>
+            <div class="mt-4">
+              <a href="https://github.com/ShawnPi233/SynParaSpeech" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github" alt="GitHub Repository">
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Paper Abstract -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p>We introduce QinYu, a family of high-fidelity text-to-speech systems designed to deliver 32kHz studio-quality speech with exceptional naturalness—surpassing the 22kHz limit of most open-source TTS tools. Engineered for versatility, this family excels in spontaneous colloquialism for conversational scenarios (e.g., podcasts) and fine-grained emotional control for narrative contexts (e.g., audiobooks), with a standout ability to generate authentic paralinguistic elements like natural laughter and precise prosodic pauses. Its scenario-specific variants include QinYuCast, which automates colloquial artifacts (e.g., pauses, hesitations) for lifelike dialogue, and QinYuInstruct, which enables emotion specification via simple descriptors like "warm" or "excited." Future iterations will advance an "ALL-in-One" architecture built on a million-hour-scale base model, integrating controllable paralinguistic tagging, adjustable colloquialism strength, large-model enhancements, and novel voice generation—closing the gap between synthetic and human speech across diverse TTS applications.</p>
-            <!-- Contents Navigation -->
+            <p>Paralinguistic sounds like laughter and sighs are crucial for realistic speech synthesis. They make natural talks more engaging and authentic. But current methods depend heavily on private datasets, and open ones have problems: missing speech, timestamps, or not matching real life. To mitigate these issues, we propose an automated synthesis framework for large-scale paralinguistic datasets and introduce SynParaSpeech. It includes 6 paralinguistic categories, 118.87 hours of Chinese speech, and precise timestamp annotations. Our work contributes the first automated synthesis method for such datasets, the release of SynParaSpeech, improved paralinguistic speech synthesis models via fine-tuning, and enhanced paralinguistic event detection through prompt tuning.</p>
             <div class="mt-6">
               <h3 class="title is-5 has-text-centered">Contents</h3>
               <ul class="list-disc pl-6 mt-2">
-                <li><a href="#Paralanguage-TTS" class="link">Paralanguage Voice Generation</a></li>
-                <li><a href="#Instructed Voice Generation" class="link">Instructed Voice Generation</a></li>
-                <li><a href="#Text-to-Timbre" class="link">Text-to-Timbre</a></li>
-                <li><a href="#Audiobook Generation" class="link">Audiobook Generation</a></li>
-                <li><a href="#Auto-Oral" class="link">Zero-Shot Auto-Oral Voice Generation</a></li> 
-                <li><a href="#Podcast Generation" class="link">Podcast Generation</a></li> 
+                <li><a href="#Methodology" class="link">Automated Synthesis Pipeline</a></li>
+                <li><a href="#Dataset-Overview" class="link">Dataset Overview</a></li>
+                <li><a href="#Paralinguistic-TTS" class="link">Paralinguistic TTS Improvement</a></li>
+                <li><a href="#Event-Detection" class="link">Paralinguistic Event Detection</a></li>
+                <li><a href="#Comparison" class="link">Dataset Comparison</a></li>
               </ul>
             </div>
           </div>
@@ -177,726 +136,217 @@
     </div>
   </section>
 
-  <section id="Paralanguage-TTS" class="section">
+    <section id="Methodology" class="section">
     <div class="container-wider">
       <div class="shadow-card">
-        <h2 class="title is-3 has-text-centered">Paralanguage Voice Generation</h2>
+        <h2 class="title is-3 has-text-centered">Automated Synthesis Pipeline</h2>
+        <div class="content has-text-justified">
+          <ol class="list-decimal pl-6">
+            <li><strong>Labeled Text Synthesis</strong>: ASR models (Whisper, Paraformer) generate transcriptions with VAD-based timestamp correction. LLMs insert paralinguistic tags at appropriate positions.</li>
+            <li><strong>Audio Synthesis</strong>: Paralinguistic audio clips are converted to match speech timbre using SeedVC, then inserted into speech segments at annotated timestamps.</li>
+            <li><strong>Verification</strong>: Manual checks ensure naturalness, timbre consistency, audio quality, and timing alignment.</li>
+          </ol>
+          <figure class="image is-centered mt-4">
+            <img src="statics/figs/synparaspeech.png" alt="SynParaSpeech Pipeline" style="max-width: 1400px;">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Dataset-Overview" class="section">
+    <div class="container-wider">
+      <div class="shadow-card">
+        <h2 class="title is-3 has-text-centered">Dataset Overview</h2>
+        <div class="content has-text-justified">
+          <p>SynParaSpeech covers 6 paralinguistic categories (laughter, sigh, throat clearing, gasp, tsk, pause), with 118.87 hours of audio and precise timestamp annotations. The dataset is constructed via an automated pipeline combining ASR transcription, LLM-based paralinguistic tagging, voice conversion, and manual verification.</p>
+          <div class="table-responsive mt-4">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Language</th>
+                  <th>Duration (hours)</th>
+                  <th>Clips</th>
+                  <th>Paralinguistic Categories</th>
+                  <th>Sampling Rate</th>
+                  <th>Timestamps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Chinese</td>
+                  <td>118.87</td>
+                  <td>80,117</td>
+                  <td>6</td>
+                  <td>24kHz</td>
+                  <td>✓</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Paralinguistic-TTS" class="section">
+    <div class="container-wider">
+      <div class="shadow-card">
+        <h2 class="title is-3 has-text-centered">Paralinguistic TTS Improvement</h2>
+        <p class="has-text-centered">Fine-tuning with SynParaSpeech enhances paralinguistic generation quality in CosyVoice2 and F5-TTS</p>
         <div class="table-responsive">
-          <table class="table" style="border: 1px solid #e0e0e0; border-bottom: none; table-layout: auto;">
+          <table class="table">
             <thead>
               <tr>
-                <th style="vertical-align: middle; width: 25%;">Text</th>
-                <th style="vertical-align: middle;">Prompt</th>
-                <th style="vertical-align: middle;">CosyVoice2</th>
-                <th style="vertical-align: middle;">GPT-SoVITS</th>
-                <th style="vertical-align: middle;">ChatTTS</th>
-                <th style="vertical-align: middle;">QinYu</th>
+                <th>Text with Paralinguistic Tags</th>
+                <th>Baseline CosyVoice2</th>
+                <th>CosyVoice2 + SynParaSpeech</th>
+                <th>Baseline F5-TTS</th>
+                <th>F5-TTS + SynParaSpeech</th>
               </tr>
             </thead>
-            <tbody id="audioTableBody"></tbody>
+            <tbody>
+              <tr>
+                <td>这电影, [laugh] 太有趣了!</td>
+                <td><audio controls><source src="audios/tts/cosyvoice_baseline/1.wav" type="audio/wav">Browser not supported</audio></td>
+                <td><audio controls><source src="audios/tts/cosyvoice_sft/1.wav" type="audio/wav">Browser not supported</audio></td>
+                <td><audio controls><source src="audios/tts/f5_baseline/1.wav" type="audio/wav">Browser not supported</audio></td>
+                <td><audio controls><source src="audios/tts/f5_sft/1.wav" type="audio/wav">Browser not supported</audio></td>
+              </tr>
+              <tr>
+                <td>[sigh] 没想到会是这样的结果</td>
+                <td><audio controls><source src="audios/tts/cosyvoice_baseline/2.wav" type="audio/wav">Browser not supported</audio></td>
+                <td><audio controls><source src="audios/tts/cosyvoice_sft/2.wav" type="audio/wav">Browser not supported</audio></td>
+                <td><audio controls><source src="audios/tts/f5_baseline/2.wav" type="audio/wav">Browser not supported</audio></td>
+                <td><audio controls><source src="audios/tts/f5_sft/2.wav" type="audio/wav">Browser not supported</audio></td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
     </div>
   </section>
 
-   <section id="Instructed Voice Generation" class="section">
+  <section id="Event-Detection" class="section">
     <div class="container-wider">
       <div class="shadow-card">
-        <h2 class="title is-3 has-text-centered">Instructed Voice Generation</h2>
+        <h2 class="title is-3 has-text-centered">Paralinguistic Event Detection</h2>
+        <p class="has-text-centered">Prompt tuning with SynParaSpeech improves event localization and classification accuracy</p>
         <div class="table-responsive">
-          <table class="table" style="border: 1px solid #e0e0e0; border-bottom: none; table-layout: auto;">
+          <table class="table">
             <thead>
               <tr>
-                <th style="vertical-align: middle; width: 10%;">Speaker</th>
-                <th style="vertical-align: middle; width: 75%">Instruct</th>
-                <th style="vertical-align: middle; width: 15%">Generated</th>
+                <th>Audio Clip</th>
+                <th>Qwen 2.5 Omni (Baseline)</th>
+                <th>Qwen 2.5 Omni + SynParaSpeech</th>
+                <th>Kimi Audio (Baseline)</th>
+                <th>Kimi Audio + SynParaSpeech</th>
               </tr>
             </thead>
-            <tbody id="instructTableBody"></tbody>
+            <tbody>
+              <tr>
+                <td><audio controls><source src="audios/detection/sample1.wav" type="audio/wav">Browser not supported</audio></td>
+                <td>No paralinguistic events detected</td>
+                <td>[laugh] at 00:01-00:03</td>
+                <td>Unknown sound at 00:00-00:04</td>
+                <td>[laugh] at 00:01-00:03</td>
+              </tr>
+              <tr>
+                <td><audio controls><source src="audios/detection/sample2.wav" type="audio/wav">Browser not supported</audio></td>
+                <td>Cough detected (no timestamp)</td>
+                <td>[cough] at 00:02-00:03</td>
+                <td>Noise at 00:02-00:03</td>
+                <td>[cough] at 00:02-00:03</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="Text-to-Timbre" class="section">
+  <section id="Comparison" class="section">
     <div class="container-wider">
       <div class="shadow-card">
-        <h2 class="title is-3 has-text-centered">Text-to-Timbre</h2>
+        <h2 class="title is-3 has-text-centered">Dataset Comparison</h2>
         <div class="table-responsive">
-          <table class="table" style="border: 1px solid #e0e0e0; border-bottom: none; table-layout: auto;">
+          <table class="table">
             <thead>
               <tr>
-                <th style="vertical-align: middle; width: 5%;">Category</th>
-                <th style="vertical-align: middle; width: 40%">Text-to-Timbre Prompt</th>
-                <th style="vertical-align: middle; width: 40%">Instruct</th>
-                <th style="vertical-align: middle; width: 15%">Generated</th>
+                <th>Dataset</th>
+                <th>Duration (h)</th>
+                <th>Languages</th>
+                <th>Paralinguistic Categories</th>
+                <th>Timestamps</th>
+                <th>Speech Content</th>
               </tr>
             </thead>
-            <tbody id="timbreTableBody"></tbody> <!-- 表格内容容器 -->
+            <tbody>
+              <tr>
+                <td>AudioSet [5]</td>
+                <td>72.3</td>
+                <td>-</td>
+                <td>18</td>
+                <td>×</td>
+                <td>×</td>
+              </tr>
+              <tr>
+                <td>Switchboard [9]</td>
+                <td>260</td>
+                <td>En</td>
+                <td>42</td>
+                <td>×</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>NVSpeech-38K [14]</td>
+                <td>131</td>
+                <td>Zh/En</td>
+                <td>10</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>SynParaSpeech (Ours)</td>
+                <td>120</td>
+                <td>Zh/Ja</td>
+                <td>6</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
     </div>
   </section>
 
-    <section id="Audiobook Generation" class="section">
-    <div class="container-wider">
-      <div class="shadow-card">
-        <h2 class="title is-3 has-text-centered">Audiobook Generation</h2>
-        <div class="table-responsive">
-          <table class="table" style="border: 1px solid #e0e0e0; border-bottom: none; table-layout: auto;">
-            <thead>
-              <tr>
-                <th style="vertical-align: middle; width: 85%;">Text</th>
-                <th style="vertical-align: middle; width: 15%">Generated</th>
-              </tr>
-            </thead>
-            <tbody id="audiobookTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section id="Podcast Generation" class="section">
-  <div class="container-wider">
-    <div class="shadow-card">
-      <h2 class="title is-3 has-text-centered">Podcast Generation</h2>
-      <div class="table-responsive">
-        <!-- 关键修改：使用固定布局并移除不必要的样式 -->
-        <table class="table" style="border: 1px solid #e0e0e0; border-bottom: none; table-layout: fixed; width: 100%;">
-          <thead>
-            <tr>
-              <!-- 为每个表头设置相同宽度（6列各占16.67%） -->
-              <th style="vertical-align: middle; width: 16.67%;">Prompt 1</th>
-              <th style="vertical-align: middle; width: 16.67%;">Prompt 2</th>
-              <th style="vertical-align: middle; width: 16.67%;">MOSS-TTSD</th>
-              <th style="vertical-align: middle; width: 16.67%;">Doubao(豆包)</th>
-              <th style="vertical-align: middle; width: 16.67%;">VibeVoice Large</th>
-              <th style="vertical-align: middle; width: 16.67%;">QinYu-Cast</th>
-            </tr>
-          </thead>
-          <tbody id="podcastTableBody"></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="Auto-Oral" class="section">
-  <div class="container-wider">
-    <div class="shadow-card">
-      <h2 class="title is-3 has-text-centered">Zero-Shot Auto-Oral Voice Generation</h2>
-      <div class="table-responsive">
-        <table class="table" style="border: 1px solid #e0e0e0; border-bottom: none; table-layout: fixed; width: 100%;">
-          <thead>
-            <tr>
-              <th style="vertical-align: middle; width: 52%;">Text</th>
-              <th style="vertical-align: middle; width: 12.5%;">Prompt</th>
-              <th style="vertical-align: middle; width: 12.5%;">F5-TTS</th>
-              <th style="vertical-align: middle; width: 12.5%;">CosyVoice2</th>
-              <th style="vertical-align: middle; width: 12.5%;">QinYu-Cast</th>
-            </tr>
-          </thead>
-          <tbody id="autooralTableBody"></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <script>
-    (function() {
-      const tasks = ["laugh"];
-      const texts = [
-        { content: "你上次说减肥，结果半夜发朋友圈烧烤配奶茶，快乐似神仙。<b>哈哈哈</b>， 这波自我攻略我服！", number: "1" },
-        { content: "你上次说减肥，结果半夜发朋友圈烧烤配奶茶，快乐似神仙。<b>哈哈哈</b>， 这波自我攻略我服！", number: "2" },
-        { content: "<b>呵呵</b>，聪明！不过凶手漏了个细节", number: "3" },
-        { content: "<b>哈哈</b>，那顿饭真是难以下咽，我到现在还记得那个味道！", number: "4" },
-        { content: "这猫上树时那表情，像极了周一上班的我，<b>哈哈哈哈</b>。", number: "5" },
-      ];
-      const models = ["Prompt", "CosyVoice2", "GPT-Sovits", "ChatTTS", "QinYu"];
-
-      // 确保DOM加载完成后获取容器
-      const tableBody = document.getElementById("audioTableBody");
-      if (!tableBody) return; // 防止容器不存在导致报错
-
-      tasks.forEach(task => {
-        texts.forEach((text, textIndex) => {
-          const row = document.createElement("tr");
-          const isLastRow = textIndex === texts.length - 1 && task === tasks[tasks.length - 1];
-          const borderStyle = isLastRow ? "border: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0 !important;" : "border: 1px solid #e0e0e0;";
-
-          // 文本列
-          const textCell = document.createElement("td");
-          textCell.style = `${borderStyle} vertical-align: middle; width: 25%; word-break: break-all; padding: 8px;`;
-          textCell.innerHTML = text.content;
-          row.appendChild(textCell);
-
-          // 音频列
-          models.forEach((model, modelIndex) => {
-            const audioCell = document.createElement("td");
-            const cellStyle = `${borderStyle} vertical-align: middle; padding: 8px;`;
-            audioCell.style = cellStyle;
-
-            audioCell.innerHTML = `
-              <audio controls>
-                <source src="audios/${task}/${model}/${text.number}.wav" type="audio/wav">
-                浏览器不支持音频播放
-             </audio>
-            `;
-            row.appendChild(audioCell);
-          });
-
-          tableBody.appendChild(row);
-        });
-      });
-    })();
-
-    (function() {
-      // 模型名称
-      const model = "qinyu-instruct";
-      // 任务对应的路径前缀
-      const taskPrefix = "instruct";
-      
-      // 定义3个speaker的完整数据
-      const speakers = [
-        {
-          name: "speaker1",
-          items: [
-            { 
-              number: 1,
-              instruct: "<b>愤怒、质问|怀疑伴侣不忠时的尖锐质问|</b>你心里难不成还有人？或者，你看上了今日的魏无勋？"
-            },
-            { 
-              number: 2,
-              instruct: "<b>无奈|评价家人缺点时的语气|</b>你姐不都这副德性吗，从小到大都这样。亲戚们都不喜欢她。"
-            },
-            { 
-              number: 3,
-              instruct: "<b>遗憾惋惜|对晚辈婚姻选择的叹息|</b>我看顾雨泽啊，这辈子是不打算结婚了，给他介绍了好几个相亲对象，没一个看上的。"
-            },
-            { 
-              number: 4,
-              instruct: "<b>懊恼、关切担心|为自己冲动行为后悔时的自责与担忧|</b>我刚刚当着他们，也就是乱说的，我只是气不过，想要替你出头。你怎么也跟着我乱来？ "
-            }
-          ]
-        },
-        {
-          name: "speaker2",
-          items: [
-            { 
-              number: 1,
-              instruct: "<b>愤怒、质问|怀疑伴侣不忠时的尖锐质问|</b>你心里难不成还有人？或者，你看上了今日的魏无勋？"
-            },
-            { 
-              number: 2,
-              instruct: "<b>悲伤、咆哮|失去至亲时的崩溃哭喊|</b>小姐，你要是走了，我怎么办？我怎么办呢？"
-            },
-            { 
-              number: 3,
-              instruct: "<b>悲伤、哀求|面对逝者时的绝望乞求|</b>寻儿，睁开眼看看我。"
-            },
-            { 
-              number: 4,
-              instruct: "<b>懊恼、关切担心|为自己冲动行为后悔时的自责与担忧|</b>我刚刚当着他们，也就是乱说的，我只是气不过，想要替你出头。你怎么也跟着我乱来？ "
-            }
-          ]
-        },
-        {
-          name: "speaker3",
-          items: [
-            { 
-              number: 1,
-              instruct: "<b>愤怒、质问|怀疑伴侣不忠时的尖锐质问|</b>你心里难不成还有人？或者，你看上了今日的魏无勋？"
-            },
-            { 
-              number: 2,
-              instruct: "<b>无奈|评价家人缺点时的语气|</b>你姐不都这副德性吗，从小到大都这样。亲戚们都不喜欢她。"
-            },
-            { 
-              number: 3,
-              instruct: "<b>赞叹|对孩童可爱模样表达喜爱时的赞叹|</b>你这闺女也太可爱了吧！"
-            },
-            { 
-              number: 4,
-              instruct: "<b>懊恼、感慨|反思过往错误时的沉重|</b>其实一直以来，我都很后悔，当初选择跟她结了婚。既对不起你，也伤害了她。 "
-            }
-          ]
-        }
-      ];
-
-      const tableBody = document.getElementById("instructTableBody");
-      if (!tableBody) return;
-
-      // 遍历每个speaker，生成4行数据
-      speakers.forEach(speaker => {
-        // 1. 生成speaker名称行（跨4行）
-        const firstRow = document.createElement("tr");
-        
-        // 第一列：speaker名称（固定跨4行）
-        const speakerCell = document.createElement("td");
-        speakerCell.rowSpan = 4;
-        speakerCell.className = "speaker-cell";
-        speakerCell.textContent = speaker.name;
-        firstRow.appendChild(speakerCell);
-        
-        // 第二列：instruct内容（第一行的instruct）
-        const firstInstructCell = document.createElement("td");
-        firstInstructCell.className = "instruct-cell";
-        firstInstructCell.innerHTML = speaker.items[0].instruct;
-        firstRow.appendChild(firstInstructCell);
-        
-        // 音频列：路径格式 → instruct/qinyu-instruct/speakerX/N.wav（X为speaker名，N为1-4）
-        const audioCellFirst = document.createElement("td");
-        audioCellFirst.innerHTML = `
-          <audio controls>
-            <source src="audios/${taskPrefix}/${model}/${speaker.name}/${speaker.items[0].number}.wav" type="audio/wav">
-            浏览器不支持音频播放
-          </audio>
-        `;
-        firstRow.appendChild(audioCellFirst);
-        
-        tableBody.appendChild(firstRow);
-        
-        // 2. 生成剩余3行（共4行）
-        for (let i = 1; i < 4; i++) {
-          const row = document.createElement("tr");
-          
-          // 第二列：instruct内容
-          const instructCell = document.createElement("td");
-          instructCell.className = "instruct-cell";
-          instructCell.innerHTML = speaker.items[i].instruct;
-          row.appendChild(instructCell);
-          
-          // 音频列：保持相同路径格式
-          const audioCell = document.createElement("td");
-          audioCell.innerHTML = `
-            <audio controls>
-              <source src="audios/${taskPrefix}/${model}/${speaker.name}/${speaker.items[i].number}.wav" type="audio/wav">
-              浏览器不支持音频播放
-            </audio>
-          `;
-          row.appendChild(audioCell);
-          
-          tableBody.appendChild(row);
-        }
-      });
-    })();
-
-
-    (function() {
-      // 完整数据（确保音频路径与实际文件一致）
-      const timbreData = [
-        {
-          category: "Child",
-          items: [
-            // {
-            //   tttPrompt: "该角色是一个幼儿男性，身份是农家小儿，性格憨厚耿直、认死理，气质质朴干净。",
-            //   caPrompt: "斩钉截铁|被质疑时的直白辩解|\"我没说谎！这就是我看到的样子！你不信就算了！\"",
-            //   audioSrc: "audios/autobook/1.wav"
-            // },
-            // {
-            //   tttPrompt: "该角色是一个幼儿女性，身份是世家千金，性格活泼机敏、爱撒娇，气质天真灵动。",
-            //   caPrompt: "撒娇|向长辈讨要东西时的快语|\"娘亲娘亲！你看那个糖人，翅膀亮晶晶的！给我买一个嘛～\"",
-            //   audioSrc: "audios/autobook/2.wav"
-            // },
-            // {
-            //   tttPrompt: "该角色是一个幼儿女性，身份是绣坊小徒，性格耐心细致、指尖灵巧，气质娴静乖巧。",
-            //   caPrompt: "思考|做手工时的轻柔自语|\"一针… 一线… 要绣得整整齐齐的，师父才会夸我。\"",
-            //   audioSrc: "audios/autobook/3.wav"
-            // },
-            {
-              tttPrompt: "该角色是一个<b>幼儿女性</b>，身份是小郡主/公主，性格骄慢却善良、爱助人，气质高贵带娇憨。",
-              caPrompt: "<b>关切|看到他人困难时的别扭关心|</b>\"哼，你怎么这么笨！这点事都做不好，我… 我帮你就是了！\"",
-              audioSrc: "audios/autobook/4.wav"
-            }
-          ]
-        },
-        {
-          category: "Youth",
-          items: [
-            // {
-            //   tttPrompt: "该角色是一个青年男性，身份是画师/书生，性格敏感细腻、爱采风，气质清雅忧郁，音色轻柔，语调舒缓",
-            //   caPrompt: "感慨|触景生情时的轻叹|\"这花开得再好，也有谢的时候… 就像人间聚散。\"",
-            //   audioSrc: "audios/autobook/26.wav"
-            // },
-            // {
-            //   tttPrompt: "该角色是一个青年男性，身份是酿酒师/工匠，性格踏实执拗、重手艺，气质质朴热忱，音色粗亮，带烟火气",
-            //   caPrompt: "思考|做手艺时的自语|\"这活儿得细着来，差一分都不行… 手艺可不能丢。\"",
-            //   audioSrc: "audios/autobook/27.wav"
-            // },
-            // {
-            //   tttPrompt: "该角色是一个青年女性，身份是宗门圣女/仙子，性格清冷高傲、不食烟火，气质高洁矜持，音色清越冰冷，语调平淡",
-            //   caPrompt: "冷漠|拒绝他人时的平淡语调|\"凡尘情爱，不过镜花水月。你我殊途，请回吧。\"",
-            //   audioSrc: "audios/autobook/31.wav"
-            // },
-            {
-              tttPrompt: "该角色是一个<b>青年女性</b>，身份是医者/药师，性格温婉善良、细腻包容，气质清雅含蓄，音色柔和温暖，语速舒缓",
-              caPrompt: "<b>关切|安抚受伤者时的轻语|</b>\"乖，吃了这糖丸就不疼了。让姐姐看看伤口，很快就好。\"",
-              audioSrc: "audios/autobook/32.wav"
-            }
-          ]
-        },
-        {
-          category: "Middle-aged",
-          items: [
-            {
-              tttPrompt: "该角色是一个<b>中年男性</b>，身份是王朝将军，性格铁血威严、霸气侧漏，气质不怒自威",
-              caPrompt: "<b>坚定|阵前发布指令时的呐喊|</b>\"三军听令！擂鼓，进军！后退者，斩！\"",
-              audioSrc: "audios/autobook/41.wav"
-            },
-            // {
-            //   tttPrompt: "该角色是一个中年男性，身份是山村猎户/农夫，性格朴实憨厚、沉默寡言，气质质朴善良",
-            //   caPrompt: "关切|拒绝陌生人时的缓慢回应|\"山里？不去不去。那林子邪乎，城里人莫要去送死。\"",
-            //   audioSrc: "audios/autobook/46.wav"
-            // },
-            // {
-            //   tttPrompt: "该角色是一个中年女性，身份是隐居高手/毒师，性格古怪孤僻、手段狠辣，气质阴郁危险",
-            //   caPrompt: "嘲讽|嘲讽对手时的冷笑|\"就这点本事也敢来？你的毒，给我家狗当洗脚水都不配！\"",
-            //   audioSrc: "audios/autobook/56.wav"
-            // },
-            // {
-            //   tttPrompt: "该角色是一个中年女性，身份是丧夫寡妇/孤母，性格忧郁坚韧、撑家计，气质悲苦却倔强",
-            //   caPrompt: "悲伤|丧亲后的泣诉|\"你个死鬼… 丢下我们娘俩… 但我会撑下去的… 一定……\"",
-            //   audioSrc: "audios/autobook/59.wav"
-            // }
-          ]
-        },
-        {
-          category: "Elderly",
-          items: [
-            {
-              tttPrompt: "该角色是一个<b>老年男性</b>，身份是退隐老帝/太上皇，性格深不可测、威势犹存，气质泰山压顶",
-              caPrompt: "<b>严厉|谈及权势时的低语|</b>\"这天下，终究还是朕的天下。有些人，手伸太长了。\"",
-              audioSrc: "audios/autobook/61.wav"
-            },
-            // {
-            //   tttPrompt: "该角色是一个老年男性，身份是家族老祖/活化石，性格慈祥护短、偶尔顽皮，气质深藏不露",
-            //   caPrompt: "宠溺|逗晚辈时的苍老声|\"小皮猴，又想掏曾祖的葫芦？来，让我看看你根基练得如何。\"",
-            //   audioSrc: "audios/autobook/62.wav"
-            // },
-            // {
-            //   tttPrompt: "该角色是一个老年女性，身份是慈祥祖母/接生婆，性格唠唠叨叨、心地善良，气质温暖和蔼",
-            //   caPrompt: "宠溺|哄孩子时的轻哼|\"哦哦哦～宝宝乖，睡觉觉～奶奶的小心肝哟…\"",
-            //   audioSrc: "audios/autobook/72.wav"
-            // },
-            // {
-            //   tttPrompt: "该角色是一个老年女性，身份是庵主/道姑，性格清心寡欲、洞察世情，气质冷静出尘",
-            //   caPrompt: "冷漠|拒绝访客时的语调|\"红尘已断，施主请回。青灯古佛，便是归宿。\"",
-            //   audioSrc: "audios/autobook/73.wav"
-            // }
-          ]
-        },
-        {
-          category: "Non-human",
-          items: [
-            {
-              tttPrompt: "该角色是一个<b>非人类树精（中年男性）</b>，身份是古木灵/山林守护者，性格沉稳寡言、爱自然，气质古老带绿意",
-              caPrompt: "<b>感慨|抚花叶时的叹息|</b>\"又一个百年过去了… 当年种我的人，如今轮回成了谁呢？\"",
-              audioSrc: "audios/autobook/82.wav"
-            },
-            // {
-            //   tttPrompt: "该角色是一个非人类猫妖（青年女性），身份是宠妖/捣蛋精，性格慵懒狡黠、好奇心重，气质妩媚灵活",
-            //   caPrompt: "撒娇|索要食物时的鼻音|\"嗯～今天太阳真好呀… 小鱼干呢？没有就不干活哦。\"",
-            //   audioSrc: "audios/autobook/87.wav"
-            // },
-            // {
-            //   tttPrompt: "该角色是一个非人类机器人（中性），身份是星际AI副官，性格冷静高效、绝对忠诚，气质可靠",
-            //   caPrompt: "平静|报告情况时的电子音|\"航线清晰，无异常波动。舰体完整性 100%。愿为您服务。\"",
-            //   audioSrc: "audios/autobook/93.wav"
-            // },
-            // {
-            //   tttPrompt: "该角色是一个非人类混沌灵火（无性别），身份是先天灵物/破坏者，性格顽皮毁灭、不可测，气质危险灼热",
-            //   caPrompt: "兴奋|跳跃时的童声|\"嘻嘻～烧起来啦！好看！真好玩！再来多一点！\"",
-            //   audioSrc: "audios/autobook/97.wav"
-            // }
-          ]
-        }
-      ];
-
-      // 确保DOM加载完成后执行（关键：避免容器未加载就执行脚本）
-      document.addEventListener('DOMContentLoaded', function() {
-        const tableBody = document.getElementById("timbreTableBody");
-        if (!tableBody) {
-          console.error("Text-to-Timbre表格容器未找到！请检查ID是否为timbreTableBody");
-          return;
-        }
-
-        // 遍历数据生成表格
-        timbreData.forEach(categoryData => {
-          const { category, items } = categoryData;
-          items.forEach((item, itemIndex) => {
-            const row = document.createElement("tr");
-            const isLastItem = itemIndex === items.length - 1;
-            const baseStyle = "border: 1px solid #e0e0e0; padding: 8px; vertical-align: middle; word-break: break-all;";
-
-            // 分类列（仅第一条数据显示，占4行）
-            if (itemIndex === 0) {
-              const categoryCell = document.createElement("td");
-              categoryCell.style = `${baseStyle} border-right: 1px solid #e0e0e0;`;
-              categoryCell.rowSpan = items.length; // 合并4行
-              categoryCell.textContent = category;
-              row.appendChild(categoryCell);
-            }
-
-            // TTT Prompt列
-            const tttCell = document.createElement("td");
-            tttCell.style = baseStyle;
-            tttCell.innerHTML = item.tttPrompt;
-            row.appendChild(tttCell);
-
-            // CA-Instruct-TTS Prompt列
-            const caCell = document.createElement("td");
-            caCell.style = baseStyle;
-            caCell.innerHTML = item.caPrompt;
-            row.appendChild(caCell);
-
-            // 音频列（最后一行补充底部边框）
-            const audioCell = document.createElement("td");
-            audioCell.style = isLastItem ? `${baseStyle} border-bottom: 1px solid #e0e0e0 !important;` : baseStyle;
-            audioCell.innerHTML = `
-              <audio controls>
-                <source src="${item.audioSrc}" type="audio/wav">
-                您的浏览器不支持音频播放
-             </audio>
-            `;
-            row.appendChild(audioCell);
-
-            tableBody.appendChild(row);
-          });
-        });
-      });
-    })();
-
-    (function() {
-      const tasks = ["audiobook"];
-      const texts = [
-        { content: "就在李七夜陷入思考时，刚刚进入的群友已经忍不住发话了。聊天群界面：【叶大仙】这是哪？我的外挂！？【叶大仙】钢铁侠！女帝！！哈哈哈哈哈哈！！我的外挂终于到了！【钢铁侠】什么东西？哪里来的投影技术？你怎么认识我？【独孤求败】这是哪！？你们都是什么人？【波雅汉库克】：无礼之徒！究竟是谁的恶魔果实能力！居然敢对妾身出手！？看着众人的发言，眼珠子转了转开始思考起来。", number: "1" },
-        { content: "方源循声望去，发现是中央的那桌，六个猎户围着桌子，已经喝得酒气熏天，气氛热烈如火，各个脸红脖子粗。【角色1】张老弟，来，再喝一杯！【角色2】峰大哥，兄弟们佩服你的本事，一个人就搞定一头黑皮野猪，真是好汉！这杯酒你必须得喝，不喝就是不给兄弟们面子。【角色3】谢兄弟们抬爱，但我实在喝不下了。【角色1】峰大哥喝不下，是嫌弃这酒不好吗？小二，你过来，给爷几个上好酒！声音越来越大，很显然几个猎户都喝多了。跑堂的小二连忙走过去：【角色4】几位大哥，好酒是有，但是可有些贵呢。【角色1】怎么，怕爷几个不给钱怎么的？！猎户们听了这话，好几个都站起来，瞪向店小二。他们不是五大三粗，身材魁梧，就是黑瘦粗壮，精悍逼人，带着山民特有的彪悍之气。", number: "2" },
-      ];
-      const models = ["qinyu-instruct"];
-
-      // 确保DOM加载完成后获取容器
-      const tableBody = document.getElementById("audiobookTableBody");
-      if (!tableBody) return; // 防止容器不存在导致报错
-
-      tasks.forEach(task => {
-        texts.forEach((text, textIndex) => {
-          const row = document.createElement("tr");
-          const isLastRow = textIndex === texts.length - 1 && task === tasks[tasks.length - 1];
-          const borderStyle = isLastRow ? "border: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0 !important;" : "border: 1px solid #e0e0e0;";
-
-          // 文本列
-          const textCell = document.createElement("td");
-          textCell.style = `${borderStyle} vertical-align: middle; width: 25%; word-break: break-all; padding: 8px;`;
-          textCell.innerHTML = text.content;
-          row.appendChild(textCell);
-
-          // 音频列
-          models.forEach((model, modelIndex) => {
-            const audioCell = document.createElement("td");
-            const cellStyle = `${borderStyle} vertical-align: middle; padding: 8px;`;
-            audioCell.style = cellStyle;
-
-            audioCell.innerHTML = `
-              <audio controls>
-                <source src="audios/${task}/${model}/${text.number}.wav" type="audio/wav">
-                浏览器不支持音频播放
-             </audio>
-            `;
-            row.appendChild(audioCell);
-          });
-
-          tableBody.appendChild(row);
-        });
-      });
-    })();
-
-    (function() {
-    const task = "Auto-Oral"; // 只有一个任务，使用单个变量
-    const models = ["Prompt", "F5-TTS", "CosyVoice2", "QinYuCast"];
-    const texts = [
-      { content: "等等。大额存单的什么？听着好专业的样子。", number: "1" },
-      { content: "这个案例，太典型了。P to P本质是个人借贷平台，早已因为高违约率被市场淘汰。", number: "2" },
-      { content: "很多人急用钱时才发现要交高额罚金，最后，永远保留应急资金，建议至少存六个月生活费在活期账户。", number: "3" },
-      { content: "说到这个，我深有体会，去年家里突然需要钱，被迫卖掉还没回本的基金，白白损失了手续费。", number: "4" },
-    ];
-
-    // 确保DOM加载完成后执行
-    document.addEventListener('DOMContentLoaded', function() {
-      const tableBody = document.getElementById("autooralTableBody");
-      if (!tableBody) return;
-
-      // 为每个文本创建一行
-      texts.forEach((text, index) => {
-        const row = document.createElement("tr");
-        // 判断是否为最后一行
-        const isLastRow = index === texts.length - 1;
-        const borderStyle = isLastRow ? "border: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0 !important;" : "border: 1px solid #e0e0e0;";
-
-        // 创建文本单元格（第一列）
-        const textCell = document.createElement("td");
-        textCell.style = `${borderStyle} vertical-align: middle; padding: 8px;`;
-        textCell.textContent = text.content;
-        row.appendChild(textCell);
-
-        // 为每个模型创建音频单元格
-        models.forEach(model => {
-          const audioCell = document.createElement("td");
-          audioCell.style = `${borderStyle} vertical-align: middle; padding: 8px; text-align: center;`;
-
-          audioCell.innerHTML = `
-            <audio controls style="width: 100%; max-width: 200px;">
-              <source src="audios/${task}/${model}/${text.number}.wav" type="audio/wav">
-              浏览器不支持音频播放
-            </audio>
-          `;
-          row.appendChild(audioCell);
-        });
-
-        tableBody.appendChild(row);
-      });
-    });
-  })();
-  
-(function() {
-    const tasks = ["QinYuCast"];
-    const indexs = ["1", "2"]; // 使用索引数组替代文本数组
-    const models = ["Prompt1", "Prompt2", "MOSS-TTSD", "Doubao", "VibeVoiceLarge", "QinYuCast"];
-
-    // 确保DOM加载完成后执行
-    document.addEventListener('DOMContentLoaded', function() {
-      const tableBody = document.getElementById("podcastTableBody");
-      if (!tableBody) return;
-
-      tasks.forEach(task => {
-        // 创建两行表格
-        indexs.forEach((index, indexNum) => {
-          const row = document.createElement("tr");
-          const isLastRow = indexNum === indexs.length - 1 && task === tasks[tasks.length - 1];
-          const borderStyle = isLastRow ? "border: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0 !important;" : "border: 1px solid #e0e0e0;";
-
-          models.forEach(model => {
-            // 豆包列特殊处理：只在第一行创建，合并两行，且只放1.wav
-            if (model === "Doubao") {
-              // 只在第一行创建豆包单元格
-              if (indexNum === 0) {
-                const audioCell = document.createElement("td");
-                // 设置合并两行
-                audioCell.rowSpan = 2;
-                const cellStyle = `${borderStyle} vertical-align: middle; padding: 8px;`;
-                audioCell.style = cellStyle;
-
-                // 只放1.wav
-                audioCell.innerHTML = `
-                  <audio controls>
-                    <source src="audios/${task}/${model}/1.wav" type="audio/wav">
-                    浏览器不支持音频播放
-                  </audio>
-                `;
-                row.appendChild(audioCell);
-              }
-              // 第二行不创建豆包单元格
-            } else {
-              // 其他模型正常处理
-              const audioCell = document.createElement("td");
-              const cellStyle = `${borderStyle} vertical-align: middle; padding: 8px;`;
-              audioCell.style = cellStyle;
-
-              audioCell.innerHTML = `
-                <audio controls>
-                  <source src="audios/${task}/${model}/${index}.wav" type="audio/wav">
-                  浏览器不支持音频播放
-                </audio>
-              `;
-              row.appendChild(audioCell);
-            }
-          });
-
-          tableBody.appendChild(row);
-        });
-      });
-
-      // 在表格下方添加文本（关键新增部分）
-      // 获取表格的父容器
-      const tableContainer = tableBody.closest('.table-responsive');
-      if (tableContainer) {
-        // 创建文本容器
-        const textContainer = document.createElement('div');
-        textContainer.className = 'mt-4 has-text-justified'; // 添加间距和文本对齐样式
-        textContainer.style.padding = '0 1rem'; // 与表格保持一致的内边距
-        
-        // 文本内容（可根据需要修改）
-        textContainer.innerHTML = `
-          <p><b>[S1]</b>哈喽大家好欢迎收听，我们的播客。呃今天我们要聊的是一首，非常有意义的歌啊，周杰伦的止战之殇。
-<b>[S1]</b>对然后我们会从它的创作背景啊，音乐啊歌词啊。包括他的这个MV，所表达出来的一些情感啊，来聊一聊这首歌是如何，批判战争向往和平的。
-<b>[S2]</b>好的那我们就直接开始吧，我也很期待对这首歌进行一个深度的剖析。
-<b>[S1]</b>那我们第一个问题就来聊一聊，止战之殇这首歌，是如何，体现出他的反战主题的？
-<b>[S2]</b>就是这首歌呢它是，以俄罗斯的海参崴。这个经历过战火的城市为背景然后周杰伦呢在这个 MV 里面。也是展现了战后的一些荒凉的画面还有孩子恐惧的眼神。
-<b>[S2]</b>包括他在这个专辑七里香的末尾。还用俄文写了，我希望世界充满和平，永远爱人民。就直接点出了这个反战的主题。
-<b>[S1]</b>那在止战之殇这首歌的创作过程当中啊这个团队合作是怎么体现出他们这个艺术特色的？
-<b>[S2]</b>就是方文山的这个歌词呢他是从一个孩子的视角，然后用一些面包秋千糖这些很简单的意象，就勾勒出了战争对童真的一个毁灭。
-<b>[S2]</b>周杰伦呢他的这个作曲还有编曲。是第一次引入了俄罗斯的曲风在钢琴的伴奏上面呢他是借鉴了巴赫的平均律，营造出了那种很悲凉很肃杀的那种氛围。
-<b>[S2]</b>他甚至在一些发音上面特意的用了一些平舌音来让这个叙述更有一些真实感。
-<b>[S1]</b>在止战之殇这首歌当中啊音乐和歌词是如何共同来营造出这种艺术氛围的？
-<b>[S2]</b>就是它被乐评人列为是黑暗三部曲之一嘛，那它其实相比起其他两首歌它没有那么多的戏剧性。
-<b>[S2]</b>它更多的是一种感伤，那这个从它的前奏就可以听出来。它是用一个笔尖摩擦的声音，来模拟写信的这个动作，那其实就是在象征着对和平的一个书写。
-<b>[S1]</b>对这个细节真的很打动人。
-<b>[S2]</b>对对对，然后包括它的间奏里面有一段很重复的Ba Ba La Beng Beng。这种，就很像是战鼓嘛，对又进一步的增加了这种紧张感。
-<b>[S2]</b>歌词里面的一些隐喻。光，不光是代表了剧场的灯光即将消失的艺术，它也代表了炮火对即将到来的战争。
-<b>[S2]</b>包括那个她放弃抵抗的她其实很多人都解读说这个她是代表了战争当中被逼迫的女性，那孩子们眼中的希望是什么形状就直接点出了战争对未来的摧残。
-<b>[S1]</b>哦，是的，然后止战之殇的这个 MV 啊，它的视觉叙事是怎么来强化这个主题的？
-<b>[S2]</b>就是它是，在海参崴实地拍摄的然后有十五个军人，和四十个孩子来参与。那些孩子的眼神，真的是你没有办法。就是，忽视的那种空洞包括整个，废墟的那种画面
-<b>[S2]</b>周杰伦一人分饰两角，一个是军官一个是说书人，就其实是象征了战争的参与者和旁观者也暗示了艺术在战争面前的无力感。
-<b>[S1]</b>那止战之殇这首歌，在乐评界和行业里面是获得了哪些重要的认可的？
-<b>[S2]</b>就是它在零五年的时候获得了金曲奖的最佳作词人和最佳音乐录像带两项提名。
-<b>[S2]</b>然后被乐评人称为是周杰伦编曲的巅峰之作。他的这个钢琴和鼓点的配合是非常的，古典功底非常深厚歌词呢又是那种看似很平静但是其实是非常能够打动人的这种叙事。
-<b>[S1]</b>你觉得止战之殇这首歌，有哪些，让你印象深刻的彩蛋或者冷知识？
-<b>[S2]</b>就是他开头的那个笔尖的声音是周杰伦特意加进去的就是象征着写信呼吁和平。
-<b>[S2]</b>然后他的间奏的那段旋律是借鉴了海参崴当地的民谣，还有就是网友们会发现就是他的歌词其实很贴合像巴以冲突这种，现实的战争，就觉得好像他有一些，跨时代的这种预言性。
-<b>[S1]</b>今天我们聊了这么多关于止战之殇的，创作背景啊歌词啊。音乐啊，包括它的MV，其实就是在讲这首歌是如何通过这么多元素。来深刻的批判战争，然后表达对和平的向往的。
-<b>[S2]</b>以上就是这期播客的全部内容啦，然后咱们下期再见吧。</p>
-        `;
-        
-        // 将文本容器插入到表格容器的后面
-        tableContainer.parentNode.insertBefore(textContainer, tableContainer.nextSibling);
-      }
-    });
-  })();
-  </script>
-
-
-
-  <!-- BibTeX Citation -->
-  <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
     <div class="container-wider content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{qinyu-2025,
-  title={QinYu: A Family of High-Fidelity Zero-Shot TTS with High Naturalness, Spontaneous Colloquialism, and Emotional Control},
-  author={QinYu Team},
-  year={2025}
+      <pre><code>@inproceedings{bai2026synparaspeech,
+  title={SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
+  author={Bai, Bingsong and Lu, Qihang and Sun, Zihan and Pu, Songbai and Yang, Wenbing and Gao, Yingming and Li, Ya and Gao, Jun},
+  booktitle={ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year={2026},
+  organization={IEEE}
 }</code></pre>
     </div>
-  </section>
+  </section> -->
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
             <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> (adopted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>).
-              <br> Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+              Dataset and audio samples available at <a href="https://github.com/ShawnPi233/SynParaSpeech" target="_blank">GitHub</a>.
+              <br>Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
             </p>
           </div>
         </div>
       </div>
     </div>
   </footer>
-
 </body>
 </html>
