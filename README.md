@@ -22,8 +22,8 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 ## ✨ Highlights
 
 - 🚀 **First automated pipeline** for large-scale paralinguistic dataset synthesis, eliminating reliance on manual annotation.  
-- 🌍 Covers **Chinese and Japanese** with 6 fine-grained paralinguistic categories (e.g., laughter, sigh, throat clearing).  
-- 🎧 **119 hours of data** with 81k clips, including precise timestamp annotations for paralinguistic events.  
+- 🌍 Covers 6 fine-grained paralinguistic categories (e.g., laughter, sigh, throat clearing).  
+- 🎧 **118.87 hours of data** with 81k clips, including precise timestamp annotations for paralinguistic events.  
 - 🎤 Enhances TTS models (CosyVoice2, F5-TTS) via fine-tuning for more natural paralinguistic speech generation.  
 - 🔍 Improves paralinguistic event detection (Qwen 2.5 Omni, Kimi Audio) through prompt tuning.  
 
