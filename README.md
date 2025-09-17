@@ -24,9 +24,9 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 
 - 🚀 **First automated pipeline** for large-scale paralinguistic dataset synthesis, eliminating reliance on manual annotation.  
 - 🌍 Covers **Chinese and Japanese** with 6 fine-grained paralinguistic categories (e.g., laughter, sigh, throat clearing).  
-- 🎧 **120 hours of data** with 100k clips, including precise timestamp annotations for paralinguistic events.  
+- 🎧 **119 hours of data** with 81k clips, including precise timestamp annotations for paralinguistic events.  
 - 🎤 Enhances TTS models (CosyVoice2, F5-TTS) via fine-tuning for more natural paralinguistic speech generation.  
-- 🔍 Improves paralinguistic event detection (Gemini 2.5 Pro, Qwen 2.5 Omni, Kimi Audio) through prompt tuning.  
+- 🔍 Improves paralinguistic event detection (Qwen 2.5 Omni, Kimi Audio) through prompt tuning.  
 
 
 ## 📊 Pipeline Overview
@@ -57,10 +57,10 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 
 | Feature                | Specification                                                                 |
 |------------------------|-------------------------------------------------------------------------------|
-| Total Duration         | 120 hours                                                                     |
-| Number of Clips        | 100k                                                                          |
-| Languages              | Chinese, Japanese                                                            |
-| Paralinguistic Categories | 6 (e.g., laughter, sigh, throat clearing, gasp, tsk)                        |
+| Total Duration         | 119 hours                                                                     |
+| Number of Clips        | 81k                                                                           |
+| Languages              | Chinese                                                                       |
+| Paralinguistic Categories | 6 (e.g., laughter, sigh, throat clearing, gasp, tsk)                       |
 | Annotations            | Precise timestamps for paralinguistic events, aligned with speech and text    |
 | Synthesis Method       | Automated integration of paralinguistic audio and speech via voice conversion |
 
