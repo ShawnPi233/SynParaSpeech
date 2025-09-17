@@ -81,8 +81,7 @@ Output Audio: [Speech with natural laughter inserted at the annotated position]
 ### 🎯 Paralinguistic Event Detection
 Prompt tuning with SynParaSpeech enhances models' ability to:
 - Detect paralinguistic events (accuracy, F1 score)
-- Localize events in time (mean absolute error)
-- Generalize across Chinese and Japanese
+- Automatic Speech Recognition (CER)
 
 
 ## 📜 Citation
