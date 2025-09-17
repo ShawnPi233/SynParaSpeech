@@ -15,7 +15,6 @@ SynParaSpeech is the first automated framework for constructing large-scale para
 
 Unlike traditional datasets limited by privacy, incomplete annotations, or poor realism, **SynParaSpeech** unifies:
 - 🤖 Automated synthesis of paralinguistic speech-text pairs
-- 🌐 Multilingual coverage (Chinese and Japanese)
 - ⏱️ Precise timestamp annotations for event localization
 - 📊 Support for both paralinguistic TTS and event detection tasks
 
@@ -45,8 +44,8 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 
 ### 📅 Release Plan
 
-* ✅ SynParaSpeech dataset (120 hours, Chinese/Japanese)
-* ✅ Audio samples with paralinguistic annotations
+* [ ] SynParaSpeech dataset (118.87 hours, Chinese)
+* [ ] Audio samples with paralinguistic annotations
 * [ ] Fine-tuned TTS model checkpoints (CosyVoice2-SFT, F5-TTS-SFT)
 * [ ] Prompt tuning code for paralinguistic event detection
 
@@ -57,7 +56,7 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 
 | Feature                | Specification                                                                 |
 |------------------------|-------------------------------------------------------------------------------|
-| Total Duration         | 119 hours                                                                     |
+| Total Duration         | 118.87 hours                                                                     |
 | Number of Clips        | 81k                                                                           |
 | Languages              | Chinese                                                                       |
 | Paralinguistic Categories | 6 (e.g., laughter, sigh, throat clearing, gasp, tsk)                       |
