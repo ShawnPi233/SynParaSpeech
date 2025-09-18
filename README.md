@@ -1,7 +1,6 @@
 # SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding
 
 <div align="center">
-    <h1>SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding</h1>
     <p>
     <!-- 若有logo可添加：<img src="path/to/logo.png" alt="SynParaSpeech Logo" width="300"> -->
     </p>
