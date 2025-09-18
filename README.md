@@ -1,7 +1,7 @@
+# SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding
+
 <div align="center">
-    <h1>
-    SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding
-    </h1>
+    <h1>SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding</h1>
     <p>
     <!-- 若有logo可添加：<img src="path/to/logo.png" alt="SynParaSpeech Logo" width="300"> -->
     </p>
@@ -11,43 +11,48 @@
     <a href="README_zh.md"><img src="https://img.shields.io/badge/语言-简体中文-green" alt="简体中文"></a>
     <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-blue.svg" alt="License: CC BY-NC-ND 4.0"></a>
 </div>
-SynParaSpeech is the first automated framework for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and robust speech understanding. It addresses critical gaps in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, coughing) that are aligned with speech, text, and precise timestamps.
+
+SynParaSpeech is the **first automated framework** for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and robust speech understanding. It addresses critical gaps in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, sigh, throat clearing) that are fully aligned with speech, text, and precise timestamps.
 
 Unlike traditional datasets limited by privacy, incomplete annotations, or poor realism, **SynParaSpeech** unifies:
-- 🤖 Automated synthesis of paralinguistic speech-text pairs
-- ⏱️ Precise timestamp annotations for event localization
-- 📊 Support for both paralinguistic TTS and event detection tasks
+- 🤖 Automated synthesis of paralinguistic speech-text pairs (no manual annotation dependency)
+- ⏱️ Precise timestamp annotations for paralinguistic event localization
+- 📊 Dual support for paralinguistic Text-to-Speech (TTS) and event detection tasks
 
 
 ## ✨ Highlights
 
-- 🚀 **First automated pipeline** for large-scale paralinguistic dataset synthesis, eliminating reliance on manual annotation.  
-- 🌍 Covers 6 fine-grained paralinguistic categories (e.g., laughter, sigh, throat clearing).  
-- 🎧 **118.87 hours of data** with 81k clips, including precise timestamp annotations for paralinguistic events.  
-- 🎤 Enhances TTS models (CosyVoice2, F5-TTS) via fine-tuning for more natural paralinguistic speech generation.  
-- 🔍 Improves paralinguistic event detection (Qwen 2.5 Omni, Kimi Audio) through prompt tuning.  
+- 🚀 **First automated pipeline** for large-scale paralinguistic dataset synthesis, eliminating reliance on labor-intensive manual annotation.  
+- 🌍 Covers **6 fine-grained paralinguistic categories**: sigh, throat clearing, laugh, pause, tsk, gasp (matches natural conversational distribution).  
+- 🎧 **118.75 hours of data** with 79,986 clips, including millisecond-level timestamps for paralinguistic events (aligned with speech/text).  
+- 🎤 Enhances TTS models (CosyVoice2, F5-TTS) via **SFT + DPO optimization**: CosyVoice2 achieves 3.46 PMOS (paralinguistic quality) with DPO-Joint, outperforming baselines.  
+- 🔍 Improves paralinguistic event detection (Qwen 2.5 Omni, Kimi Audio) via prompt tuning: Qwen 2.5 Omni reaches 47.3% accuracy and 47.1% macro F1 with 5-shot context.  
 
 
 ## 📊 Pipeline Overview
 
 ![SynParaSpeech Pipeline](statics/figs/synparaspeech.png)  
-*The pipeline includes 5 stages: labeled text synthesis, audio synthesis, manual verification, paralinguistic speech generation, and paralinguistic speech understanding.*
+*The pipeline consists of 5 core stages:*  
+1. **Labeled Text Synthesis**: Generate timestamped text via 3 ASR models (Whisper Large V3, SenseVoice, Paraformer) + majority voting, then insert paralinguistic tags with Deepseek Chat V3.  
+2. **Audio Synthesis**: Integrate paralinguistic audio (voice conversion via SeedVC) with speech audio (sliced by timestamps) to maintain timbre consistency.  
+3. **Manual Auxiliary Verification**: Evaluate 4 dimensions (naturalness, paralinguistic matching, audio quality, temporal alignment) to retain high-quality clips.  
+4. **Paralinguistic Speech Generation**: Optimize TTS models with SFT and DPO for better paralinguistic integration.  
+5. **Paralinguistic Speech Understanding**: Prompt-tune MLLMs to detect paralinguistic events.  
 
 
 ## 🗞 News
 
-- **[2026-09-17]** 🎉 Initial release of SynParaSpeech:
-  - 📄 Paper submitted to ICASSP 2026
-  - 📊 [Dataset](https://huggingface.co/datasets/shawnpi/SynParaSpeech)
-  - 🎧 [Audio Samples](https://shawnpi233.github.io/SynParaSpeech)
-  -  Benchmark results for TTS and event detection tasks
+- **[2025-09]** 🎉 Initial release of SynParaSpeech:
+  - 📊 [Full Dataset](https://huggingface.co/datasets/shawnpi/SynParaSpeech) (118.75 hours, Chinese)
+  - 🎧 [Audio Samples](https://shawnpi233.github.io/SynParaSpeech) (with paralinguistic annotations)
+  - 📈 Benchmark results for TTS (CosyVoice2/F5-TTS) and event detection (Qwen 2.5 Omni/Kimi Audio)
 
 ### 📅 Release Plan
 
-* [ ] SynParaSpeech dataset (118.87 hours, Chinese)
-* [ ] Audio samples with paralinguistic annotations
-* [ ] Fine-tuned TTS model checkpoints (CosyVoice2-SFT, F5-TTS-SFT)
-* [ ] Prompt tuning code for paralinguistic event detection
+- [ ] SynParaSpeech dataset (118.75 hours, Chinese, 79,986 clips)
+- [ ] Audio samples with paralinguistic annotations
+- [ ] Fine-tuned TTS model checkpoints (CosyVoice2-SFT, CosyVoice2-DPO, F5-TTS-SFT)
+- [ ] Prompt tuning code for paralinguistic event detection (with 5-shot context example)
 
 
 ## 📦 Dataset
@@ -56,53 +61,60 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 
 | Feature                | Specification                                                                 |
 |------------------------|-------------------------------------------------------------------------------|
-| Total Duration         | 118.87 hours                                                                     |
-| Number of Clips        | 81k                                                                           |
-| Languages              | Chinese                                                                       |
-| Paralinguistic Categories | 6 (e.g., laughter, sigh, throat clearing, gasp, tsk)                       |
+| Total Duration         | 118.75 hours                                                                  |
+| Number of Clips        | 79,986                                                                        |
+| Languages              | Chinese (natural conversational speech)                                       |
+| Paralinguistic Categories | Sigh, throat clearing, laugh, pause, tsk, gasp (balanced distribution: 9.36%–23.76%) |
+| Sampling Rate (SR)     | 24 kHz                                                                        |
 | Annotations            | Precise timestamps for paralinguistic events, aligned with speech and text    |
-| Synthesis Method       | Automated integration of paralinguistic audio and speech via voice conversion |
+| Synthesis Method       | Automated integration: Whisper Large V3 (semantic encoding) + CAM++ (speaker embedding) + SeedVC (zero-shot voice conversion) |
 
 
 ## 🔍 Key Capabilities
 
 ### 🔊 Paralinguistic TTS
-Fine-tuning state-of-the-art TTS models (CosyVoice2, F5-TTS) with SynParaSpeech significantly improves:
-- Naturalness of paralinguistic sound integration
-- Timbre consistency between speech and paralinguistic cues
-- Alignment of generated audio with text timestamps
+Fine-tuning state-of-the-art TTS models with SynParaSpeech delivers significant improvements in paralinguistic naturalness:
+- **Optimization Methods**: Supports Supervised Fine-Tuning (SFT) and Direct Preference Optimization (DPO, including DPO-Staged and DPO-Joint).  
+- **Performance Gains**: 
+  - CosyVoice2: PMOS (paralinguistic quality) rises from 1.88 (baseline) to 3.31 (SFT) and 3.46 (DPO-Joint).  
+  - F5-TTS: PMOS improves from 1.16 (baseline) to 3.10 (SFT), with NMOS (naturalness) maintained at 4.16.  
+- **Timbre Consistency**: Voice conversion via SeedVC ensures paralinguistic sounds match speaker timbre.
 
 Example input-output:
 ```text
 Input Text:  "这电影, [laugh] 太有趣了!"
-Output Audio: [Speech with natural laughter inserted at the annotated position]
+Output Audio: [Speech with natural laughter inserted at 00:06–00:08 (aligned with timestamp)]
 ```
 
 ### 🎯 Paralinguistic Event Detection
-Prompt tuning with SynParaSpeech enhances models' ability to:
-- Detect paralinguistic events (accuracy, F1 score)
-- Automatic Speech Recognition (CER)
+Prompt tuning with SynParaSpeech enhances MLLMs' ability to detect paralinguistic events:
+- **Optimal Context**: 5-shot prompts yield best performance (avoids overload from redundant context).  
+- **Key Improvements**:
+  - Qwen 2.5 Omni: Accuracy increases from 21.5% (no context) to 47.3% (5-shot), macro F1 from 18.9% to 47.1%.  
+  - Kimi Audio: Accuracy reaches 38.2% (5-shot), with CER (character error rate) reduced to 11.11%.  
 
 
 ## 📜 Citation
 
-If you use SynParaSpeech, please cite:
+If you use SynParaSpeech in your research, please cite our work:
 
 ```bibtex
-@inproceedings{bai2026synparaspeech,
+@article{bai2024synparaspeech,
   title     = {SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
-  author    = {Bingsong Bai and Qihang Lu and Zihan Sun and Songbai Pu and Wenbing Yang and Yingming Gao and Ya Li and Jun Gao},
-  booktitle = {ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-  year      = {2026},
-  organization = {IEEE}
+  author    = {Bingsong Bai and Qihang Lu and YueRan Hou and Peilei Jia and Yingming Gao and Wenbing Yang and Zihan Sun and Songbai Pu and Ruibo Fu and Ya Li and Jun Gao},
+  journal   = {arXiv preprint arXiv:2406.05692},
+  year      = {2024}
 }
 ```
 
 
 ## 🙏 Acknowledgement
-We thank the open-source communities behind [CosyVoice](https://github.com/FunAudioLLM/CosyVoice), [Whisper](https://github.com/openai/whisper), and [SeedVC](https://arxiv.org/abs/2411.09943) for their foundational tools.
+We thank the open-source communities behind:
+- TTS/ASR: [CosyVoice](https://github.com/FunAudioLLM/CosyVoice), [Whisper](https://github.com/openai/whisper), [SenseVoice](https://arxiv.org/abs/2407.04051), [Paraformer](https://www.isca-speech.org/archive/interspeech_2022/gao22b_interspeech.html)  
+- Voice Conversion: [SeedVC](https://arxiv.org/abs/2411.09943), [CAM++](https://www.isca-speech.org/archive/interspeech_2023/wang23aa_interspeech.html)  
+- LLM: [Deepseek Chat V3](https://arxiv.org/abs/2412.19437)  
 
 
 ## 🪪 License
 
-The dataset and code are licensed under **CC BY-NC-ND 4.0** to encourage open research and collaboration.
+The dataset and code are licensed under **CC BY-NC-ND 4.0** to encourage open research while protecting intellectual property. For commercial use, please contact the corresponding authors (Ya Li, Jun Gao).
