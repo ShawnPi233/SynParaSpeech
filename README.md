@@ -45,8 +45,8 @@ Unlike traditional paralinguistic datasets limited by missing speech, incomplete
 
 ### 📅 Release Plan
 
-- [ ] SynParaSpeech dataset (118.75 hours, Chinese, 79,986 clips)
-- [ ] Audio samples with paralinguistic annotations
+- [ ] SynParaSpeech dataset
+- [ ] Demo page
 - [ ] Fine-tuned TTS model checkpoints (CosyVoice2-SFT, CosyVoice2-DPO, F5-TTS-SFT)
 
 
