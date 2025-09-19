@@ -13,7 +13,7 @@
 
 SynParaSpeech is the **first automated framework** for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and robust speech understanding. It addresses critical gaps in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, sigh, throat clearing) that are fully aligned with speech, text, and precise timestamps.
 
-Unlike traditional datasets limited by privacy, incomplete annotations, or poor realism, **SynParaSpeech** unifies:
+Unlike traditional paralinguistic datasets limited by missing speech, incomplete annotations, or poor realism, **SynParaSpeech** unifies:
 - 🤖 Automated synthesis of paralinguistic speech-text pairs
 - ⏱️ Precise timestamp annotations for paralinguistic event localization
 - 📊 Dual support for paralinguistic Text-to-Speech (TTS) and event detection tasks
