@@ -11,7 +11,7 @@
     <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-blue.svg" alt="License: CC BY-NC-ND 4.0"></a>
 </div>
 
-SynParaSpeech is the **first automated framework** for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and robust speech understanding. It addresses critical gaps in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, sigh, throat clearing) that are fully aligned with speech, text, and precise timestamps.
+SynParaSpeech is the **first automated framework** for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and speech understanding. It addresses critical gaps in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, sigh, throat clearing) that are fully aligned with speech, text, and precise timestamps.
 
 Unlike traditional paralinguistic datasets limited by missing speech, incomplete annotations, or poor realism, **SynParaSpeech** unifies:
 - 🤖 Automated synthesis of paralinguistic speech-text pairs
@@ -48,7 +48,6 @@ Unlike traditional paralinguistic datasets limited by missing speech, incomplete
 - [ ] SynParaSpeech dataset (118.75 hours, Chinese, 79,986 clips)
 - [ ] Audio samples with paralinguistic annotations
 - [ ] Fine-tuned TTS model checkpoints (CosyVoice2-SFT, CosyVoice2-DPO, F5-TTS-SFT)
-- [ ] Prompt tuning code for paralinguistic event detection (with 5-shot context example per categories)
 
 
 ## 📦 Dataset
