@@ -103,6 +103,10 @@ We thank the open-source communities behind:
 - Dataset: [NonVerSpeech38k (NVS)](https://github.com/nonverbalspeech38k/nonverspeech38k)
 
 
-## 🪪 License
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date)](https://www.star-history.com/#ShawnPi233/SynParaSpeech&Date)
+
+## License
 
 The dataset and code are licensed under **CC BY-NC-ND 4.0** to encourage open research while protecting intellectual property. For commercial use, please contact the corresponding authors (Ya Li, Jun Gao).
