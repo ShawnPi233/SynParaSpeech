@@ -14,14 +14,14 @@
 SynParaSpeech is the **first automated framework** for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and robust speech understanding. It addresses critical gaps in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, sigh, throat clearing) that are fully aligned with speech, text, and precise timestamps.
 
 Unlike traditional datasets limited by privacy, incomplete annotations, or poor realism, **SynParaSpeech** unifies:
-- 🤖 Automated synthesis of paralinguistic speech-text pairs (no manual annotation dependency)
+- 🤖 Automated synthesis of paralinguistic speech-text pairs
 - ⏱️ Precise timestamp annotations for paralinguistic event localization
 - 📊 Dual support for paralinguistic Text-to-Speech (TTS) and event detection tasks
 
 
 ## ✨ Highlights
 
-- 🚀 **First automated pipeline** for large-scale paralinguistic dataset synthesis, eliminating reliance on labor-intensive manual annotation.  
+- 🚀 **First automated synthesis pipeline** for large-scale paralinguistic dataset construction, eliminating reliance on labor-intensive manual annotation.  
 - 🌍 Covers **6 fine-grained paralinguistic categories**: sigh, throat clearing, laugh, pause, tsk, gasp (matches natural conversational distribution).  
 - 🎧 **118.75 hours of data** with 79,986 clips, including millisecond-level timestamps for paralinguistic events (aligned with speech/text).  
 - 🎤 Enhances TTS models (CosyVoice2, F5-TTS) via **SFT + DPO optimization**: CosyVoice2 achieves 3.46 PMOS (paralinguistic quality) with DPO-Joint, outperforming baselines.  
@@ -51,7 +51,7 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 - [ ] SynParaSpeech dataset (118.75 hours, Chinese, 79,986 clips)
 - [ ] Audio samples with paralinguistic annotations
 - [ ] Fine-tuned TTS model checkpoints (CosyVoice2-SFT, CosyVoice2-DPO, F5-TTS-SFT)
-- [ ] Prompt tuning code for paralinguistic event detection (with 5-shot context example)
+- [ ] Prompt tuning code for paralinguistic event detection (with 5-shot context example per categories)
 
 
 ## 📦 Dataset
@@ -62,7 +62,7 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 |------------------------|-------------------------------------------------------------------------------|
 | Total Duration         | 118.75 hours                                                                  |
 | Number of Clips        | 79,986                                                                        |
-| Languages              | Chinese (natural conversational speech)                                       |
+| Languages              | Chinese                                                                       |
 | Paralinguistic Categories | Sigh, throat clearing, laugh, pause, tsk, gasp (balanced distribution: 9.36%–23.76%) |
 | Sampling Rate (SR)     | 24 kHz                                                                        |
 | Annotations            | Precise timestamps for paralinguistic events, aligned with speech and text    |
