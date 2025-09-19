@@ -41,10 +41,7 @@ Unlike traditional datasets limited by privacy, incomplete annotations, or poor 
 
 ## 🗞 News
 
-- **[2025-09]** 🎉 Initial release of SynParaSpeech:
-  - 📊 [Full Dataset](https://huggingface.co/datasets/shawnpi/SynParaSpeech) (118.75 hours, Chinese)
-  - 🎧 [Audio Samples](https://shawnpi233.github.io/SynParaSpeech) (with paralinguistic annotations)
-  - 📈 Benchmark results for TTS (CosyVoice2/F5-TTS) and event detection (Qwen 2.5 Omni/Kimi Audio)
+- **[2025-09]** 🎉 Initial release of SynParaSpeech
 
 ### 📅 Release Plan
 
