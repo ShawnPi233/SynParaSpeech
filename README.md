@@ -79,19 +79,12 @@ Fine-tuning state-of-the-art TTS models with SynParaSpeech delivers significant 
   - F5-TTS: PMOS improves from 1.16 (baseline) to 3.10 (SFT), with NMOS (naturalness) maintained at 4.16.  
 - **Timbre Consistency**: Voice conversion via SeedVC ensures paralinguistic sounds match speaker timbre.
 
-Example input-output:
-```text
-Input Text:  "这电影, [laugh] 太有趣了!"
-Output Audio: [Speech with natural laughter inserted at 00:06–00:08 (aligned with timestamp)]
-```
-
 ### 🎯 Paralinguistic Event Detection
 Prompt tuning with SynParaSpeech enhances MLLMs' ability to detect paralinguistic events:
 - **Optimal Context**: 5-shot prompts yield best performance (avoids overload from redundant context).  
 - **Key Improvements**:
   - Qwen 2.5 Omni: Accuracy increases from 21.5% (no context) to 47.3% (5-shot), macro F1 from 18.9% to 47.1%.  
   - Kimi Audio: Accuracy reaches 38.2% (5-shot), with CER (character error rate) reduced to 11.11%.  
-
 
 ## 📜 Citation
 
