@@ -1,327 +1,556 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding">
-  <meta property="og:title" content="SynParaSpeech: A Large-Scale Bilingual Paralinguistic Dataset"/>
-  <meta property="og:description" content="118.87 hours of Chinese speech with 6 paralinguistic categories and precise timestamps"/>
-  <meta property="og:url" content="https://github.com/ShawnPi233/SynParaSpeech"/>
-  <meta name="twitter:title" content="SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding">
-  <meta name="twitter:description" content="Automated synthesis framework for laughter, sighs, throat clearing, gasps, tsk, and pause sounds">
-  <meta name="keywords" content="paralinguistic, speech synthesis, speech understanding, dataset">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SynParaSpeech: Automated Synthesis of Paralinguistic Datasets</title>
-  <link rel="icon" type="image/x-icon" href="statics/images/logo.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link rel="stylesheet" href="statics/css/bulma.min.css">
-  <link rel="stylesheet" href="statics/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="statics/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="statics/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="statics/css/index.css">
-  <style>
-    .shadow-card {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      background: white;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      overflow-x: auto;
-      width: 100% !important;
-      max-width: 100% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-    .table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-      min-width: 800px;
-    }
-    .table th, .table td {
-      padding: 0.75rem;
-      text-align: center !important;
-      vertical-align: middle;
-      border: 1px solid #e0e0e0;
-      word-break: break-all;
-      min-width: 150px;
-    }
-    .table th:first-child, .table td:first-child {
-      min-width: 300px;
-    }
-    .table th {
-      background-color: #3498db !important;
-      color: white !important;
-      font-weight: 600;
-    }
-    audio {
-      width: 100%;
-      max-width: 170px;
-      box-sizing: border-box;
-      margin: 0 auto;
-      display: block;
-    }
-    .container-wider {
-      width: 100%;
-      padding-right: 1rem;
-      padding-left: 1rem;
-      margin-right: auto;
-      margin-left: auto;
-    }
-    @media screen and (min-width: 1024px) {
-      .container-wider { max-width: 1440px; }
-    }
-    @media screen and (min-width: 1216px) {
-      .container-wider { max-width: 1600px; }
-    }
-    @media screen and (max-width: 1023px) {
-      .container-wider { max-width: 90%; }
-    }
-    #BibTeX pre { font-size: 20px; }
-  </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="statics/js/fontawesome.all.min.js"></script>
-  <script src="statics/js/bulma-carousel.min.js"></script>
-  <script src="statics/js/bulma-slider.min.js"></script>
-  <script src="statics/js/index.js"></script>
-</head>
-<body>
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">SynParaSpeech</h1>
-            <h2 class="subtitle is-3">Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding</h2>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">Bingsong Bai, Qihang Lu, Wenbing Yang, </span>
-              <span class="author-block">Zihan Sun, YueRan Hou, Peilei Jia, Songbai Pu, Ruibo Fu, Yingming Gao, Ya Li*, Jun Gao*</span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">Beijing University of Posts and Telecommunications & Hello Group Inc. & Chinese
- Academy of Sciences</span>
-            </div>
-            <div class="mt-4">
-              <a href="https://github.com/ShawnPi233/SynParaSpeech" target="_blank" rel="noopener noreferrer">
-                <img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github" alt="GitHub Repository">
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding"
+    />
+    <meta
+      property="og:title"
+      content="SynParaSpeech: A Large-Scale Bilingual Paralinguistic Dataset"
+    />
+    <meta
+      property="og:description"
+      content="118.75 hours of Chinese speech with 6 paralinguistic categories and precise timestamps"
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/ShawnPi233/SynParaSpeech"
+    />
+    <meta
+      name="twitter:title"
+      content="SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding"
+    />
+    <meta
+      name="twitter:description"
+      content="Automated synthesis framework for laughter, sighs, throat clearing, gasps, tsk, and pause sounds"
+    />
+    <meta
+      name="keywords"
+      content="paralinguistic, speech synthesis, speech understanding, dataset"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SynParaSpeech: Automated Synthesis of Paralinguistic Datasets</title>
+    <link rel="icon" type="image/x-icon" href="statics/images/logo.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="statics/css/bulma.min.css" />
+    <link rel="stylesheet" href="statics/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="statics/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="statics/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="statics/css/index.css" />
+    <style>
+      .shadow-card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        overflow: hidden;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .container-wider {
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>Paralinguistic sounds like laughter and sighs are crucial for realistic speech synthesis. They make natural talks more engaging and authentic. But current methods depend heavily on private datasets, and open ones have problems: missing speech, timestamps, or not matching real life. To mitigate these issues, we propose an automated synthesis framework for large-scale paralinguistic datasets and introduce SynParaSpeech. It includes 6 paralinguistic categories, 118.87 hours of Chinese speech, and precise timestamp annotations. Our work contributes the first automated synthesis method for such datasets, the release of SynParaSpeech, improved paralinguistic speech synthesis models via fine-tuning, and enhanced paralinguistic event detection through prompt tuning.</p>
-            <div class="mt-6">
-              <h3 class="title is-5 has-text-centered">Contents</h3>
-              <ul class="list-disc pl-6 mt-2">
-                <li><a href="#Methodology" class="link">Automated Synthesis Pipeline</a></li>
-                <li><a href="#Dataset-Overview" class="link">Dataset Overview</a></li>
-                <li><a href="#Paralinguistic-TTS" class="link">Paralinguistic TTS Improvement</a></li>
-                <li><a href="#Event-Detection" class="link">Paralinguistic Event Detection</a></li>
-                <li><a href="#Comparison" class="link">Dataset Comparison</a></li>
-              </ul>
+      /* 表格容器样式 */
+      .table-container {
+        width: 100%; /* 容器占满可用宽度 */
+        overflow-x: auto; /* 超出宽度可以横向滚动 */
+      }
+
+      table {
+        border-collapse: collapse;
+        table-layout: fixed; /* 固定列宽，使音频组件显示正常 */
+        width: 100%; /* 表格占满容器 */
+        border-radius: 12px; /* 可选 */
+        overflow: hidden;
+      }
+      #table-head th {
+        font-size: 14px; /* 调整字体大小 */
+        text-align: center; /* 水平居中 */
+        vertical-align: middle;
+        font-weight: bold; /* 加粗可选 */
+        background-color: #3498db;
+        color: #ffffff;
+      }
+      #Methodology .content ol {
+        padding-left: 1.2rem; /* 缩进一点点对齐标题 */
+        margin-left: 0; /* 去掉默认外边距 */
+      }
+
+      td audio {
+        width: 100%; /* 音频组件占满单元格宽度 */
+        max-width: 150px; /* 音频最大宽度，避免过大 */
+      }
+      /* 奇偶列颜色 */
+      table td:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      table td:nth-child(odd) {
+        background-color: #ffffff;
+      }
+      .section {
+        padding-top: 1rem; /* 默认是 3rem */
+        padding-bottom: 1rem; /* 默认是 3rem */
+      }
+      .hero-body {
+        padding-top: 2rem; /* 默认是 3rem */
+        padding-bottom: 2rem; /* 默认是 3rem */
+      }
+
+      /* 添加可拖动指示器 */
+      .table-container::after {
+        content: "↔";
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 16px;
+        color: #999;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 800px;
+        border-radius: 12px; /* 可选 */
+        overflow: hidden;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        vertical-align: top;
+      }
+
+      .table th,
+      .table td {
+        padding: 0.75rem;
+        text-align: center !important;
+        vertical-align: middle;
+        border: 1px solid #e0e0e0;
+        word-break: break-word;
+        min-width: 120px;
+        max-width: 300px;
+      }
+
+      .table th:first-child {
+        background-color: #3498db;
+        color: white;
+        z-index: 3;
+      }
+
+      .table th {
+        background-color: #3498db !important;
+        color: white !important;
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+
+      audio {
+        width: 100%;
+        max-width: 170px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        display: block;
+      }
+
+      @media screen and (min-width: 1024px) {
+        .container-wider {
+          max-width: 1440px;
+        }
+      }
+
+      @media screen and (min-width: 1216px) {
+        .container-wider {
+          max-width: 1600px;
+        }
+      }
+
+      @media screen and (max-width: 1023px) {
+        .container-wider {
+          max-width: 90%;
+        }
+
+        .table th,
+        .table td {
+          padding: 0.5rem;
+          font-size: 0.9rem;
+        }
+
+        .table th:first-child,
+        .table td:first-child {
+          min-width: 150px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .table th,
+        .table td {
+          padding: 0.4rem;
+          font-size: 0.85rem;
+          min-width: 100px;
+        }
+
+        .table th:first-child,
+        .table td:first-child {
+          min-width: 120px;
+        }
+      }
+
+      #BibTeX pre {
+        font-size: 20px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="statics/js/fontawesome.all.min.js"></script>
+    <script src="statics/js/bulma-carousel.min.js"></script>
+    <script src="statics/js/bulma-slider.min.js"></script>
+    <script src="statics/js/index.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container-wider">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">SynParaSpeech</h1>
+              <h2 class="subtitle is-3">
+                Automated Synthesis of Paralinguistic Datasets for Speech
+                Generation and Understanding
+              </h2>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"
+                  >Bingsong Bai, Qihang Lu, Wenbing Yang,
+                </span>
+                <span class="author-block"
+                  >Zihan Sun, YueRan Hou, Peilei Jia, Songbai Pu, Ruibo Fu,
+                  Yingming Gao, Ya Li*, Jun Gao*</span
+                >
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"
+                  >Beijing University of Posts and Telecommunications & Hello
+                  Group Inc. & Chinese Academy of Sciences</span
+                >
+              </div>
+              <div class="mt-4">
+                <a
+                  href="https://github.com/ShawnPi233/SynParaSpeech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github"
+                    alt="GitHub Repository"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container-wider">
+          <div class="column has-text-left">
+            <h2 class="title is-3 has-text-left">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Paralinguistic sounds like laughter and sighs are crucial for
+                realistic speech synthesis. They make natural talks more
+                engaging and authentic. But current methods depend heavily on
+                private datasets, and open ones have problems: missing speech,
+                timestamps, or not matching real life. To mitigate these issues,
+                we propose an automated synthesis framework for large-scale
+                paralinguistic datasets and introduce SynParaSpeech. It includes
+                6 paralinguistic categories, 118.75 hours of Chinese speech, and
+                precise timestamp annotations. Our work contributes the first
+                automated synthesis method for such datasets, the release of
+                SynParaSpeech, improved paralinguistic speech synthesis models
+                via fine-tuning, and enhanced paralinguistic event detection
+                through prompt tuning.
+              </p>
+              <div class="mt-6">
+                <h3 class="title is-5 has-text-left">Contents</h3>
+                <ul class="list-disc pl-6 mt-2">
+                  <li>
+                    <a href="#Methodology" class="link"
+                      >Automated Synthesis Pipeline</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#Dataset-Overview" class="link"
+                      >Dataset Overview</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#Paralinguistic-TTS" class="link"
+                      >Paralinguistic TTS Improvement</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#Event-Detection" class="link"
+                      >Paralinguistic Event Detection</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#Comparison" class="link">Dataset Comparison</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="Methodology" class="section">
-    <div class="container-wider">
-      <div class="shadow-card">
-        <h2 class="title is-3 has-text-centered">Automated Synthesis Pipeline</h2>
-        <div class="content has-text-justified">
-          <ol class="list-decimal pl-6">
-            <li><strong>Labeled Text Synthesis</strong>: ASR models (Whisper, Paraformer) generate transcriptions with VAD-based timestamp correction. LLMs insert paralinguistic tags at appropriate positions.</li>
-            <li><strong>Audio Synthesis</strong>: Paralinguistic audio clips are converted to match speech timbre using SeedVC, then inserted into speech segments at annotated timestamps.</li>
-            <li><strong>Verification</strong>: Manual checks ensure naturalness, timbre consistency, audio quality, and timing alignment.</li>
-          </ol>
-          <figure class="image is-centered mt-4">
-            <img src="statics/figs/synparaspeech.png" alt="SynParaSpeech Pipeline" style="max-width: 1400px;">
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="Dataset-Overview" class="section">
-    <div class="container-wider">
-      <div class="shadow-card">
-        <h2 class="title is-3 has-text-centered">Dataset Overview</h2>
-        <div class="content has-text-justified">
-          <p>SynParaSpeech covers 6 paralinguistic categories (laughter, sigh, throat clearing, gasp, tsk, pause), with 118.87 hours of audio and precise timestamp annotations. The dataset is constructed via an automated pipeline combining ASR transcription, LLM-based paralinguistic tagging, voice conversion, and manual verification.</p>
-          <div class="table-responsive mt-4">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Language</th>
-                  <th>Duration (hours)</th>
-                  <th>Clips</th>
-                  <th>Paralinguistic Categories</th>
-                  <th>Sampling Rate</th>
-                  <th>Timestamps</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Chinese</td>
-                  <td>118.87</td>
-                  <td>80,117</td>
-                  <td>6</td>
-                  <td>24kHz</td>
-                  <td>✓</td>
-                </tr>
-              </tbody>
-            </table>
+      <div class="container-wider">
+        <div class="shadow-card">
+          <h2 class="title is-3 has-text-left">Automated Synthesis Pipeline</h2>
+          <div class="content has-text-left">
+            <ol class="list-decimal pl-6">
+              <li>
+                <strong>Labeled Text Synthesis</strong>: ASR models (Whisper,
+                Paraformer) generate transcriptions with VAD-based timestamp
+                correction. LLMs insert paralinguistic tags at appropriate
+                positions.
+              </li>
+              <li>
+                <strong>Audio Synthesis</strong>: Paralinguistic audio clips are
+                converted to match speech timbre using SeedVC, then inserted
+                into speech segments at annotated timestamps.
+              </li>
+              <li>
+                <strong>Verification</strong>: Manual checks ensure naturalness,
+                timbre consistency, audio quality, and timing alignment.
+              </li>
+            </ol>
+            <figure class="image is-centered mt-4">
+              <img
+                src="statics/figs/synparaspeech.png"
+                alt="SynParaSpeech Pipeline"
+                style="max-width: 1400px"
+              />
+            </figure>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="Paralinguistic-TTS" class="section">
-    <div class="container-wider">
-      <div class="shadow-card">
-        <h2 class="title is-3 has-text-centered">Paralinguistic TTS Improvement</h2>
-        <p class="has-text-centered">Fine-tuning with SynParaSpeech enhances paralinguistic generation quality in CosyVoice2 and F5-TTS</p>
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Text with Paralinguistic Tags</th>
-                <th>Baseline CosyVoice2</th>
-                <th>CosyVoice2 + SynParaSpeech</th>
-                <th>Baseline F5-TTS</th>
-                <th>F5-TTS + SynParaSpeech</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>这电影, [laugh] 太有趣了!</td>
-                <td><audio controls><source src="audios/tts/cosyvoice_baseline/1.wav" type="audio/wav">Browser not supported</audio></td>
-                <td><audio controls><source src="audios/tts/cosyvoice_sft/1.wav" type="audio/wav">Browser not supported</audio></td>
-                <td><audio controls><source src="audios/tts/f5_baseline/1.wav" type="audio/wav">Browser not supported</audio></td>
-                <td><audio controls><source src="audios/tts/f5_sft/1.wav" type="audio/wav">Browser not supported</audio></td>
-              </tr>
-              <tr>
-                <td>[sigh] 没想到会是这样的结果</td>
-                <td><audio controls><source src="audios/tts/cosyvoice_baseline/2.wav" type="audio/wav">Browser not supported</audio></td>
-                <td><audio controls><source src="audios/tts/cosyvoice_sft/2.wav" type="audio/wav">Browser not supported</audio></td>
-                <td><audio controls><source src="audios/tts/f5_baseline/2.wav" type="audio/wav">Browser not supported</audio></td>
-                <td><audio controls><source src="audios/tts/f5_sft/2.wav" type="audio/wav">Browser not supported</audio></td>
-              </tr>
-            </tbody>
-          </table>
+    <section id="Dataset-Overview" class="section">
+      <div class="container-wider">
+        <div class="shadow-card">
+          <h2 class="title is-3 has-text-left">Dataset Overview</h2>
+          <div class="content has-text-justified">
+            <p>
+              SynParaSpeech covers 6 paralinguistic categories (laughter, sigh,
+              throat clearing, gasp, tsk, pause), with 118.75 hours of audio and
+              precise timestamp annotations. The dataset is constructed via an
+              automated pipeline combining ASR transcription, LLM-based
+              paralinguistic tagging, voice conversion, and manual verification.
+            </p>
+            <div class="table-responsive mt-4">
+              <div class="table-container">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Language</th>
+                      <th>Duration (hours)</th>
+                      <th>Clips</th>
+                      <th>Paralinguistic Categories</th>
+                      <th>Sampling Rate</th>
+                      <th>Timestamps</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Chinese</td>
+                      <td>118.75</td>
+                      <td>79,986</td>
+                      <td>6</td>
+                      <td>24kHz</td>
+                      <td>✓</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="Event-Detection" class="section">
-    <div class="container-wider">
-      <div class="shadow-card">
-        <h2 class="title is-3 has-text-centered">Paralinguistic Event Detection</h2>
-        <p class="has-text-centered">Prompt tuning with SynParaSpeech improves event localization and classification accuracy</p>
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Audio Clip</th>
-                <th>Qwen 2.5 Omni (Baseline)</th>
-                <th>Qwen 2.5 Omni + SynParaSpeech</th>
-                <th>Kimi Audio (Baseline)</th>
-                <th>Kimi Audio + SynParaSpeech</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><audio controls><source src="audios/detection/sample1.wav" type="audio/wav">Browser not supported</audio></td>
-                <td>No paralinguistic events detected</td>
-                <td>[laugh] at 00:01-00:03</td>
-                <td>Unknown sound at 00:00-00:04</td>
-                <td>[laugh] at 00:01-00:03</td>
-              </tr>
-              <tr>
-                <td><audio controls><source src="audios/detection/sample2.wav" type="audio/wav">Browser not supported</audio></td>
-                <td>Cough detected (no timestamp)</td>
-                <td>[cough] at 00:02-00:03</td>
-                <td>Noise at 00:02-00:03</td>
-                <td>[cough] at 00:02-00:03</td>
-              </tr>
-            </tbody>
-          </table>
+    <section id="Paralinguistic-TTS" class="section">
+      <div class="container-wider">
+        <div class="shadow-card">
+          <h2 class="title is-3 has-text-left">
+            Paralinguistic TTS Improvement
+          </h2>
+          <p class="has-text-left">
+            Fine-tuning with SynParaSpeech enhances paralinguistic generation
+            quality in CosyVoice2 and F5-TTS
+          </p>
+          <div class="table-responsive">
+            <div class="table-container" style="margin-top: 30px">
+              <table id="audio-table">
+                <thead>
+                  <tr id="table-head"></tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="Comparison" class="section">
-    <div class="container-wider">
-      <div class="shadow-card">
-        <h2 class="title is-3 has-text-centered">Dataset Comparison</h2>
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Dataset</th>
-                <th>Duration (h)</th>
-                <th>Languages</th>
-                <th>Paralinguistic Categories</th>
-                <th>Timestamps</th>
-                <th>Speech Content</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>AudioSet [5]</td>
-                <td>72.3</td>
-                <td>-</td>
-                <td>18</td>
-                <td>×</td>
-                <td>×</td>
-              </tr>
-              <tr>
-                <td>Switchboard [9]</td>
-                <td>260</td>
-                <td>En</td>
-                <td>42</td>
-                <td>×</td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>NVSpeech-38K [14]</td>
-                <td>131</td>
-                <td>Zh/En</td>
-                <td>10</td>
-                <td>✓</td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>SynParaSpeech (Ours)</td>
-                <td>120</td>
-                <td>Zh/Ja</td>
-                <td>6</td>
-                <td>✓</td>
-                <td>✓</td>
-              </tr>
-            </tbody>
-          </table>
+    <section id="Event-Detection" class="section">
+      <div class="container-wider">
+        <div class="shadow-card">
+          <h2 class="title is-3 has-text-left">
+            Paralinguistic Event Detection
+          </h2>
+          <p class="has-text-left">
+            Prompt tuning with SynParaSpeech improves event localization and
+            classification accuracy
+          </p>
+          <div class="table-responsive">
+            <div class="table-container" style="margin-top: 30px">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Audio Clip</th>
+                    <th>Qwen 2.5 Omni (Baseline)</th>
+                    <th>Qwen 2.5 Omni + SynParaSpeech</th>
+                    <th>Kimi Audio (Baseline)</th>
+                    <th>Kimi Audio + SynParaSpeech</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <audio controls>
+                        <source
+                          src="audios/detection/sample1.wav"
+                          type="audio/wav"
+                        />
+                        Browser not supported
+                      </audio>
+                    </td>
+                    <td>No paralinguistic events detected</td>
+                    <td>[laugh] at 00:01-00:03</td>
+                    <td>Unknown sound at 00:00-00:04</td>
+                    <td>[laugh] at 00:01-00:03</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <audio controls>
+                        <source
+                          src="audios/detection/sample2.wav"
+                          type="audio/wav"
+                        />
+                        Browser not supported
+                      </audio>
+                    </td>
+                    <td>Cough detected (no timestamp)</td>
+                    <td>[cough] at 00:02-00:03</td>
+                    <td>Noise at 00:02-00:03</td>
+                    <td>[cough] at 00:02-00:03</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- <section class="section" id="BibTeX">
+    <section id="Comparison" class="section">
+      <div class="container-wider">
+        <div class="shadow-card">
+          <h2 class="title is-3 has-text-left">Dataset Comparison</h2>
+          <div class="table-responsive">
+            <div class="table-container" style="margin-top: 30px">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Dataset</th>
+                    <th>Duration (h)</th>
+                    <th>Languages</th>
+                    <th>Paralinguistic Categories</th>
+                    <th>Timestamps</th>
+                    <th>Speech Content</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>AudioSet [5]</td>
+                    <td>72.3</td>
+                    <td>-</td>
+                    <td>18</td>
+                    <td>×</td>
+                    <td>×</td>
+                  </tr>
+                  <tr>
+                    <td>Switchboard [9]</td>
+                    <td>260</td>
+                    <td>En</td>
+                    <td>42</td>
+                    <td>×</td>
+                    <td>✓</td>
+                  </tr>
+                  <tr>
+                    <td>NVSpeech-38K [14]</td>
+                    <td>131</td>
+                    <td>Zh/En</td>
+                    <td>10</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                  </tr>
+                  <tr>
+                    <td>SynParaSpeech (Ours)</td>
+                    <td>120</td>
+                    <td>Zh/Ja</td>
+                    <td>6</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section" id="BibTeX">
     <div class="container-wider content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@inproceedings{bai2026synparaspeech,
@@ -334,19 +563,102 @@
     </div>
   </section> -->
 
-  <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              Dataset and audio samples available at <a href="https://github.com/ShawnPi233/SynParaSpeech" target="_blank">GitHub</a>.
-              <br>Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
-            </p>
+    <footer class="footer">
+      <div class="container">
+        <div class="columns has-text-leftd">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                Dataset and audio samples available at
+                <a
+                  href="https://github.com/ShawnPi233/SynParaSpeech"
+                  target="_blank"
+                  >GitHub</a
+                >. <br />Licensed under
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  target="_blank"
+                  >CC BY-SA 4.0</a
+                >.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+    <script>
+      const tableHead = document.getElementById("table-head");
+      const tableBody = document.getElementById("table-body");
+
+      // 模型显示名称
+      const modelDisplayNames = {
+        cosyvoice_base: "Baseline CosyVoice2",
+        cosyvoice_sft: "CosyVoice2<br>+ SynParaSpeech",
+        cosyvoice_sft_dpo: "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-staged",
+        "cosyvoice_sft+dpo": "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-joint",
+        F5_base: "Baseline F5-TTS",
+        F5_sft: "F5-TTS<br>+ SynParaSpeech",
+        cosyvoice_nv: "CosyVoice2<br>+ NVSpeech-38K",
+        F5_nv: "F5-TTS<br>+ NVSpeech-38K"
+      };
+
+      let tts_data = {};
+
+      // 初始化表头（固定）
+      function initTableHeader() {
+        tableHead.innerHTML = "<th>文本内容</th>";
+        Object.keys(modelDisplayNames).forEach((model) => {
+          const th = document.createElement("th");
+          th.innerHTML = modelDisplayNames[model];
+          tableHead.appendChild(th);
+        });
+      }
+      // 渲染类别下拉菜单
+      function populateTable() {
+        tableBody.innerHTML = "";
+
+        const referenceModel = "cosyvoice_base";
+
+        Object.keys(tts_data[referenceModel]).forEach((category) => {
+          const texts = tts_data[referenceModel][category].texts;
+
+          texts.forEach((text, idx) => {
+            const tr = document.createElement("tr");
+
+            // 文本列
+            const tdText = document.createElement("td");
+            tdText.textContent = text;
+            tr.appendChild(tdText);
+
+            // 各模型音频列
+            Object.keys(modelDisplayNames).forEach((model) => {
+              const td = document.createElement("td");
+              if (tts_data[model] && tts_data[model][category]) {
+                const audios = tts_data[model][category].audios;
+                if (audios && audios[idx]) {
+                  const audio = document.createElement("audio");
+                  audio.controls = true;
+                  audio.src = audios[idx];
+                  td.appendChild(audio);
+                }
+              }
+              tr.appendChild(td);
+            });
+
+            tableBody.appendChild(tr);
+          });
+        });
+      }
+
+      // 加载 JSON 后直接渲染
+      fetch("assets/tts_data.json")
+        .then((res) => res.json())
+        .then((data) => {
+          tts_data = data;
+          initTableHeader();
+          populateTable();
+        });
+    </script>
+  </body>
 </html>
