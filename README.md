@@ -87,7 +87,7 @@ Prompt tuning with SynParaSpeech enhances MLLMs' ability to detect paralinguisti
 If you use SynParaSpeech in your research, please cite our work:
 
 ```bibtex
-@article{bai2024synparaspeech,
+@article{bai2025synparaspeech,
   title     = {SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
   author    = {Bingsong Bai and Qihang Lu and Wenbing Yang and Zihan Sun and YueRan Hou and Peilei Jia and Songbai Pu and Ruibo Fu and Yingming Gao and Ya Li and Jun Gao},
   journal   = {arXiv preprint arXiv:2509.14946},
