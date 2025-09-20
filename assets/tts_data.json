@@ -4,7 +4,6 @@
       "texts": [],
       "audios": [
         "assets/tts_audio/F5_nv/throat_clearing/1.wav",
-        "assets/tts_audio/F5_nv/throat_clearing/10.wav",
         "assets/tts_audio/F5_nv/throat_clearing/2.wav",
         "assets/tts_audio/F5_nv/throat_clearing/3.wav",
         "assets/tts_audio/F5_nv/throat_clearing/4.wav",
@@ -12,7 +11,8 @@
         "assets/tts_audio/F5_nv/throat_clearing/6.wav",
         "assets/tts_audio/F5_nv/throat_clearing/7.wav",
         "assets/tts_audio/F5_nv/throat_clearing/8.wav",
-        "assets/tts_audio/F5_nv/throat_clearing/9.wav"
+        "assets/tts_audio/F5_nv/throat_clearing/9.wav",
+        "assets/tts_audio/F5_nv/throat_clearing/10.wav"
       ]
     },
     "gasp": {
@@ -58,7 +58,6 @@
       "texts": [],
       "audios": [
         "assets/tts_audio/F5_sft/throat_clearing/1.wav",
-        "assets/tts_audio/F5_sft/throat_clearing/10.wav",
         "assets/tts_audio/F5_sft/throat_clearing/2.wav",
         "assets/tts_audio/F5_sft/throat_clearing/3.wav",
         "assets/tts_audio/F5_sft/throat_clearing/4.wav",
@@ -66,7 +65,8 @@
         "assets/tts_audio/F5_sft/throat_clearing/6.wav",
         "assets/tts_audio/F5_sft/throat_clearing/7.wav",
         "assets/tts_audio/F5_sft/throat_clearing/8.wav",
-        "assets/tts_audio/F5_sft/throat_clearing/9.wav"
+        "assets/tts_audio/F5_sft/throat_clearing/9.wav",
+        "assets/tts_audio/F5_sft/throat_clearing/10.wav"
       ]
     },
     "gasp": {
@@ -112,7 +112,6 @@
       "texts": [],
       "audios": [
         "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/1.wav",
-        "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/10.wav",
         "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/2.wav",
         "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/3.wav",
         "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/4.wav",
@@ -120,7 +119,8 @@
         "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/6.wav",
         "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/7.wav",
         "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/8.wav",
-        "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/9.wav"
+        "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/9.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/10.wav"
       ]
     },
     "gasp": {
@@ -166,7 +166,6 @@
       "texts": [],
       "audios": [
         "assets/tts_audio/gt/throat_clearing/1.wav",
-        "assets/tts_audio/gt/throat_clearing/10.wav",
         "assets/tts_audio/gt/throat_clearing/2.wav",
         "assets/tts_audio/gt/throat_clearing/3.wav",
         "assets/tts_audio/gt/throat_clearing/4.wav",
@@ -174,7 +173,8 @@
         "assets/tts_audio/gt/throat_clearing/6.wav",
         "assets/tts_audio/gt/throat_clearing/7.wav",
         "assets/tts_audio/gt/throat_clearing/8.wav",
-        "assets/tts_audio/gt/throat_clearing/9.wav"
+        "assets/tts_audio/gt/throat_clearing/9.wav",
+        "assets/tts_audio/gt/throat_clearing/10.wav"
       ]
     },
     "gasp": {
@@ -220,7 +220,6 @@
       "texts": [],
       "audios": [
         "assets/tts_audio/F5_base/throat_clearing/1.wav",
-        "assets/tts_audio/F5_base/throat_clearing/10.wav",
         "assets/tts_audio/F5_base/throat_clearing/2.wav",
         "assets/tts_audio/F5_base/throat_clearing/3.wav",
         "assets/tts_audio/F5_base/throat_clearing/4.wav",
@@ -228,7 +227,8 @@
         "assets/tts_audio/F5_base/throat_clearing/6.wav",
         "assets/tts_audio/F5_base/throat_clearing/7.wav",
         "assets/tts_audio/F5_base/throat_clearing/8.wav",
-        "assets/tts_audio/F5_base/throat_clearing/9.wav"
+        "assets/tts_audio/F5_base/throat_clearing/9.wav",
+        "assets/tts_audio/F5_base/throat_clearing/10.wav"
       ]
     },
     "gasp": {
@@ -285,7 +285,6 @@
       ],
       "audios": [
         "assets/tts_audio/cosyvoice_base/throat_clearing/1.wav",
-        "assets/tts_audio/cosyvoice_base/throat_clearing/10.wav",
         "assets/tts_audio/cosyvoice_base/throat_clearing/2.wav",
         "assets/tts_audio/cosyvoice_base/throat_clearing/3.wav",
         "assets/tts_audio/cosyvoice_base/throat_clearing/4.wav",
@@ -293,7 +292,8 @@
         "assets/tts_audio/cosyvoice_base/throat_clearing/6.wav",
         "assets/tts_audio/cosyvoice_base/throat_clearing/7.wav",
         "assets/tts_audio/cosyvoice_base/throat_clearing/8.wav",
-        "assets/tts_audio/cosyvoice_base/throat_clearing/9.wav"
+        "assets/tts_audio/cosyvoice_base/throat_clearing/9.wav",
+        "assets/tts_audio/cosyvoice_base/throat_clearing/10.wav"
       ]
     },
     "gasp": {
@@ -364,7 +364,6 @@
       "texts": [],
       "audios": [
         "assets/tts_audio/cosyvoice_nv/throat_clearing/1.wav",
-        "assets/tts_audio/cosyvoice_nv/throat_clearing/10.wav",
         "assets/tts_audio/cosyvoice_nv/throat_clearing/2.wav",
         "assets/tts_audio/cosyvoice_nv/throat_clearing/3.wav",
         "assets/tts_audio/cosyvoice_nv/throat_clearing/4.wav",
@@ -372,7 +371,8 @@
         "assets/tts_audio/cosyvoice_nv/throat_clearing/6.wav",
         "assets/tts_audio/cosyvoice_nv/throat_clearing/7.wav",
         "assets/tts_audio/cosyvoice_nv/throat_clearing/8.wav",
-        "assets/tts_audio/cosyvoice_nv/throat_clearing/9.wav"
+        "assets/tts_audio/cosyvoice_nv/throat_clearing/9.wav",
+        "assets/tts_audio/cosyvoice_nv/throat_clearing/10.wav"
       ]
     },
     "gasp": {
@@ -418,7 +418,6 @@
       "texts": [],
       "audios": [
         "assets/tts_audio/cosyvoice_sft/throat_clearing/1.wav",
-        "assets/tts_audio/cosyvoice_sft/throat_clearing/10.wav",
         "assets/tts_audio/cosyvoice_sft/throat_clearing/2.wav",
         "assets/tts_audio/cosyvoice_sft/throat_clearing/3.wav",
         "assets/tts_audio/cosyvoice_sft/throat_clearing/4.wav",
@@ -426,7 +425,8 @@
         "assets/tts_audio/cosyvoice_sft/throat_clearing/6.wav",
         "assets/tts_audio/cosyvoice_sft/throat_clearing/7.wav",
         "assets/tts_audio/cosyvoice_sft/throat_clearing/8.wav",
-        "assets/tts_audio/cosyvoice_sft/throat_clearing/9.wav"
+        "assets/tts_audio/cosyvoice_sft/throat_clearing/9.wav",
+        "assets/tts_audio/cosyvoice_sft/throat_clearing/10.wav"
       ]
     },
     "gasp": {
@@ -472,7 +472,6 @@
       "texts": [],
       "audios": [
         "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/1.wav",
-        "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/10.wav",
         "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/2.wav",
         "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/3.wav",
         "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/4.wav",
@@ -480,7 +479,8 @@
         "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/6.wav",
         "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/7.wav",
         "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/8.wav",
-        "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/9.wav"
+        "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/9.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/10.wav"
       ]
     },
     "gasp": {
