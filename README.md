@@ -5,7 +5,7 @@
     <!-- 若有logo可添加：<img src="path/to/logo.png" alt="SynParaSpeech Logo" width="300"> -->
     </p>
     <a href="https://arxiv.org/abs/2509.14946"><img src="https://img.shields.io/badge/arXiv-2509.14946-b31b1b.svg?logo=arxiv&logoColor=white" alt="arXiv:2509.14946"></a>
-    <a href="https://shawnpi233.github.io/SynParaSpeech"><img src="https://img.shields.io/badge/Demos (Coming Soon)-🌐-blue" alt="Demos"></a>
+    <a href="https://shawnpi233.github.io/SynParaSpeech"><img src="https://img.shields.io/badge/Demos-🌐-blue" alt="Demos"></a>
     <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20Access-Coming%20Soon-orange" alt="Dataset Access(Coming Soon)"></a>
 <!--     <a href="README_zh.md"><img src="https://img.shields.io/badge/语言-简体中文-green" alt="简体中文"></a> -->
     <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-blue.svg" alt="License: CC BY-NC-ND 4.0"></a>
@@ -41,13 +41,13 @@ Unlike traditional paralinguistic datasets limited by missing speech, incomplete
 
 ## 🗞 News
 
-- **[2025-09]** 🎉 Initial release of SynParaSpeech
-
+- **[2025-09-18]** 🎉 Initial release of SynParaSpeech.
+- **[2025-09-20]** 🎉 Initial release of Demo Page.
+- 
 ### 📅 Release Plan
-
+- [x] Demo page
 - [ ] SynParaSpeech dataset
-- [ ] Demo page
-- [ ] Fine-tuned TTS model checkpoints (CosyVoice2-SFT, CosyVoice2-DPO, F5-TTS-SFT)
+- [ ] Fine-tuned TTS model checkpoints
 
 
 ## 📦 Dataset
