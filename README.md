@@ -108,11 +108,11 @@ We thank the open-source communities behind:
 <a href="https://www.star-history.com/#ShawnPi233/SynParaSpeech&Date">
   <picture>
     <!-- 深色主题 SVG：加防缓存参数 &v=2024092016 -->
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date&theme=dark&v=2024092016" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date&theme=dark&v=2024092018" />
     <!-- 浅色主题 SVG：加防缓存参数 &v=2024092016 -->
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date&v=2024092016" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date&v=2024092018" />
     <!-- 默认 SVG：加防缓存参数 &v=2024092016 -->
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date&v=2024092016" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date&v=2024092018" />
   </picture>
 </a>
 
