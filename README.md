@@ -104,7 +104,12 @@ We thank the open-source communities behind:
 
 ## Star History
 
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://www.star-history.com/embed?secret=Z2hwX3hGcnJVU0VaOG1kSzFJakpDMVZRUlhaN0dDVFMxYzM3djBEdg==#ShawnPi233/SynParaSpeech&Date" frameBorder="0"></iframe>
-## License
+<a href="https://www.star-history.com/#ShawnPi233/SynParaSpeech&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date" />
+ </picture>
+</a>
 
 The dataset and code are licensed under **CC BY-NC-ND 4.0** to encourage open research while protecting intellectual property. For commercial use, please contact the corresponding authors (Ya Li, Jun Gao).
