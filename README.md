@@ -43,7 +43,7 @@ Unlike traditional paralinguistic datasets limited by missing speech, incomplete
 
 - **[2025-09-18]** 🎉 Initial release of SynParaSpeech.
 - **[2025-09-20]** 🎉 Initial release of Demo Page.
-- 
+  
 ### 📅 Release Plan
 - [x] Demo page
 - [ ] SynParaSpeech dataset
