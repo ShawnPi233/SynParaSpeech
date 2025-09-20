@@ -66,25 +66,31 @@
 
       /* 表格容器样式 */
       .table-container {
-        width: 100%; /* 容器占满可用宽度 */
-        overflow-x: auto; /* 超出宽度可以横向滚动 */
+        max-height: 600px;      /* 表格显示区的最大高度，可以改成你需要的值 */
+        overflow-y: auto;
+        position: relative;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
       }
 
       table {
-        border-collapse: collapse;
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
         table-layout: fixed; /* 固定列宽，使音频组件显示正常 */
-        width: 100%; /* 表格占满容器 */
-        border-radius: 12px; /* 可选 */
-        overflow: hidden;
       }
-      #table-head th {
-        font-size: 14px; /* 调整字体大小 */
-        text-align: center; /* 水平居中 */
-        vertical-align: middle;
-        font-weight: bold; /* 加粗可选 */
-        background-color: #3498db;
-        color: #ffffff;
+      .table-container table thead th {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: #3498db !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        color: white !important;
+        font-weight: 600;
+        border-bottom: 1px solid #e0e0e0;
       }
+      
       #Methodology .content ol {
         padding-left: 1.2rem; /* 缩进一点点对齐标题 */
         margin-left: 0; /* 去掉默认外边距 */
@@ -95,12 +101,12 @@
         max-width: 150px; /* 音频最大宽度，避免过大 */
       }
       /* 奇偶列颜色 */
-      table td:nth-child(even) {
+      /* table td:nth-child(even) {
         background-color: #f9f9f9;
       }
       table td:nth-child(odd) {
         background-color: #ffffff;
-      }
+      } */
       .section {
         padding-top: 1rem; /* 默认是 3rem */
         padding-bottom: 1rem; /* 默认是 3rem */
@@ -248,7 +254,7 @@
                   >Bingsong Bai, Qihang Lu, Wenbing Yang,
                 </span>
                 <span class="author-block"
-                  >Zihan Sun, YueRan Hou, Peilei Jia, Songbai Pu, Ruibo Fu,
+                  >Zihan Sun, Yueran Hou, Peilei Jia, Songbai Pu, Ruibo Fu,
                   Yingming Gao, Ya Li*, Jun Gao*</span
                 >
               </div>
@@ -550,18 +556,18 @@
       </div>
     </section>
 
-    <!-- <section class="section" id="BibTeX">
+    <section class="section" id="BibTeX">
     <div class="container-wider content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{bai2026synparaspeech,
-  title={SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
-  author={Bai, Bingsong and Lu, Qihang and Sun, Zihan and Pu, Songbai and Yang, Wenbing and Gao, Yingming and Li, Ya and Gao, Jun},
-  booktitle={ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-  year={2026},
-  organization={IEEE}
+      <pre><code>@i@article{bai2025synparaspeech,
+    title={SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
+    author={Bingsong Bai and Qihang Lu and Wenbing Yang and Zihan Sun and YueRan Hou and Peilei Jia and Songbai Pu and Ruibo Fu and Yingming Gao and Ya Li and Jun Gao},
+    journal={arXiv preprint arXiv:2509.14946},
+    year={2025}
+}
 }</code></pre>
     </div>
-  </section> -->
+  </section>
 
     <footer class="footer">
       <div class="container">
@@ -595,40 +601,76 @@
       const modelDisplayNames = {
         cosyvoice_base: "Baseline CosyVoice2",
         cosyvoice_sft: "CosyVoice2<br>+ SynParaSpeech",
-        cosyvoice_sft_dpo: "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-staged",
-        "cosyvoice_sft+dpo": "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-joint",
+        cosyvoice_sft_dpo: "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-Staged",
+        "cosyvoice_sft+dpo": "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-Joint",
         F5_base: "Baseline F5-TTS",
         F5_sft: "F5-TTS<br>+ SynParaSpeech",
-        cosyvoice_nv: "CosyVoice2<br>+ NVSpeech-38K",
-        F5_nv: "F5-TTS<br>+ NVSpeech-38K"
+        cosyvoice_nv: "CosyVoice2<br>+ NVS",
+        F5_nv: "F5-TTS<br>+ NVS"
       };
 
       let tts_data = {};
 
       // 初始化表头（固定）
       function initTableHeader() {
-        tableHead.innerHTML = "<th>文本内容</th>";
+        tableHead.innerHTML = "<th>Text</th>";
         Object.keys(modelDisplayNames).forEach((model) => {
           const th = document.createElement("th");
           th.innerHTML = modelDisplayNames[model];
           tableHead.appendChild(th);
         });
       }
+
       // 渲染类别下拉菜单
+      // 在populateTable函数中添加高亮逻辑
       function populateTable() {
         tableBody.innerHTML = "";
 
         const referenceModel = "cosyvoice_base";
+        const categories = Object.keys(tts_data[referenceModel]);
 
-        Object.keys(tts_data[referenceModel]).forEach((category) => {
+        // 标签颜色映射
+        const tagColors = {
+          '[laugh]': '#B3E5FC', // 明亮的天蓝色
+          '[sigh]': '#bbdefb',  // 标准的蓝色
+          '[gasp]': '#B3E5FC',  // 清新的亮蓝色
+          '[throat_clearing]': '#81D4FA', // 柔和的浅蓝色
+          '[tsk]': '#81D4FA',   // 淡雅的淡蓝色
+          '[pause]': '#B3E5FC'  // 非常淡的蓝色
+        };
+
+        categories.forEach((category, categoryIndex) => {
+          // 添加类别标题行
+          const categoryRow = document.createElement("tr");
+          const categoryCell = document.createElement("td");
+          categoryCell.colSpan = Object.keys(modelDisplayNames).length + 1;
+          categoryCell.style.backgroundColor = "#e0e0e0";
+          categoryCell.style.fontWeight = "bold";
+          categoryCell.style.textAlign = "center";
+          categoryCell.textContent = `Category：${category}`;
+          categoryRow.appendChild(categoryCell);
+          tableBody.appendChild(categoryRow);
+
           const texts = tts_data[referenceModel][category].texts;
 
           texts.forEach((text, idx) => {
             const tr = document.createElement("tr");
 
-            // 文本列
+            // 文本列 - 添加标签高亮
             const tdText = document.createElement("td");
-            tdText.textContent = text;
+            
+            // 高亮所有标签
+            let highlightedText = text;
+            Object.keys(tagColors).forEach(tag => {
+              if (text.includes(tag)) {
+                highlightedText = highlightedText.replace(
+                  new RegExp(tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
+                  `<span class="highlighted-tag" style="background-color: ${tagColors[tag]}; padding: 2px 4px; border-radius: 3px; font-weight: bold;">${tag}</span>`
+                );
+              }
+            });
+            
+            tdText.innerHTML = highlightedText;
             tr.appendChild(tdText);
 
             // 各模型音频列
@@ -650,7 +692,6 @@
           });
         });
       }
-
       // 加载 JSON 后直接渲染
       fetch("assets/tts_data.json")
         .then((res) => res.json())
@@ -662,5 +703,3 @@
     </script>
   </body>
 </html>
-
-
