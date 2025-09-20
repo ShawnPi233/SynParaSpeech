@@ -88,7 +88,7 @@ If you use SynParaSpeech in your research, please cite our work:
 ```bibtex
 @article{bai2025synparaspeech,
   title     = {SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
-  author    = {Bingsong Bai and Qihang Lu and Wenbing Yang and Zihan Sun and YueRan Hou and Peilei Jia and Songbai Pu and Ruibo Fu and Yingming Gao and Ya Li and Jun Gao},
+  author    = {Bingsong Bai and Qihang Lu and Wenbing Yang and Zihan Sun and Yueran Hou and Peilei Jia and Songbai Pu and Ruibo Fu and Yingming Gao and Ya Li and Jun Gao},
   journal   = {arXiv preprint arXiv:2509.14946},
   year      = {2025}
 }
@@ -97,7 +97,7 @@ If you use SynParaSpeech in your research, please cite our work:
 
 ## 🙏 Acknowledgement
 We thank the open-source communities behind:
-- TTS/ASR: [CosyVoice](https://github.com/FunAudioLLM/CosyVoice), [Whisper](https://github.com/openai/whisper), [SenseVoice](https://arxiv.org/abs/2407.04051), [Paraformer](https://www.isca-speech.org/archive/interspeech_2022/gao22b_interspeech.html), [F5-TTS](https://github.com/SWivid/F5-TTS)  
+- TTS/ASR: [CosyVoice](https://github.com/FunAudioLLM/CosyVoice), [Whisper](https://github.com/openai/whisper), [SenseVoice](https://arxiv.org/abs/2407.04051), [Paraformer](https://www.isca-speech.org/archive/interspeech_2022/gao22b_interspeech.html), [F5-TTS](https://github.com/SWivid/F5-TTS)  , [Stable Whisper](https://github.com/jianfch/stable-ts)
 - Voice Conversion: [SeedVC](https://arxiv.org/abs/2411.09943), [CAM++](https://www.isca-speech.org/archive/interspeech_2023/wang23aa_interspeech.html)  
 - LLM: [Deepseek V3](https://arxiv.org/abs/2412.19437)  
 - Dataset: [NonVerSpeech38k (NVS)](https://github.com/nonverbalspeech38k/nonverspeech38k)
