@@ -44,7 +44,7 @@ Unlike traditional paralinguistic datasets limited by missing speech, incomplete
 - **[2025-09-18]** 🎉 Initial release of arxiv paper.
 - **[2025-09-20]** 🎉 Initial release of demo page.
 - **[2025-09-22]** 🎉 Initial release of HuggingFace dataset demo.
-- 
+
 ### 📅 Release Plan
 - [x] Demo page
 - [x] SynParaSpeech demo dataset
