@@ -11,6 +11,18 @@
     <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-blue.svg" alt="License: CC BY-NC-ND 4.0"></a>
 </div>
 
+## 🗞 News
+
+- **[2025-09-18]** 🎉 Initial release of arxiv paper.
+- **[2025-09-20]** 🎉 Initial release of demo page.
+- **[2025-09-22]** 🎉 Initial release of HuggingFace dataset demo.
+
+### 📅 Release Plan
+- [x] Demo page
+- [x] SynParaSpeech demo dataset
+- [ ] SynParaSpeech full dataset
+- [ ] Fine-tuned TTS model checkpoints
+
 SynParaSpeech is the **first automated syntheis framework** designed for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and speech understanding. It addresses critical issues in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, sigh, throat clearing) that are fully aligned with speech, text, and precise timestamps.
 
 Unlike traditional paralinguistic datasets limited by missing speech, incomplete annotations, or poor realism, **SynParaSpeech** unifies:
@@ -37,20 +49,6 @@ Unlike traditional paralinguistic datasets limited by missing speech, incomplete
 3. **Manual Auxiliary Verification**: Evaluate 4 dimensions (naturalness, paralinguistic matching, audio quality, temporal alignment) to retain high-quality clips.  
 4. **Paralinguistic Speech Generation**: Optimize TTS models with SFT and DPO for better paralinguistic integration.  
 5. **Paralinguistic Speech Understanding**: Prompt-tune MLLMs to detect paralinguistic events.  
-
-
-## 🗞 News
-
-- **[2025-09-18]** 🎉 Initial release of arxiv paper.
-- **[2025-09-20]** 🎉 Initial release of demo page.
-- **[2025-09-22]** 🎉 Initial release of HuggingFace dataset demo.
-
-### 📅 Release Plan
-- [x] Demo page
-- [x] SynParaSpeech demo dataset
-- [ ] SynParaSpeech full dataset
-- [ ] Fine-tuned TTS model checkpoints
-
 
 ## 📦 Dataset
 
