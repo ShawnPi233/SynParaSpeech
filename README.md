@@ -21,7 +21,7 @@
 - [x] Demo page
 - [x] SynParaSpeech demo dataset
 - [ ] SynParaSpeech full dataset
-- [ ] Fine-tuned TTS model checkpoints
+- [ ] Fine-tuned TTS model checkpoints and inference codes
 
 SynParaSpeech is the **first automated syntheis framework** designed for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and speech understanding. It addresses critical issues in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, sigh, throat clearing) that are fully aligned with speech, text, and precise timestamps.
 
