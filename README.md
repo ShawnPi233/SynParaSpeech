@@ -6,10 +6,22 @@
     </p>
     <a href="https://arxiv.org/abs/2509.14946"><img src="https://img.shields.io/badge/arXiv-2509.14946-b31b1b.svg?logo=arxiv&logoColor=white" alt="arXiv:2509.14946"></a>
     <a href="https://shawnpi233.github.io/SynParaSpeech"><img src="https://img.shields.io/badge/Demos-🌐-blue" alt="Demos"></a>
-    <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20Access-Coming%20Soon-orange" alt="Dataset Access(Coming Soon)"></a>
+    <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-Demo%20Access-orange" alt="Dataset Access(Coming Soon)"></a>
 <!--     <a href="README_zh.md"><img src="https://img.shields.io/badge/语言-简体中文-green" alt="简体中文"></a> -->
     <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-blue.svg" alt="License: CC BY-NC-ND 4.0"></a>
 </div>
+
+## 🗞 News
+
+- **[2025-09-18]** 🎉 Initial release of arxiv paper.
+- **[2025-09-20]** 🎉 Initial release of demo page.
+- **[2025-09-22]** 🎉 Initial release of HuggingFace dataset demo.
+
+### 📅 Release Plan
+- [x] Demo page
+- [x] SynParaSpeech demo dataset
+- [ ] SynParaSpeech full dataset
+- [ ] Fine-tuned TTS model checkpoints and inference codes
 
 SynParaSpeech is the **first automated syntheis framework** designed for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and speech understanding. It addresses critical issues in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, sigh, throat clearing) that are fully aligned with speech, text, and precise timestamps.
 
@@ -38,18 +50,6 @@ Unlike traditional paralinguistic datasets limited by missing speech, incomplete
 4. **Paralinguistic Speech Generation**: Optimize TTS models with SFT and DPO for better paralinguistic integration.  
 5. **Paralinguistic Speech Understanding**: Prompt-tune MLLMs to detect paralinguistic events.  
 
-
-## 🗞 News
-
-- **[2025-09-18]** 🎉 Initial release of SynParaSpeech.
-- **[2025-09-20]** 🎉 Initial release of Demo Page.
-  
-### 📅 Release Plan
-- [x] Demo page
-- [ ] SynParaSpeech dataset
-- [ ] Fine-tuned TTS model checkpoints
-
-
 ## 📦 Dataset
 
 ### 📌 SynParaSpeech Details
@@ -76,7 +76,7 @@ Fine-tuning state-of-the-art TTS models with SynParaSpeech delivers significant 
 
 ### 🎯 Paralinguistic Event Detection
 Prompt tuning with SynParaSpeech enhances MLLMs' ability to detect paralinguistic events:
-- **Optimal Context**: 5-shot prompts per catergory yield best performance (avoids overload from redundant context).  
+- **Optimal Context**: 5-shot prompts per category yield best performance (avoids overload from redundant context).  
 - **Key Improvements**:
   - Qwen 2.5 Omni: Accuracy increases from 21.5% (no context) to 47.3% (5-shot), macro F1 from 18.9% to 47.1%.  
   - Kimi Audio: Accuracy reaches 38.2% (5-shot), with CER (character error rate) reduced to 11.11%.  
@@ -88,7 +88,7 @@ If you use SynParaSpeech in your research, please cite our work:
 ```bibtex
 @article{bai2025synparaspeech,
   title     = {SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
-  author    = {Bingsong Bai and Qihang Lu and Wenbing Yang and Zihan Sun and YueRan Hou and Peilei Jia and Songbai Pu and Ruibo Fu and Yingming Gao and Ya Li and Jun Gao},
+  author    = {Bingsong Bai and Qihang Lu and Wenbing Yang and Zihan Sun and Yueran Hou and Peilei Jia and Songbai Pu and Ruibo Fu and Yingming Gao and Ya Li and Jun Gao},
   journal   = {arXiv preprint arXiv:2509.14946},
   year      = {2025}
 }
@@ -97,16 +97,19 @@ If you use SynParaSpeech in your research, please cite our work:
 
 ## 🙏 Acknowledgement
 We thank the open-source communities behind:
-- TTS/ASR: [CosyVoice](https://github.com/FunAudioLLM/CosyVoice), [Whisper](https://github.com/openai/whisper), [SenseVoice](https://arxiv.org/abs/2407.04051), [Paraformer](https://www.isca-speech.org/archive/interspeech_2022/gao22b_interspeech.html), [F5-TTS](https://github.com/SWivid/F5-TTS)  
+- TTS/ASR: [CosyVoice](https://github.com/FunAudioLLM/CosyVoice), [Whisper](https://github.com/openai/whisper), [SenseVoice](https://arxiv.org/abs/2407.04051), [Paraformer](https://www.isca-speech.org/archive/interspeech_2022/gao22b_interspeech.html), [F5-TTS](https://github.com/SWivid/F5-TTS)  , [Stable Whisper](https://github.com/jianfch/stable-ts)
 - Voice Conversion: [SeedVC](https://arxiv.org/abs/2411.09943), [CAM++](https://www.isca-speech.org/archive/interspeech_2023/wang23aa_interspeech.html)  
 - LLM: [Deepseek V3](https://arxiv.org/abs/2412.19437)  
 - Dataset: [NonVerSpeech38k (NVS)](https://github.com/nonverbalspeech38k/nonverspeech38k)
 
-
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date)](https://www.star-history.com/#ShawnPi233/SynParaSpeech&Date)
-
-## License
+<a href="https://www.star-history.com/#ShawnPi233/SynParaSpeech&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ShawnPi233/SynParaSpeech&type=Date" />
+ </picture>
+</a>
 
 The dataset and code are licensed under **CC BY-NC-ND 4.0** to encourage open research while protecting intellectual property. For commercial use, please contact the corresponding authors (Ya Li, Jun Gao).
