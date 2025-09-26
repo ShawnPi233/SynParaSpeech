@@ -1,5 +1,6 @@
 backup
 # Byte-compiled / optimized / DLL files
+.DS_Store
 __pycache__/
 *.py[codz]
 *$py.class
