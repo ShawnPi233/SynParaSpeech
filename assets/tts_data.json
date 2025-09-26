@@ -1,0 +1,444 @@
+{
+  "F5_nv": {
+    "throat_clearing": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_nv/throat_clearing/0001.wav",
+        "assets/tts_audio/F5_nv/throat_clearing/0002.wav",
+        "assets/tts_audio/F5_nv/throat_clearing/0003.wav",
+        "assets/tts_audio/F5_nv/throat_clearing/0004.wav",
+        "assets/tts_audio/F5_nv/throat_clearing/0005.wav",
+        "assets/tts_audio/F5_nv/throat_clearing/0006.wav"
+      ]
+    },
+    "gasp": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_nv/gasp/0001.wav",
+        "assets/tts_audio/F5_nv/gasp/0002.wav",
+        "assets/tts_audio/F5_nv/gasp/0003.wav",
+        "assets/tts_audio/F5_nv/gasp/0004.wav",
+        "assets/tts_audio/F5_nv/gasp/0005.wav",
+        "assets/tts_audio/F5_nv/gasp/0006.wav"
+      ]
+    },
+    "sigh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_nv/sigh/0001.wav",
+        "assets/tts_audio/F5_nv/sigh/0002.wav",
+        "assets/tts_audio/F5_nv/sigh/0003.wav",
+        "assets/tts_audio/F5_nv/sigh/0004.wav",
+        "assets/tts_audio/F5_nv/sigh/0005.wav",
+        "assets/tts_audio/F5_nv/sigh/0006.wav"
+      ]
+    },
+    "laugh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_nv/laugh/0001.wav",
+        "assets/tts_audio/F5_nv/laugh/0002.wav",
+        "assets/tts_audio/F5_nv/laugh/0003.wav",
+        "assets/tts_audio/F5_nv/laugh/0004.wav",
+        "assets/tts_audio/F5_nv/laugh/0005.wav",
+        "assets/tts_audio/F5_nv/laugh/0006.wav"
+      ]
+    }
+  },
+  "F5_sft": {
+    "throat_clearing": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_sft/throat_clearing/0001.wav",
+        "assets/tts_audio/F5_sft/throat_clearing/0002.wav",
+        "assets/tts_audio/F5_sft/throat_clearing/0003.wav",
+        "assets/tts_audio/F5_sft/throat_clearing/0004.wav",
+        "assets/tts_audio/F5_sft/throat_clearing/0005.wav",
+        "assets/tts_audio/F5_sft/throat_clearing/0006.wav"
+      ]
+    },
+    "gasp": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_sft/gasp/0001.wav",
+        "assets/tts_audio/F5_sft/gasp/0002.wav",
+        "assets/tts_audio/F5_sft/gasp/0003.wav",
+        "assets/tts_audio/F5_sft/gasp/0004.wav",
+        "assets/tts_audio/F5_sft/gasp/0005.wav",
+        "assets/tts_audio/F5_sft/gasp/0006.wav"
+      ]
+    },
+    "sigh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_sft/sigh/0001.wav",
+        "assets/tts_audio/F5_sft/sigh/0002.wav",
+        "assets/tts_audio/F5_sft/sigh/0003.wav",
+        "assets/tts_audio/F5_sft/sigh/0004.wav",
+        "assets/tts_audio/F5_sft/sigh/0005.wav",
+        "assets/tts_audio/F5_sft/sigh/0006.wav"
+      ]
+    },
+    "laugh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_sft/laugh/0001.wav",
+        "assets/tts_audio/F5_sft/laugh/0002.wav",
+        "assets/tts_audio/F5_sft/laugh/0003.wav",
+        "assets/tts_audio/F5_sft/laugh/0004.wav",
+        "assets/tts_audio/F5_sft/laugh/0005.wav",
+        "assets/tts_audio/F5_sft/laugh/0006.wav"
+      ]
+    }
+  },
+  "cosyvoice_sft_dpo": {
+    "throat_clearing": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/0001.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/0002.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/0003.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/0004.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/0005.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/throat_clearing/0006.wav"
+      ]
+    },
+    "gasp": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft_dpo/gasp/0001.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/gasp/0002.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/gasp/0003.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/gasp/0004.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/gasp/0005.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/gasp/0006.wav"
+      ]
+    },
+    "sigh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft_dpo/sigh/0001.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/sigh/0002.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/sigh/0003.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/sigh/0004.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/sigh/0005.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/sigh/0006.wav"
+      ]
+    },
+    "laugh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft_dpo/laugh/0001.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/laugh/0002.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/laugh/0003.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/laugh/0004.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/laugh/0005.wav",
+        "assets/tts_audio/cosyvoice_sft_dpo/laugh/0006.wav"
+      ]
+    }
+  },
+  "gt": {
+    "throat_clearing": {
+      "texts": [
+        "[throat_clearing]恕我冒昧，您可能不太了解情况。",
+        "从长远来看[throat_clearing]，投资自己是值得的。",
+        "这个决定……[throat_clearing]需要我们共同承担后果。",
+        "从技术层面讲[throat_clearing]，这个实现难度很大。",
+        "不得不佩服[throat_clearing]，你的心态总是这么好。",
+        "我最后强调一次[throat_clearing]，纪律就是纪律。"
+      ],
+      "audios": [
+        "assets/tts_audio/gt/throat_clearing/0001.wav",
+        "assets/tts_audio/gt/throat_clearing/0002.wav",
+        "assets/tts_audio/gt/throat_clearing/0003.wav",
+        "assets/tts_audio/gt/throat_clearing/0004.wav",
+        "assets/tts_audio/gt/throat_clearing/0005.wav",
+        "assets/tts_audio/gt/throat_clearing/0006.wav"
+      ]
+    },
+    "gasp": {
+      "texts": [
+        "[gasp]你真的要一个人去？",
+        "你锁骨上是什么[gasp]？草莓印？",
+        "[gasp]你听到楼上装修的电钻声了吗？",
+        "[gasp]你闻到一股奇怪的糊味了吗？",
+        "你把我备用钥匙[gasp]藏哪儿了？",
+        "你手腕[gasp]怎么了？淤青了！"
+      ],
+      "audios": [
+        "assets/tts_audio/gt/gasp/0001.wav",
+        "assets/tts_audio/gt/gasp/0002.wav",
+        "assets/tts_audio/gt/gasp/0003.wav",
+        "assets/tts_audio/gt/gasp/0004.wav",
+        "assets/tts_audio/gt/gasp/0005.wav",
+        "assets/tts_audio/gt/gasp/0006.wav"
+      ]
+    },
+    "sigh": {
+      "texts": [
+        "年轻时的梦想，现在想想真好笑。[sigh]",
+        "过去的就让它过去吧，别再提了。[sigh]",
+        "人生啊，就是这样起起落落。[sigh]",
+        "天下没有不散的筵席。[sigh]",
+        "倦了，就这样吧[sigh]。",
+        "或许，这就是成长的代价吧[sigh]。"
+      ],
+      "audios": [
+        "assets/tts_audio/gt/sigh/0001.wav",
+        "assets/tts_audio/gt/sigh/0002.wav",
+        "assets/tts_audio/gt/sigh/0003.wav",
+        "assets/tts_audio/gt/sigh/0004.wav",
+        "assets/tts_audio/gt/sigh/0005.wav",
+        "assets/tts_audio/gt/sigh/0006.wav"
+      ]
+    },
+    "laugh": {
+      "texts": [
+        "你怕黑居然还要开小夜灯睡觉[laugh]？",
+        "你居然会看偶像剧还看得哭唧唧[laugh]？",
+        "你这么大个人还怕打针[laugh]？",
+        "你紧张到顺拐了[laugh]？",
+        "你抽卡又保底了[laugh]？真是个非洲大阴阳师。",
+        "他尝试做可乐鸡翅结果做出了焦炭鸡翅[laugh]。"
+      ],
+      "audios": [
+        "assets/tts_audio/gt/laugh/0001.wav",
+        "assets/tts_audio/gt/laugh/0002.wav",
+        "assets/tts_audio/gt/laugh/0003.wav",
+        "assets/tts_audio/gt/laugh/0004.wav",
+        "assets/tts_audio/gt/laugh/0005.wav",
+        "assets/tts_audio/gt/laugh/0006.wav"
+      ]
+    }
+  },
+  "F5_base": {
+    "throat_clearing": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_base/throat_clearing/0001.wav",
+        "assets/tts_audio/F5_base/throat_clearing/0002.wav",
+        "assets/tts_audio/F5_base/throat_clearing/0003.wav",
+        "assets/tts_audio/F5_base/throat_clearing/0004.wav",
+        "assets/tts_audio/F5_base/throat_clearing/0005.wav",
+        "assets/tts_audio/F5_base/throat_clearing/0006.wav"
+      ]
+    },
+    "gasp": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_base/gasp/0001.wav",
+        "assets/tts_audio/F5_base/gasp/0002.wav",
+        "assets/tts_audio/F5_base/gasp/0003.wav",
+        "assets/tts_audio/F5_base/gasp/0004.wav",
+        "assets/tts_audio/F5_base/gasp/0005.wav",
+        "assets/tts_audio/F5_base/gasp/0006.wav"
+      ]
+    },
+    "sigh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_base/sigh/0001.wav",
+        "assets/tts_audio/F5_base/sigh/0002.wav",
+        "assets/tts_audio/F5_base/sigh/0003.wav",
+        "assets/tts_audio/F5_base/sigh/0004.wav",
+        "assets/tts_audio/F5_base/sigh/0005.wav",
+        "assets/tts_audio/F5_base/sigh/0006.wav"
+      ]
+    },
+    "laugh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/F5_base/laugh/0001.wav",
+        "assets/tts_audio/F5_base/laugh/0002.wav",
+        "assets/tts_audio/F5_base/laugh/0003.wav",
+        "assets/tts_audio/F5_base/laugh/0004.wav",
+        "assets/tts_audio/F5_base/laugh/0005.wav",
+        "assets/tts_audio/F5_base/laugh/0006.wav"
+      ]
+    }
+  },
+  "cosyvoice_base": {
+    "throat_clearing": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_base/throat_clearing/0001.wav",
+        "assets/tts_audio/cosyvoice_base/throat_clearing/0002.wav",
+        "assets/tts_audio/cosyvoice_base/throat_clearing/0003.wav",
+        "assets/tts_audio/cosyvoice_base/throat_clearing/0004.wav",
+        "assets/tts_audio/cosyvoice_base/throat_clearing/0005.wav",
+        "assets/tts_audio/cosyvoice_base/throat_clearing/0006.wav"
+      ]
+    },
+    "gasp": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_base/gasp/0001.wav",
+        "assets/tts_audio/cosyvoice_base/gasp/0002.wav",
+        "assets/tts_audio/cosyvoice_base/gasp/0003.wav",
+        "assets/tts_audio/cosyvoice_base/gasp/0004.wav",
+        "assets/tts_audio/cosyvoice_base/gasp/0005.wav",
+        "assets/tts_audio/cosyvoice_base/gasp/0006.wav"
+      ]
+    },
+    "sigh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_base/sigh/0001.wav",
+        "assets/tts_audio/cosyvoice_base/sigh/0002.wav",
+        "assets/tts_audio/cosyvoice_base/sigh/0003.wav",
+        "assets/tts_audio/cosyvoice_base/sigh/0004.wav",
+        "assets/tts_audio/cosyvoice_base/sigh/0005.wav",
+        "assets/tts_audio/cosyvoice_base/sigh/0006.wav"
+      ]
+    },
+    "laugh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_base/laugh/0001.wav",
+        "assets/tts_audio/cosyvoice_base/laugh/0002.wav",
+        "assets/tts_audio/cosyvoice_base/laugh/0003.wav",
+        "assets/tts_audio/cosyvoice_base/laugh/0004.wav",
+        "assets/tts_audio/cosyvoice_base/laugh/0005.wav",
+        "assets/tts_audio/cosyvoice_base/laugh/0006.wav"
+      ]
+    }
+  },
+  "cosyvoice_nv": {
+    "throat_clearing": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_nv/throat_clearing/0001.wav",
+        "assets/tts_audio/cosyvoice_nv/throat_clearing/0002.wav",
+        "assets/tts_audio/cosyvoice_nv/throat_clearing/0003.wav",
+        "assets/tts_audio/cosyvoice_nv/throat_clearing/0004.wav",
+        "assets/tts_audio/cosyvoice_nv/throat_clearing/0005.wav",
+        "assets/tts_audio/cosyvoice_nv/throat_clearing/0006.wav"
+      ]
+    },
+    "gasp": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_nv/gasp/0001.wav",
+        "assets/tts_audio/cosyvoice_nv/gasp/0002.wav",
+        "assets/tts_audio/cosyvoice_nv/gasp/0003.wav",
+        "assets/tts_audio/cosyvoice_nv/gasp/0004.wav",
+        "assets/tts_audio/cosyvoice_nv/gasp/0005.wav",
+        "assets/tts_audio/cosyvoice_nv/gasp/0006.wav"
+      ]
+    },
+    "sigh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_nv/sigh/0001.wav",
+        "assets/tts_audio/cosyvoice_nv/sigh/0002.wav",
+        "assets/tts_audio/cosyvoice_nv/sigh/0003.wav",
+        "assets/tts_audio/cosyvoice_nv/sigh/0004.wav",
+        "assets/tts_audio/cosyvoice_nv/sigh/0005.wav",
+        "assets/tts_audio/cosyvoice_nv/sigh/0006.wav"
+      ]
+    },
+    "laugh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_nv/laugh/0001.wav",
+        "assets/tts_audio/cosyvoice_nv/laugh/0002.wav",
+        "assets/tts_audio/cosyvoice_nv/laugh/0003.wav",
+        "assets/tts_audio/cosyvoice_nv/laugh/0004.wav",
+        "assets/tts_audio/cosyvoice_nv/laugh/0005.wav",
+        "assets/tts_audio/cosyvoice_nv/laugh/0006.wav"
+      ]
+    }
+  },
+  "cosyvoice_sft": {
+    "throat_clearing": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft/throat_clearing/0001.wav",
+        "assets/tts_audio/cosyvoice_sft/throat_clearing/0002.wav",
+        "assets/tts_audio/cosyvoice_sft/throat_clearing/0003.wav",
+        "assets/tts_audio/cosyvoice_sft/throat_clearing/0004.wav",
+        "assets/tts_audio/cosyvoice_sft/throat_clearing/0005.wav",
+        "assets/tts_audio/cosyvoice_sft/throat_clearing/0006.wav"
+      ]
+    },
+    "gasp": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft/gasp/0001.wav",
+        "assets/tts_audio/cosyvoice_sft/gasp/0002.wav",
+        "assets/tts_audio/cosyvoice_sft/gasp/0003.wav",
+        "assets/tts_audio/cosyvoice_sft/gasp/0004.wav",
+        "assets/tts_audio/cosyvoice_sft/gasp/0005.wav",
+        "assets/tts_audio/cosyvoice_sft/gasp/0006.wav"
+      ]
+    },
+    "sigh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft/sigh/0001.wav",
+        "assets/tts_audio/cosyvoice_sft/sigh/0002.wav",
+        "assets/tts_audio/cosyvoice_sft/sigh/0003.wav",
+        "assets/tts_audio/cosyvoice_sft/sigh/0004.wav",
+        "assets/tts_audio/cosyvoice_sft/sigh/0005.wav",
+        "assets/tts_audio/cosyvoice_sft/sigh/0006.wav"
+      ]
+    },
+    "laugh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft/laugh/0001.wav",
+        "assets/tts_audio/cosyvoice_sft/laugh/0002.wav",
+        "assets/tts_audio/cosyvoice_sft/laugh/0003.wav",
+        "assets/tts_audio/cosyvoice_sft/laugh/0004.wav",
+        "assets/tts_audio/cosyvoice_sft/laugh/0005.wav",
+        "assets/tts_audio/cosyvoice_sft/laugh/0006.wav"
+      ]
+    }
+  },
+  "cosyvoice_sft+dpo": {
+    "throat_clearing": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/0001.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/0002.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/0003.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/0004.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/0005.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/throat_clearing/0006.wav"
+      ]
+    },
+    "gasp": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft+dpo/gasp/0001.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/gasp/0002.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/gasp/0003.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/gasp/0004.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/gasp/0005.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/gasp/0006.wav"
+      ]
+    },
+    "sigh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft+dpo/sigh/0001.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/sigh/0002.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/sigh/0003.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/sigh/0004.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/sigh/0005.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/sigh/0006.wav"
+      ]
+    },
+    "laugh": {
+      "texts": [],
+      "audios": [
+        "assets/tts_audio/cosyvoice_sft+dpo/laugh/0001.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/laugh/0002.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/laugh/0003.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/laugh/0004.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/laugh/0005.wav",
+        "assets/tts_audio/cosyvoice_sft+dpo/laugh/0006.wav"
+      ]
+    }
+  }
+}

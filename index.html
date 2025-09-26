@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding"
+    />
+    <meta
+      property="og:title"
+      content="SynParaSpeech: A Large-Scale Bilingual Paralinguistic Dataset"
+    />
+    <meta
+      property="og:description"
+      content="118.75 hours of Chinese speech with 6 paralinguistic categories and precise timestamps"
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/ShawnPi233/SynParaSpeech"
+    />
+    <meta
+      name="twitter:title"
+      content="SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding"
+    />
+    <meta
+      name="twitter:description"
+      content="Automated synthesis framework for laughter, sighs, throat clearing, gasps, tsk, and pause sounds"
+    />
+    <meta
+      name="keywords"
+      content="paralinguistic, speech synthesis, speech understanding, dataset"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SynParaSpeech: Automated Synthesis of Paralinguistic Datasets</title>
+    <link rel="icon" type="image/x-icon" href="statics/images/logo.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="statics/css/bulma.min.css" />
+    <link rel="stylesheet" href="statics/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="statics/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="statics/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="statics/css/index.css" />
+    <style>
+      .js-sticky-table {
+        position: relative;          /* 让内部 th 的 sticky 参照此容器 */
+        overflow: auto;              /* 出现滚动条 */
+        max-height: 60vh;            /* 可视区域高度，可自己调 */
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+      }
+
+      .js-sticky-table table {
+        margin: 0 !important;        /* 去掉 Bulma 默认 margin */
+        border: none;
+      }
+
+      .js-sticky-table thead th {
+        position: sticky;
+        top: 0;                      /* 粘到容器顶部 */
+        z-index: 10;
+        background: #3498db !important;
+        color: white !important;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,.15); /* 轻微阴影，更醒目 */
+      }
+      #event-table thead tr:last-of-type th {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: #3498db !important;
+        color: white !important;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,.15);
+      }
+      .shadow-card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        overflow: hidden;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .container-wider {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* 表格容器样式 */
+      .table-container {
+        width: 100%;
+        overflow-x: auto;   /* 横向滚动 */
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+      }
+
+      #audio-table thead th {
+        position: sticky;
+        top: 0;
+        background: #3498db !important;
+        color: white !important;
+        font-weight: 600;
+        z-index: 5;
+        text-align: center !important;
+      }
+      /* ========= 第一列（Text 列） ========= */
+      #audio-table th:first-child,
+      #audio-table td:first-child {
+        width: 320px;         /* 默认宽度，可调 */
+        min-width: 300px;
+        max-width: 400px;
+        text-align: left !important;
+        white-space: normal;  /* 自动换行 */
+        word-break: break-word;
+        
+      }
+
+      /* ========= 其它模型列 ========= */
+      #audio-table th:not(:first-child),
+      #audio-table td:not(:first-child) {
+        width: 180px;
+        min-width: 180px;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;    /* 超出显示省略号 */
+      }
+
+      /* ========= 音频控件适配 ========= */
+      #audio-table td audio {
+        width: 100%;
+        max-width: 150px;
+        display: block;
+        margin: 0 auto;
+      }
+      .table-container table thead th {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: #3498db !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        color: white !important;
+        font-weight: 600;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      
+      #Methodology .content ol {
+        padding-left: 1.2rem; /* 缩进一点点对齐标题 */
+        margin-left: 0; /* 去掉默认外边距 */
+      }
+
+      td audio {
+        width: 100%; /* 音频组件占满单元格宽度 */
+        max-width: 150px; /* 音频最大宽度，避免过大 */
+      }
+      /* 奇偶列颜色 */
+      /* table td:nth-child(even) {
+      /* table td:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      table td:nth-child(odd) {
+        background-color: #ffffff;
+      } */
+      } */
+      .section {
+        padding-top: 1rem; /* 默认是 3rem */
+        padding-bottom: 1rem; /* 默认是 3rem */
+      }
+      .hero-body {
+        padding-top: 2rem; /* 默认是 3rem */
+        padding-bottom: 2rem; /* 默认是 3rem */
+      }
+
+      /* 添加可拖动指示器 */
+      .table-container::after {
+        /* content: "↔"; */
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 16px;
+        color: #999;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 800px;
+        border-radius: 12px; /* 可选 */
+        overflow: hidden;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        vertical-align: top;
+      }
+
+      .table th,
+      .table td {
+        padding: 0.75rem;
+        text-align: center !important;
+        vertical-align: middle;
+        border: 1px solid #e0e0e0;
+        word-break: break-word;
+        min-width: 120px;
+        max-width: 300px;
+      }
+
+      .table th:first-child {
+        background-color: #3498db;
+        color: white;
+        z-index: 3;
+      }
+
+      .table th {
+        background-color: #3498db !important;
+        color: white !important;
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+
+      audio {
+        width: 100%;
+        max-width: 170px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        display: block;
+      }
+
+      @media screen and (min-width: 1024px) {
+        .container-wider {
+          max-width: 1440px;
+        }
+      }
+
+      @media screen and (min-width: 1216px) {
+        .container-wider {
+          max-width: 1600px;
+        }
+      }
+
+      @media screen and (max-width: 1023px) {
+        .container-wider {
+          max-width: 90%;
+        }
+
+        .table th,
+        .table td {
+          padding: 0.5rem;
+          font-size: 0.9rem;
+        }
+
+        .table th:first-child,
+        .table td:first-child {
+          min-width: 150px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .table th,
+        .table td {
+          padding: 0.4rem;
+          font-size: 0.85rem;
+          min-width: 100px;
+        }
+
+        .table th:first-child,
+        .table td:first-child {
+          min-width: 120px;
+        }
+      }
+
+      #BibTeX pre {
+        font-size: 20px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="statics/js/fontawesome.all.min.js"></script>
+    <script src="statics/js/bulma-carousel.min.js"></script>
+    <script src="statics/js/bulma-slider.min.js"></script>
+    <script src="statics/js/index.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container-wider">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">SynParaSpeech</h1>
+              <h2 class="subtitle is-3">
+                Automated Synthesis of Paralinguistic Datasets for Speech
+                Generation and Understanding
+              </h2>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Bingsong Bai<sup>1</sup>*, Qihang Lu<sup>1</sup>*, Wenbing Yang<sup>1</sup>*,</span>
+                <span class="author-block">Zihan Sun<sup>2</sup>, Yueran Hou<sup>2</sup>, Peilei Jia<sup>2</sup>, Songbai Pu<sup>2</sup>,</span>
+                <span class="author-block">Ruibo Fu<sup>3</sup>, Yingming Gao<sup>1</sup>, Ya Li<sup>1</sup>†, Jun Gao<sup>2</sup>†</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>School of Artificial Intelligence, Beijing University of Posts and Telecommunications, China</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>2</sup>Hello Group Inc., China</span>
+                <span class="author-block">Bingsong Bai<sup>1</sup>*, Qihang Lu<sup>1</sup>*, Wenbing Yang<sup>1</sup>*,</span>
+                <span class="author-block">Zihan Sun<sup>2</sup>, Yueran Hou<sup>2</sup>, Peilei Jia<sup>2</sup>, Songbai Pu<sup>2</sup>,</span>
+                <span class="author-block">Ruibo Fu<sup>3</sup>, Yingming Gao<sup>1</sup>, Ya Li<sup>1</sup>†, Jun Gao<sup>2</sup>†</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>School of Artificial Intelligence, Beijing University of Posts and Telecommunications, China</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>2</sup>Hello Group Inc., China</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>3</sup>Institute of Automation, Chinese Academy of Sciences, China</span>
+                <span class="author-block"><sup>3</sup>Institute of Automation, Chinese Academy of Sciences, China</span>
+              </div>
+              <div class="mt-4">
+                <a href="https://arxiv.org/abs/2509.14946"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                >
+                  <img 
+                    src="https://img.shields.io/badge/arXiv-2509.14946-b31b1b.svg?logo=arxiv&logoColor=white" 
+                    alt="arXiv:2509.14946"
+                  />
+                </a>
+                <a href="https://arxiv.org/abs/2509.14946"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                >
+                  <img 
+                    src="https://img.shields.io/badge/arXiv-2509.14946-b31b1b.svg?logo=arxiv&logoColor=white" 
+                    alt="arXiv:2509.14946"
+                  />
+                </a>
+                <a
+                  href="https://github.com/ShawnPi233/SynParaSpeech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github"
+                    alt="GitHub Repository"
+                  />
+                </a>
+                <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-Demo%20Access-orange" alt="Dataset Access"></a>
+                <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-Demo%20Access-orange" alt="Dataset Access"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container-wider">
+          <div class="column has-text-left">
+            <h2 class="title is-3 has-text-left">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Paralinguistic sounds like laughter and sighs are crucial for
+                realistic speech synthesis. They make natural talks more
+                engaging and authentic. But current methods depend heavily on
+                private datasets, and open ones have problems: missing speech,
+                timestamps, or not matching real life. To mitigate these issues,
+                we propose an automated synthesis framework for large-scale
+                paralinguistic datasets and introduce SynParaSpeech. It includes
+                6 paralinguistic categories, 118.75 hours of Chinese speech, and
+                precise timestamp annotations. Our work contributes the first
+                automated synthesis method for such datasets, the release of
+                SynParaSpeech, improved paralinguistic speech synthesis models
+                via fine-tuning, and enhanced paralinguistic event detection
+                through prompt tuning.
+              </p>
+              <div class="mt-6">
+                <h3 class="title is-5 has-text-left">Contents</h3>
+                <ul class="list-disc pl-6 mt-2">
+                  <li>
+                    <a href="#Methodology" class="link"
+                      >Automated Synthesis Pipeline</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#Dataset-Overview" class="link"
+                      >Dataset Overview</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#Paralinguistic-TTS" class="link"
+                      >Paralinguistic TTS Improvement</a
+                    >
+                  </li>
+<!--                   <li>
+<!--                   <li>
+                    <a href="#Event-Detection" class="link"
+                      >Paralinguistic Event Detection</a
+                    >
+                  </li> -->
+                  </li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Methodology" class="section">
+      <div class="container-wider">
+        <div class="shadow-card">
+          <h2 class="title is-3 has-text-left">Automated Synthesis Pipeline</h2>
+          <div class="content has-text-left">
+            <ol class="list-decimal pl-6">
+              <li>
+                <strong>Labeled Text Synthesis</strong>: ASR models (Whisper,
+                Paraformer) generate transcriptions with VAD-based timestamp
+                correction. LLMs insert paralinguistic tags at appropriate
+                positions.
+              </li>
+              <li>
+                <strong>Audio Synthesis</strong>: Paralinguistic audio clips are
+                converted to match speech timbre using SeedVC, then inserted
+                into speech segments at annotated timestamps.
+              </li>
+              <li>
+                <strong>Verification</strong>: Manual checks ensure naturalness,
+                timbre consistency, audio quality, and timing alignment.
+              </li>
+            </ol>
+            <figure class="image is-centered mt-4">
+              <img
+                src="statics/figs/synparaspeech.png"
+                alt="SynParaSpeech Pipeline"
+                style="max-width: 1400px"
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Dataset-Overview" class="section">
+      <div class="container-wider">
+        <div class="shadow-card">
+          <h2 class="title is-3 has-text-left">Dataset Overview</h2>
+          <div class="content has-text-justified">
+            <p>
+              SynParaSpeech covers 6 paralinguistic categories (laughter, sigh,
+              throat clearing, gasp, tsk, pause), with 118.75 hours of audio and
+              precise timestamp annotations. The dataset is constructed via an
+              automated pipeline combining ASR transcription, LLM-based
+              paralinguistic tagging, voice conversion, and manual verification.
+            </p>
+            <div class="table-responsive mt-4">
+              <div class="table-container">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Hours</th>
+                      <th>Category</th>
+                      <th>Hours</th>
+                      <th>Clips</th>
+                      <th>Avg.(s)</th>
+                      <th>Share</th>
+                      <th>Avg.(s)</th>
+                      <th>Share</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Sigh</td>
+                      <td>28.22</td>
+                      <td>17,706</td>
+                      <td>5.74</td>
+                      <td>23.76 %</td>
+                    </tr>
+                    <tr>
+                      <td>Throat Clearing</td>
+                      <td>25.45</td>
+                      <td>18,827</td>
+                      <td>4.87</td>
+                      <td>21.43 %</td>
+                    </tr>
+                    <tr>
+                      <td>Laugh</td>
+                      <td>20.84</td>
+                      <td>13,023</td>
+                      <td>5.76</td>
+                      <td>17.55 %</td>
+                    </tr>
+                    <tr>
+                      <td>Pause</td>
+                      <td>18.30</td>
+                      <td>9,643</td>
+                      <td>6.83</td>
+                      <td>15.41 %</td>
+                    </tr>
+                    <tr>
+                      <td>Tsk</td>
+                      <td>14.82</td>
+                      <td>11,941</td>
+                      <td>4.47</td>
+                      <td>12.48 %</td>
+                    </tr>
+                    <tr>
+                      <td>Gasp</td>
+                      <td>11.11</td>
+                      <td>8,846</td>
+                      <td>4.52</td>
+                      <td>9.36 %</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Total</strong></td>
+                      <td><strong>118.75</strong></td>
+                      <td><strong>79,986</strong></td>
+                      <td><strong>5.34</strong></td>
+                      <td><strong>100.00 %</strong></td>
+                      <td>Sigh</td>
+                      <td>28.22</td>
+                      <td>17,706</td>
+                      <td>5.74</td>
+                      <td>23.76 %</td>
+                    </tr>
+                    <tr>
+                      <td>Throat Clearing</td>
+                      <td>25.45</td>
+                      <td>18,827</td>
+                      <td>4.87</td>
+                      <td>21.43 %</td>
+                    </tr>
+                    <tr>
+                      <td>Laugh</td>
+                      <td>20.84</td>
+                      <td>13,023</td>
+                      <td>5.76</td>
+                      <td>17.55 %</td>
+                    </tr>
+                    <tr>
+                      <td>Pause</td>
+                      <td>18.30</td>
+                      <td>9,643</td>
+                      <td>6.83</td>
+                      <td>15.41 %</td>
+                    </tr>
+                    <tr>
+                      <td>Tsk</td>
+                      <td>14.82</td>
+                      <td>11,941</td>
+                      <td>4.47</td>
+                      <td>12.48 %</td>
+                    </tr>
+                    <tr>
+                      <td>Gasp</td>
+                      <td>11.11</td>
+                      <td>8,846</td>
+                      <td>4.52</td>
+                      <td>9.36 %</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Total</strong></td>
+                      <td><strong>118.75</strong></td>
+                      <td><strong>79,986</strong></td>
+                      <td><strong>5.34</strong></td>
+                      <td><strong>100.00 %</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="Paralinguistic-TTS" class="section">
+      <div class="container-wider">
+        <div class="shadow-card">
+          <h2 class="title is-3 has-text-left">
+            Paralinguistic TTS Improvement
+          </h2>
+          <p class="has-text-left">
+            Fine-tuning with SynParaSpeech enhances paralinguistic generation
+            quality in CosyVoice2 and F5-TTS
+          </p>
+          <div class="table-responsive">
+            <div class="table-container" style="margin-top: 30px">
+              <table id="audio-table">
+                <thead>
+                  <tr id="table-head"></tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Event-Detection" class="section">
+      <div class="container-wider">
+        <div class="shadow-card">
+          <h2 class="title is-3 has-text-left">Paralinguistic Event Detection</h2>
+          <p class="has-text-left">
+            Prompt tuning with SynParaSpeech improves event localization and
+            classification accuracy
+          </p>
+    
+          <div class="js-sticky-table" style="margin-top: 30px">
+            <table id="event-table" class="table is-narrow is-striped">
+              <thead id="ved-thead">
+                <tr>
+                  <!-- <tr> -->
+                    <!-- <th style="min-width: 300px;">Audio</th>
+                    <th>True Text</th> -->
+                    <!-- Kimi 0→7 -->
+                    <th>Kimi Audio<br>0-shot</th>
+                    <th>Kimi Audio<br> 1-shot</th>
+                    <th>Kimi Audio<br> 3-shot</th>
+                    <th>Kimi Audio<br> 5-shot</th>
+                    <th>Kimi Audio<br> 7-shot</th>
+                    <!-- Qwen 0→7 -->
+                    <th>Qwen 2.5 omni 0-shot</th>
+                    <th>Qwen 2.5 omni 1-shot</th>
+                    <th>Qwen 2.5 omni 3-shot</th>
+                    <th>Qwen 2.5 omni 5-shot</th>
+                    <th>Qwen 2.5 omni 7-shot</th>
+                  </tr>
+                </thead>
+                <tbody id="detection-body">
+                  <!-- 数据由 JS 动态填充 -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+    <div class="container-wider content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{bai2025synparaspeech,
+    title={SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
+    author={Bingsong Bai and Qihang Lu and Wenbing Yang and Zihan Sun and Yueran Hou and Peilei Jia and Songbai Pu and Ruibo Fu and Yingming Gao and Ya Li and Jun Gao},
+    journal={arXiv preprint arXiv:2509.14946},
+    year={2025}
+}
+</code></pre>
+      <pre><code>@article{bai2025synparaspeech,
+    title={SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
+    author={Bingsong Bai and Qihang Lu and Wenbing Yang and Zihan Sun and Yueran Hou and Peilei Jia and Songbai Pu and Ruibo Fu and Yingming Gao and Ya Li and Jun Gao},
+    journal={arXiv preprint arXiv:2509.14946},
+    year={2025}
+}
+</code></pre>
+    </div>
+  </section>
+  </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns has-text-leftd">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                <br />Licensed under
+                <br />Licensed under
+                <a
+                  rel="license"
+                  href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+                  href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+                  target="_blank"
+                  >CC BY-NC-ND 4.0</a
+                  >CC BY-NC-ND 4.0</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const tableHead = document.getElementById("table-head");
+      const tableBody = document.getElementById("table-body");
+
+      // 模型显示名称
+      const modelDisplayNames = {
+        gt:"Renfernce",
+        cosyvoice_base: "Baseline CosyVoice2",
+        cosyvoice_sft: "CosyVoice2<br>+ SynParaSpeech",
+        cosyvoice_sft_dpo: "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-Staged",
+        "cosyvoice_sft+dpo": "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-Joint",
+        cosyvoice_sft_dpo: "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-Staged",
+        "cosyvoice_sft+dpo": "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-Joint",
+        F5_base: "Baseline F5-TTS",
+        F5_sft: "F5-TTS<br>+ SynParaSpeech",
+        cosyvoice_nv: "CosyVoice2<br>+ NVS",
+        F5_nv: "F5-TTS<br>+ NVS"
+        cosyvoice_nv: "CosyVoice2<br>+ NVS",
+        F5_nv: "F5-TTS<br>+ NVS"
+      };
+
+      let tts_data = {};
+
+      // 初始化表头（固定）
+      function initTableHeader() {
+        tableHead.innerHTML = '<th style="text-align:center !important;">Text</th>';
+        Object.keys(modelDisplayNames).forEach((model) => {
+          const th = document.createElement("th");
+          th.innerHTML = modelDisplayNames[model];
+          tableHead.appendChild(th);
+        });
+      }
+
+
+      // 渲染类别下拉菜单
+      // 在populateTable函数中添加高亮逻辑
+      // 在populateTable函数中添加高亮逻辑
+      function populateTable() {
+        tableBody.innerHTML = "";
+
+        const referenceModel = "gt";
+        const categories = Object.keys(tts_data[referenceModel]);
+
+        // 标签颜色映射
+        const tagColors = {
+          '[laugh]': '#B3E5FC', // 明亮的天蓝色
+          '[sigh]': '#bbdefb',  // 标准的蓝色
+          '[gasp]': '#B3E5FC',  // 清新的亮蓝色
+          '[throat_clearing]': '#81D4FA', // 柔和的浅蓝色
+          '[tsk]': '#81D4FA',   // 淡雅的淡蓝色
+          '[pause]': '#B3E5FC'  // 非常淡的蓝色
+        };
+
+        categories.forEach((category, categoryIndex) => {
+          // 添加类别标题行
+          const categoryRow = document.createElement("tr");
+          const categoryCell = document.createElement("td");
+          categoryCell.colSpan = Object.keys(modelDisplayNames).length + 1;
+          categoryCell.style.backgroundColor = "#e0e0e0";
+          categoryCell.style.fontWeight = "bold";
+          categoryCell.style.textAlign = "center";
+          categoryCell.textContent = `Category：${category}`;
+          categoryRow.appendChild(categoryCell);
+          tableBody.appendChild(categoryRow);
+
+          const texts = tts_data[referenceModel][category].texts;
+
+          texts.forEach((text, idx) => {
+            const tr = document.createElement("tr");
+
+            // 文本列 - 添加标签高亮
+            // 文本列 - 添加标签高亮
+            const tdText = document.createElement("td");
+            
+            // 高亮所有标签
+            let highlightedText = text;
+            Object.keys(tagColors).forEach(tag => {
+              if (text.includes(tag)) {
+                highlightedText = highlightedText.replace(
+                  new RegExp(tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
+                  `<span class="highlighted-tag" style="background-color: ${tagColors[tag]}; padding: 2px 4px; border-radius: 3px; font-weight: bold;">${tag}</span>`
+                );
+              }
+            });
+            
+            tdText.innerHTML = highlightedText;
+            
+            // 高亮所有标签
+            let highlightedText = text;
+            Object.keys(tagColors).forEach(tag => {
+              if (text.includes(tag)) {
+                highlightedText = highlightedText.replace(
+                  new RegExp(tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
+                  `<span class="highlighted-tag" style="background-color: ${tagColors[tag]}; padding: 2px 4px; border-radius: 3px; font-weight: bold;">${tag}</span>`
+                );
+              }
+            });
+            
+            tdText.innerHTML = highlightedText;
+            tr.appendChild(tdText);
+
+            // 各模型音频列
+            Object.keys(modelDisplayNames).forEach((model) => {
+              const td = document.createElement("td");
+              if (tts_data[model] && tts_data[model][category]) {
+                const audios = tts_data[model][category].audios;
+                if (audios && audios[idx]) {
+                  const audio = document.createElement("audio");
+                  audio.controls = true;
+                  audio.src = audios[idx];
+                  td.appendChild(audio);
+                }
+              }
+              tr.appendChild(td);
+            });
+
+            tableBody.appendChild(tr);
+          });
+        });
+      }
+      /* ==========  TTS 表格  ========== */
+fetch("assets/tts_data.json")
+  .then(res => res.json())
+  .then(data => {
+    tts_data = data;
+    initTableHeader();
+    populateTable();
+  });
+
+/* ==========  Event-Detection 表格  ========== */
+fetch("assets/ved_data.json")
+  .then(res => res.json())
+  .then(data => {
+    const tbody = document.getElementById('detection-body');
+    const shots = [0, 1, 3, 5, 7];
+
+    data.forEach(item => {
+      /* ---- GT 行（占满 10 列）---- */
+      const gtRow       = document.createElement('tr');
+      gtRow.className   = 'has-background-light';
+      gtRow.innerHTML   = `
+        <td colspan="10">
+          <div class="is-flex is-align-items-center">
+            <div style="min-width:260px;">
+              <audio controls style="width:100%;">
+                <source src="${item.audio}" type="audio/wav">
+              </audio>
+            </div>
+            <div class="ml-4">
+              <strong>GT Text：</strong><span>${item.true_text}</span>
+            </div>
+          </div>
+        </td>`;
+      tbody.appendChild(gtRow);
+
+      /* ---- 结果行 ---- */
+      const resRow = document.createElement('tr');
+      shots.forEach(s => {          // Kimi 0→7
+        const td = document.createElement('td');
+        td.textContent = item[`kimi_${s}`] || '';
+        resRow.appendChild(td);
+      });
+      shots.forEach(s => {          // Qwen 0→7
+        const td = document.createElement('td');
+        td.textContent = item[`qwen_${s}`] || '';
+        resRow.appendChild(td);
+      });
+      tbody.appendChild(resRow);
+    });
+  });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
