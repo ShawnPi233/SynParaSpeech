@@ -47,6 +47,35 @@
     />
     <link rel="stylesheet" href="statics/css/index.css" />
     <style>
+      .js-sticky-table {
+        position: relative;          /* 让内部 th 的 sticky 参照此容器 */
+        overflow: auto;              /* 出现滚动条 */
+        max-height: 60vh;            /* 可视区域高度，可自己调 */
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+      }
+
+      .js-sticky-table table {
+        margin: 0 !important;        /* 去掉 Bulma 默认 margin */
+        border: none;
+      }
+
+      .js-sticky-table thead th {
+        position: sticky;
+        top: 0;                      /* 粘到容器顶部 */
+        z-index: 10;
+        background: #3498db !important;
+        color: white !important;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,.15); /* 轻微阴影，更醒目 */
+      }
+      #event-table thead tr:last-of-type th {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: #3498db !important;
+        color: white !important;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,.15);
+      }
       .shadow-card {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
@@ -66,18 +95,49 @@
 
       /* 表格容器样式 */
       .table-container {
-        max-height: 600px;      /* 表格显示区的最大高度，可以改成你需要的值 */
-        overflow-y: auto;
+        width: 100%;
+        overflow-x: auto;   /* 横向滚动 */
+        -webkit-overflow-scrolling: touch;
         position: relative;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
       }
 
-      table {
-        border-collapse: separate;
-        border-spacing: 0;
+      #audio-table thead th {
+        position: sticky;
+        top: 0;
+        background: #3498db !important;
+        color: white !important;
+        font-weight: 600;
+        z-index: 5;
+        text-align: center !important;
+      }
+      /* ========= 第一列（Text 列） ========= */
+      #audio-table th:first-child,
+      #audio-table td:first-child {
+        width: 320px;         /* 默认宽度，可调 */
+        min-width: 300px;
+        max-width: 400px;
+        text-align: left !important;
+        white-space: normal;  /* 自动换行 */
+        word-break: break-word;
+        
+      }
+
+      /* ========= 其它模型列 ========= */
+      #audio-table th:not(:first-child),
+      #audio-table td:not(:first-child) {
+        width: 180px;
+        min-width: 180px;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;    /* 超出显示省略号 */
+      }
+
+      /* ========= 音频控件适配 ========= */
+      #audio-table td audio {
         width: 100%;
-        table-layout: fixed; /* 固定列宽，使音频组件显示正常 */
+        max-width: 150px;
+        display: block;
+        margin: 0 auto;
       }
       .table-container table thead th {
         position: sticky;
@@ -118,7 +178,7 @@
 
       /* 添加可拖动指示器 */
       .table-container::after {
-        content: "↔";
+        /* content: "↔"; */
         position: absolute;
         right: 10px;
         bottom: 10px;
@@ -250,21 +310,29 @@
                 Generation and Understanding
               </h2>
               <div class="is-size-5 publication-authors">
-                <span class="author-block"
-                  >Bingsong Bai, Qihang Lu, Wenbing Yang,
-                </span>
-                <span class="author-block"
-                  >Zihan Sun, YueRan Hou, Peilei Jia, Songbai Pu, Ruibo Fu,
-                  Yingming Gao, Ya Li*, Jun Gao*</span
-                >
+                <span class="author-block">Bingsong Bai<sup>1</sup>*, Qihang Lu<sup>1</sup>*, Wenbing Yang<sup>1</sup>*,</span>
+                <span class="author-block">Zihan Sun<sup>2</sup>, Yueran Hou<sup>2</sup>, Peilei Jia<sup>2</sup>, Songbai Pu<sup>2</sup>,</span>
+                <span class="author-block">Ruibo Fu<sup>3</sup>, Yingming Gao<sup>1</sup>, Ya Li<sup>1</sup>†, Jun Gao<sup>2</sup>†</span>
               </div>
               <div class="is-size-5 publication-authors">
-                <span class="author-block"
-                  >Beijing University of Posts and Telecommunications & Hello
-                  Group Inc. & Chinese Academy of Sciences</span
-                >
+                <span class="author-block"><sup>1</sup>School of Artificial Intelligence, Beijing University of Posts and Telecommunications, China</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>2</sup>Hello Group Inc., China</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>3</sup>Institute of Automation, Chinese Academy of Sciences, China</span>
               </div>
               <div class="mt-4">
+                <a href="https://arxiv.org/abs/2509.14946"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                >
+                  <img 
+                    src="https://img.shields.io/badge/arXiv-2509.14946-b31b1b.svg?logo=arxiv&logoColor=white" 
+                    alt="arXiv:2509.14946"
+                  />
+                </a>
                 <a
                   href="https://github.com/ShawnPi233/SynParaSpeech"
                   target="_blank"
@@ -275,6 +343,7 @@
                     alt="GitHub Repository"
                   />
                 </a>
+                <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-Demo%20Access-orange" alt="Dataset Access"></a>
               </div>
             </div>
           </div>
@@ -320,14 +389,11 @@
                       >Paralinguistic TTS Improvement</a
                     >
                   </li>
-                  <li>
+<!--                   <li>
                     <a href="#Event-Detection" class="link"
                       >Paralinguistic Event Detection</a
                     >
-                  </li>
-                  <li>
-                    <a href="#Comparison" class="link">Dataset Comparison</a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -387,22 +453,62 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Language</th>
-                      <th>Duration (hours)</th>
+                      <th>Category</th>
+                      <th>Hours</th>
                       <th>Clips</th>
-                      <th>Paralinguistic Categories</th>
-                      <th>Sampling Rate</th>
-                      <th>Timestamps</th>
+                      <th>Avg.(s)</th>
+                      <th>Share</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Chinese</td>
-                      <td>118.75</td>
-                      <td>79,986</td>
-                      <td>6</td>
-                      <td>24kHz</td>
-                      <td>✓</td>
+                      <td>Sigh</td>
+                      <td>28.22</td>
+                      <td>17,706</td>
+                      <td>5.74</td>
+                      <td>23.76 %</td>
+                    </tr>
+                    <tr>
+                      <td>Throat Clearing</td>
+                      <td>25.45</td>
+                      <td>18,827</td>
+                      <td>4.87</td>
+                      <td>21.43 %</td>
+                    </tr>
+                    <tr>
+                      <td>Laugh</td>
+                      <td>20.84</td>
+                      <td>13,023</td>
+                      <td>5.76</td>
+                      <td>17.55 %</td>
+                    </tr>
+                    <tr>
+                      <td>Pause</td>
+                      <td>18.30</td>
+                      <td>9,643</td>
+                      <td>6.83</td>
+                      <td>15.41 %</td>
+                    </tr>
+                    <tr>
+                      <td>Tsk</td>
+                      <td>14.82</td>
+                      <td>11,941</td>
+                      <td>4.47</td>
+                      <td>12.48 %</td>
+                    </tr>
+                    <tr>
+                      <td>Gasp</td>
+                      <td>11.11</td>
+                      <td>8,846</td>
+                      <td>4.52</td>
+                      <td>9.36 %</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Total</strong></td>
+                      <td><strong>118.75</strong></td>
+                      <td><strong>79,986</strong></td>
+                      <td><strong>5.34</strong></td>
+                      <td><strong>100.00 %</strong></td>
                     </tr>
                   </tbody>
                 </table>
@@ -412,6 +518,7 @@
         </div>
       </div>
     </section>
+
 
     <section id="Paralinguistic-TTS" class="section">
       <div class="container-wider">
@@ -437,117 +544,38 @@
       </div>
     </section>
 
-<!--     <section id="Event-Detection" class="section">
+    <section id="Event-Detection" class="section">
       <div class="container-wider">
         <div class="shadow-card">
-          <h2 class="title is-3 has-text-left">
-            Paralinguistic Event Detection
-          </h2>
+          <h2 class="title is-3 has-text-left">Paralinguistic Event Detection</h2>
           <p class="has-text-left">
             Prompt tuning with SynParaSpeech improves event localization and
             classification accuracy
           </p>
-          <div class="table-responsive">
-            <div class="table-container" style="margin-top: 30px">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Audio Clip</th>
-                    <th>Qwen 2.5 Omni (Baseline)</th>
-                    <th>Qwen 2.5 Omni + SynParaSpeech</th>
-                    <th>Kimi Audio (Baseline)</th>
-                    <th>Kimi Audio + SynParaSpeech</th>
+    
+          <div class="js-sticky-table" style="margin-top: 30px">
+            <table id="event-table" class="table is-narrow is-striped">
+              <thead id="ved-thead">
+                <tr>
+                  <!-- <tr> -->
+                    <!-- <th style="min-width: 300px;">Audio</th>
+                    <th>True Text</th> -->
+                    <!-- Kimi 0→7 -->
+                    <th>Kimi Audio<br>0-shot</th>
+                    <th>Kimi Audio<br> 1-shot</th>
+                    <th>Kimi Audio<br> 3-shot</th>
+                    <th>Kimi Audio<br> 5-shot</th>
+                    <th>Kimi Audio<br> 7-shot</th>
+                    <!-- Qwen 0→7 -->
+                    <th>Qwen 2.5 omni 0-shot</th>
+                    <th>Qwen 2.5 omni 1-shot</th>
+                    <th>Qwen 2.5 omni 3-shot</th>
+                    <th>Qwen 2.5 omni 5-shot</th>
+                    <th>Qwen 2.5 omni 7-shot</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <audio controls>
-                        <source
-                          src="audios/detection/sample1.wav"
-                          type="audio/wav"
-                        />
-                        Browser not supported
-                      </audio>
-                    </td>
-                    <td>No paralinguistic events detected</td>
-                    <td>[laugh] at 00:01-00:03</td>
-                    <td>Unknown sound at 00:00-00:04</td>
-                    <td>[laugh] at 00:01-00:03</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <audio controls>
-                        <source
-                          src="audios/detection/sample2.wav"
-                          type="audio/wav"
-                        />
-                        Browser not supported
-                      </audio>
-                    </td>
-                    <td>Cough detected (no timestamp)</td>
-                    <td>[cough] at 00:02-00:03</td>
-                    <td>Noise at 00:02-00:03</td>
-                    <td>[cough] at 00:02-00:03</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <section id="Comparison" class="section">
-      <div class="container-wider">
-        <div class="shadow-card">
-          <h2 class="title is-3 has-text-left">Dataset Comparison</h2>
-          <div class="table-responsive">
-            <div class="table-container" style="margin-top: 30px">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Dataset</th>
-                    <th>Duration (h)</th>
-                    <th>Languages</th>
-                    <th>Paralinguistic Categories</th>
-                    <th>Timestamps</th>
-                    <th>Speech Content</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>AudioSet</td>
-                    <td>72.3</td>
-                    <td>-</td>
-                    <td>18</td>
-                    <td>×</td>
-                    <td>×</td>
-                  </tr>
-                  <tr>
-                    <td>Switchboard</td>
-                    <td>260</td>
-                    <td>En</td>
-                    <td>42</td>
-                    <td>×</td>
-                    <td>✓</td>
-                  </tr>
-                  <tr>
-                    <td>NonVerbalSpeech-38K</td>
-                    <td>131</td>
-                    <td>Zh/En</td>
-                    <td>10</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                  </tr>
-                  <tr>
-                    <td>SynParaSpeech (Ours)</td>
-                    <td>118.75</td>
-                    <td>Zh</td>
-                    <td>6</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                  </tr>
+                <tbody id="detection-body">
+                  <!-- 数据由 JS 动态填充 -->
                 </tbody>
               </table>
             </div>
@@ -556,18 +584,18 @@
       </div>
     </section>
 
-    <!-- <section class="section" id="BibTeX">
+    <section class="section" id="BibTeX">
     <div class="container-wider content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{bai2026synparaspeech,
-  title={SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
-  author={Bai, Bingsong and Lu, Qihang and Sun, Zihan and Pu, Songbai and Yang, Wenbing and Gao, Yingming and Li, Ya and Gao, Jun},
-  booktitle={ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-  year={2026},
-  organization={IEEE}
-}</code></pre>
+      <pre><code>@article{bai2025synparaspeech,
+    title={SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
+    author={Bingsong Bai and Qihang Lu and Wenbing Yang and Zihan Sun and Yueran Hou and Peilei Jia and Songbai Pu and Ruibo Fu and Yingming Gao and Ya Li and Jun Gao},
+    journal={arXiv preprint arXiv:2509.14946},
+    year={2025}
+}
+</code></pre>
     </div>
-  </section> -->
+  </section>
 
     <footer class="footer">
       <div class="container">
@@ -575,17 +603,12 @@
           <div class="column is-8">
             <div class="content">
               <p>
-                Dataset and audio samples available at
-                <a
-                  href="https://github.com/ShawnPi233/SynParaSpeech"
-                  target="_blank"
-                  >GitHub</a
-                >. <br />Licensed under
+                <br />Licensed under
                 <a
                   rel="license"
-                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
                   target="_blank"
-                  >CC BY-SA 4.0</a
+                  >CC BY-NC-ND 4.0</a
                 >.
               </p>
             </div>
@@ -599,6 +622,7 @@
 
       // 模型显示名称
       const modelDisplayNames = {
+        gt:"Renfernce",
         cosyvoice_base: "Baseline CosyVoice2",
         cosyvoice_sft: "CosyVoice2<br>+ SynParaSpeech",
         cosyvoice_sft_dpo: "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-Staged",
@@ -613,7 +637,7 @@
 
       // 初始化表头（固定）
       function initTableHeader() {
-        tableHead.innerHTML = "<th>Text</th>";
+        tableHead.innerHTML = '<th style="text-align:center !important;">Text</th>';
         Object.keys(modelDisplayNames).forEach((model) => {
           const th = document.createElement("th");
           th.innerHTML = modelDisplayNames[model];
@@ -626,7 +650,7 @@
       function populateTable() {
         tableBody.innerHTML = "";
 
-        const referenceModel = "cosyvoice_base";
+        const referenceModel = "gt";
         const categories = Object.keys(tts_data[referenceModel]);
 
         // 标签颜色映射
@@ -692,16 +716,64 @@
           });
         });
       }
-      // 加载 JSON 后直接渲染
-      fetch("assets/tts_data.json")
-        .then((res) => res.json())
-        .then((data) => {
-          tts_data = data;
-          initTableHeader();
-          populateTable();
-        });
+      /* ==========  TTS 表格  ========== */
+fetch("assets/tts_data.json")
+  .then(res => res.json())
+  .then(data => {
+    tts_data = data;
+    initTableHeader();
+    populateTable();
+  });
+
+/* ==========  Event-Detection 表格  ========== */
+fetch("assets/ved_data.json")
+  .then(res => res.json())
+  .then(data => {
+    const tbody = document.getElementById('detection-body');
+    const shots = [0, 1, 3, 5, 7];
+
+    data.forEach(item => {
+      /* ---- GT 行（占满 10 列）---- */
+      const gtRow       = document.createElement('tr');
+      gtRow.className   = 'has-background-light';
+      gtRow.innerHTML   = `
+        <td colspan="10">
+          <div class="is-flex is-align-items-center">
+            <div style="min-width:260px;">
+              <audio controls style="width:100%;">
+                <source src="${item.audio}" type="audio/wav">
+              </audio>
+            </div>
+            <div class="ml-4">
+              <strong>GT Text：</strong><span>${item.true_text}</span>
+            </div>
+          </div>
+        </td>`;
+      tbody.appendChild(gtRow);
+
+      /* ---- 结果行 ---- */
+      const resRow = document.createElement('tr');
+      shots.forEach(s => {          // Kimi 0→7
+        const td = document.createElement('td');
+        td.textContent = item[`kimi_${s}`] || '';
+        resRow.appendChild(td);
+      });
+      shots.forEach(s => {          // Qwen 0→7
+        const td = document.createElement('td');
+        td.textContent = item[`qwen_${s}`] || '';
+        resRow.appendChild(td);
+      });
+      tbody.appendChild(resRow);
+    });
+  });
     </script>
   </body>
 </html>
+
+
+
+
+
+
 
 
