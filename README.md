@@ -76,7 +76,7 @@ Fine-tuning state-of-the-art TTS models with SynParaSpeech delivers significant 
 
 ### 🎯 Paralinguistic Event Detection
 Prompt tuning with SynParaSpeech enhances MLLMs' ability to detect paralinguistic events:
-- **Optimal Context**: 5-shot prompts per category yield best performance (avoids overload from redundant context).  
+- **Optimal Context**: 5-shot prompts per catergory yield best performance (avoids overload from redundant context).  
 - **Key Improvements**:
   - Qwen 2.5 Omni: Accuracy increases from 21.5% (no context) to 47.3% (5-shot), macro F1 from 18.9% to 47.1%.  
   - Kimi Audio: Accuracy reaches 38.2% (5-shot), with CER (character error rate) reduced to 11.11%.  
