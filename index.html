@@ -178,7 +178,6 @@
 
       /* 添加可拖动指示器 */
       .table-container::after {
-        /* content: "↔"; */
         position: absolute;
         right: 10px;
         bottom: 10px;
@@ -195,13 +194,29 @@
         pointer-events: none;
       }
 
-      .table {
+      /* 统一所有表格圆角样式 - 关键修改 */
+      .table,
+      #audio-table,
+      #event-table {
         width: 100%;
         border-collapse: collapse;
         min-width: 800px;
-        border-radius: 12px; /* 可选 */
-        overflow: hidden;
+        border-radius: 12px; /* 统一为12px圆角 */
+        overflow: hidden; /* 确保圆角生效 */
       }
+      
+      /* 修复表头圆角显示 - 关键修改 */
+      .table thead th:first-child,
+      #audio-table thead th:first-child,
+      #event-table thead th:first-child {
+        border-top-left-radius: 12px;
+      }
+      .table thead th:last-child,
+      #audio-table thead th:last-child,
+      #event-table thead th:last-child {
+        border-top-right-radius: 12px;
+      }
+
       th,
       td {
         border: 1px solid #ddd;
@@ -343,7 +358,7 @@
                     alt="GitHub Repository"
                   />
                 </a>
-                <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-Demo%20Access-orange" alt="Dataset Access"></a>
+                <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-%20Access-orange" alt="Dataset Access"></a>
               </div>
             </div>
           </div>
@@ -557,16 +572,11 @@
             <table id="event-table" class="table is-narrow is-striped">
               <thead id="ved-thead">
                 <tr>
-                  <!-- <tr> -->
-                    <!-- <th style="min-width: 300px;">Audio</th>
-                    <th>True Text</th> -->
-                    <!-- Kimi 0→7 -->
                     <th>Kimi Audio<br>0-shot</th>
                     <th>Kimi Audio<br> 1-shot</th>
                     <th>Kimi Audio<br> 3-shot</th>
                     <th>Kimi Audio<br> 5-shot</th>
                     <th>Kimi Audio<br> 7-shot</th>
-                    <!-- Qwen 0→7 -->
                     <th>Qwen 2.5 omni 0-shot</th>
                     <th>Qwen 2.5 omni 1-shot</th>
                     <th>Qwen 2.5 omni 3-shot</th>
