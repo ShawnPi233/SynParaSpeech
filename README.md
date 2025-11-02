@@ -6,7 +6,7 @@
     </p>
     <a href="https://arxiv.org/abs/2509.14946"><img src="https://img.shields.io/badge/arXiv-2509.14946-b31b1b.svg?logo=arxiv&logoColor=white" alt="arXiv:2509.14946"></a>
     <a href="https://shawnpi233.github.io/SynParaSpeech"><img src="https://img.shields.io/badge/Demos-🌐-blue" alt="Demos"></a>
-    <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-Demo%20Access-orange" alt="Dataset Access(Coming Soon)"></a>
+    <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-%20Access-orange" alt="Dataset Access"></a>
 <!--     <a href="README_zh.md"><img src="https://img.shields.io/badge/语言-简体中文-green" alt="简体中文"></a> -->
     <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-blue.svg" alt="License: CC BY-NC-ND 4.0"></a>
 </div>
@@ -16,11 +16,12 @@
 - **[2025-09-18]** 🎉 Initial release of arxiv paper.
 - **[2025-09-20]** 🎉 Initial release of demo page.
 - **[2025-09-22]** 🎉 Initial release of HuggingFace dataset demo.
+- **[2025-11-02]** 🎉 Initial release of HuggingFace full dataset (compliance-vetted core data).
 
 ### 📅 Release Plan
 - [x] Demo page
 - [x] SynParaSpeech demo dataset
-- [ ] SynParaSpeech full dataset
+- [x] SynParaSpeech full dataset
 - [ ] Fine-tuned TTS model checkpoints and inference codes
 
 SynParaSpeech is the **first automated syntheis framework** designed for constructing large-scale paralinguistic datasets, enabling more realistic speech synthesis and speech understanding. It addresses critical issues in existing resources by generating high-quality data with paralinguistic sounds (e.g., laughter, sigh, throat clearing) that are fully aligned with speech, text, and precise timestamps.
