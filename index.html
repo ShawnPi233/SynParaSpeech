@@ -47,6 +47,35 @@
     />
     <link rel="stylesheet" href="statics/css/index.css" />
     <style>
+      .js-sticky-table {
+        position: relative;          /* 让内部 th 的 sticky 参照此容器 */
+        overflow: auto;              /* 出现滚动条 */
+        max-height: 60vh;            /* 可视区域高度，可自己调 */
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+      }
+
+      .js-sticky-table table {
+        margin: 0 !important;        /* 去掉 Bulma 默认 margin */
+        border: none;
+      }
+
+      .js-sticky-table thead th {
+        position: sticky;
+        top: 0;                      /* 粘到容器顶部 */
+        z-index: 10;
+        background: #3498db !important;
+        color: white !important;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,.15); /* 轻微阴影，更醒目 */
+      }
+      #event-table thead tr:last-of-type th {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: #3498db !important;
+        color: white !important;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,.15);
+      }
       .shadow-card {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
@@ -66,18 +95,49 @@
 
       /* 表格容器样式 */
       .table-container {
-        max-height: 600px;      /* 表格显示区的最大高度，可以改成你需要的值 */
-        overflow-y: auto;
+        width: 100%;
+        overflow-x: auto;   /* 横向滚动 */
+        -webkit-overflow-scrolling: touch;
         position: relative;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
       }
 
-      table {
-        border-collapse: separate;
-        border-spacing: 0;
+      #audio-table thead th {
+        position: sticky;
+        top: 0;
+        background: #3498db !important;
+        color: white !important;
+        font-weight: 600;
+        z-index: 5;
+        text-align: center !important;
+      }
+      /* ========= 第一列（Text 列） ========= */
+      #audio-table th:first-child,
+      #audio-table td:first-child {
+        width: 320px;         /* 默认宽度，可调 */
+        min-width: 300px;
+        max-width: 400px;
+        text-align: left !important;
+        white-space: normal;  /* 自动换行 */
+        word-break: break-word;
+        
+      }
+
+      /* ========= 其它模型列 ========= */
+      #audio-table th:not(:first-child),
+      #audio-table td:not(:first-child) {
+        width: 180px;
+        min-width: 180px;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;    /* 超出显示省略号 */
+      }
+
+      /* ========= 音频控件适配 ========= */
+      #audio-table td audio {
         width: 100%;
-        table-layout: fixed; /* 固定列宽，使音频组件显示正常 */
+        max-width: 150px;
+        display: block;
+        margin: 0 auto;
       }
       .table-container table thead th {
         position: sticky;
@@ -118,7 +178,7 @@
 
       /* 添加可拖动指示器 */
       .table-container::after {
-        content: "↔";
+        /* content: "↔"; */
         position: absolute;
         right: 10px;
         bottom: 10px;
@@ -484,66 +544,45 @@
       </div>
     </section>
 
-<!--     <section id="Event-Detection" class="section">
+    <section id="Event-Detection" class="section">
       <div class="container-wider">
         <div class="shadow-card">
-          <h2 class="title is-3 has-text-left">
-            Paralinguistic Event Detection
-          </h2>
+          <h2 class="title is-3 has-text-left">Paralinguistic Event Detection</h2>
           <p class="has-text-left">
             Prompt tuning with SynParaSpeech improves event localization and
             classification accuracy
           </p>
-          <div class="table-responsive">
-            <div class="table-container" style="margin-top: 30px">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Audio Clip</th>
-                    <th>Qwen 2.5 Omni (Baseline)</th>
-                    <th>Qwen 2.5 Omni + SynParaSpeech</th>
-                    <th>Kimi Audio (Baseline)</th>
-                    <th>Kimi Audio + SynParaSpeech</th>
+    
+          <div class="js-sticky-table" style="margin-top: 30px">
+            <table id="event-table" class="table is-narrow is-striped">
+              <thead id="ved-thead">
+                <tr>
+                  <!-- <tr> -->
+                    <!-- <th style="min-width: 300px;">Audio</th>
+                    <th>True Text</th> -->
+                    <!-- Kimi 0→7 -->
+                    <th>Kimi Audio<br>0-shot</th>
+                    <th>Kimi Audio<br> 1-shot</th>
+                    <th>Kimi Audio<br> 3-shot</th>
+                    <th>Kimi Audio<br> 5-shot</th>
+                    <th>Kimi Audio<br> 7-shot</th>
+                    <!-- Qwen 0→7 -->
+                    <th>Qwen 2.5 omni 0-shot</th>
+                    <th>Qwen 2.5 omni 1-shot</th>
+                    <th>Qwen 2.5 omni 3-shot</th>
+                    <th>Qwen 2.5 omni 5-shot</th>
+                    <th>Qwen 2.5 omni 7-shot</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <audio controls>
-                        <source
-                          src="audios/detection/sample1.wav"
-                          type="audio/wav"
-                        />
-                        Browser not supported
-                      </audio>
-                    </td>
-                    <td>No paralinguistic events detected</td>
-                    <td>[laugh] at 00:01-00:03</td>
-                    <td>Unknown sound at 00:00-00:04</td>
-                    <td>[laugh] at 00:01-00:03</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <audio controls>
-                        <source
-                          src="audios/detection/sample2.wav"
-                          type="audio/wav"
-                        />
-                        Browser not supported
-                      </audio>
-                    </td>
-                    <td>Cough detected (no timestamp)</td>
-                    <td>[cough] at 00:02-00:03</td>
-                    <td>Noise at 00:02-00:03</td>
-                    <td>[cough] at 00:02-00:03</td>
-                  </tr>
+                <tbody id="detection-body">
+                  <!-- 数据由 JS 动态填充 -->
                 </tbody>
               </table>
             </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <section class="section" id="BibTeX">
     <div class="container-wider content">
@@ -583,6 +622,7 @@
 
       // 模型显示名称
       const modelDisplayNames = {
+        gt:"Renfernce",
         cosyvoice_base: "Baseline CosyVoice2",
         cosyvoice_sft: "CosyVoice2<br>+ SynParaSpeech",
         cosyvoice_sft_dpo: "CosyVoice2<br>+ SynParaSpeech<br>+ DPO-Staged",
@@ -597,7 +637,7 @@
 
       // 初始化表头（固定）
       function initTableHeader() {
-        tableHead.innerHTML = "<th>Text</th>";
+        tableHead.innerHTML = '<th style="text-align:center !important;">Text</th>';
         Object.keys(modelDisplayNames).forEach((model) => {
           const th = document.createElement("th");
           th.innerHTML = modelDisplayNames[model];
@@ -610,7 +650,7 @@
       function populateTable() {
         tableBody.innerHTML = "";
 
-        const referenceModel = "cosyvoice_base";
+        const referenceModel = "gt";
         const categories = Object.keys(tts_data[referenceModel]);
 
         // 标签颜色映射
@@ -676,22 +716,56 @@
           });
         });
       }
-      // 加载 JSON 后直接渲染
-      fetch("assets/tts_data.json")
-        .then((res) => res.json())
-        .then((data) => {
-          tts_data = data;
-          initTableHeader();
-          populateTable();
-        });
+      /* ==========  TTS 表格  ========== */
+fetch("assets/tts_data.json")
+  .then(res => res.json())
+  .then(data => {
+    tts_data = data;
+    initTableHeader();
+    populateTable();
+  });
+
+/* ==========  Event-Detection 表格  ========== */
+fetch("assets/ved_data.json")
+  .then(res => res.json())
+  .then(data => {
+    const tbody = document.getElementById('detection-body');
+    const shots = [0, 1, 3, 5, 7];
+
+    data.forEach(item => {
+      /* ---- GT 行（占满 10 列）---- */
+      const gtRow       = document.createElement('tr');
+      gtRow.className   = 'has-background-light';
+      gtRow.innerHTML   = `
+        <td colspan="10">
+          <div class="is-flex is-align-items-center">
+            <div style="min-width:260px;">
+              <audio controls style="width:100%;">
+                <source src="${item.audio}" type="audio/wav">
+              </audio>
+            </div>
+            <div class="ml-4">
+              <strong>GT Text：</strong><span>${item.true_text}</span>
+            </div>
+          </div>
+        </td>`;
+      tbody.appendChild(gtRow);
+
+      /* ---- 结果行 ---- */
+      const resRow = document.createElement('tr');
+      shots.forEach(s => {          // Kimi 0→7
+        const td = document.createElement('td');
+        td.textContent = item[`kimi_${s}`] || '';
+        resRow.appendChild(td);
+      });
+      shots.forEach(s => {          // Qwen 0→7
+        const td = document.createElement('td');
+        td.textContent = item[`qwen_${s}`] || '';
+        resRow.appendChild(td);
+      });
+      tbody.appendChild(resRow);
+    });
+  });
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
