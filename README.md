@@ -113,4 +113,4 @@ We thank the open-source communities behind:
  </picture>
 </a>
 
-The dataset and code are licensed under **CC BY-NC-ND 4.0** to encourage open research while protecting intellectual property. For commercial use, please contact the corresponding authors (Ya Li, Jun Gao).
+The dataset and code are licensed under **CC BY-NC-ND 4.0** to encourage open research while protecting intellectual property. We actively support academic adoption to maximize research impact. For inquiries about collaborative studies, comparative experiments, or clarification on usage, contact [yli01@bupt.edu.cn, gaojun55@gmail.com].
