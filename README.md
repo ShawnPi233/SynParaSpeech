@@ -13,11 +13,11 @@
 
 ## 🗞 News
 
-- **[2025-09-18]** 🎉 Initial release of arxiv paper.
-- **[2025-09-20]** 🎉 Initial release of demo page.
-- **[2025-09-22]** 🎉 Initial release of HuggingFace dataset demo.
+- **[2026-01-16]** 🎉 Paper accepted by ICASSP 2026.
 - **[2025-11-02]** 🎉 Initial release of HuggingFace full dataset (compliance-vetted core data).
-- **[2026-01-16]** 🎉 Paper accepted by ICASSP 2026
+- **[2025-09-22]** 🎉 Initial release of HuggingFace dataset demo.
+- **[2025-09-20]** 🎉 Initial release of demo page.
+- **[2025-09-18]** 🎉 Initial release of arxiv paper.
 
 ### 📅 Release Plan
 - [x] Demo page
