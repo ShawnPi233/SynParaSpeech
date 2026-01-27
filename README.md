@@ -43,7 +43,7 @@ Unlike traditional paralinguistic datasets limited by missing speech, incomplete
 
 ## 📊 Pipeline Overview
 
-![SynParaSpeech Pipeline](statics/figs/synparaspeech.png)  
+![SynParaSpeech Pipeline](statics/synparaspeech.png)  
 *The pipeline consists of 5 core stages:*  
 1. **Labeled Text Synthesis**: Generate timestamped text via 3 ASR models (Whisper Large V3, SenseVoice, Paraformer) + majority voting, then insert paralinguistic tags with Deepseek Chat V3.  
 2. **Audio Synthesis**: Integrate paralinguistic audio (voice conversion via SeedVC) with speech audio (sliced by timestamps) to maintain timbre consistency.  
