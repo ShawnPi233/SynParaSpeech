@@ -8,7 +8,7 @@
     <a href="https://shawnpi233.github.io/SynParaSpeech"><img src="https://img.shields.io/badge/Demos-🌐-blue" alt="Demos"></a>
     <a href="https://huggingface.co/datasets/shawnpi/SynParaSpeech"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-%20Access-orange" alt="Dataset Access"></a>
 <!--     <a href="README_zh.md"><img src="https://img.shields.io/badge/语言-简体中文-green" alt="简体中文"></a> -->
-    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-blue.svg" alt="License: CC BY-NC-ND 4.0"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg" alt="License: CC BY-NC-SA 4.0"></a>
 </div>
 
 ## 🗞 News
@@ -113,4 +113,4 @@ We thank the open-source communities behind:
  </picture>
 </a>
 
-The dataset is licensed under **CC BY-NC-ND 4.0** to encourage open research while protecting intellectual property. We actively support academic adoption to maximize research impact. For inquiries about collaborative studies, comparative experiments, or clarification on usage, contact [yli01@bupt.edu.cn, gaojun55@gmail.com].
+The dataset is licensed under **CC BY-NC-SA 4.0** to encourage open research while protecting intellectual property. We actively support academic adoption to maximize research impact. For inquiries about collaborative studies, comparative experiments, or clarification on usage, contact [yli01@bupt.edu.cn, gaojun55@gmail.com].
