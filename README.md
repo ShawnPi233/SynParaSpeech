@@ -87,16 +87,14 @@ Prompt tuning with SynParaSpeech enhances MLLMs' ability to detect paralinguisti
 If you use SynParaSpeech in your research, please cite our work:
 
 ```bibtex
-@INPROCEEDINGS{11461682,
-  author={Bai, Bingsong and Lu, Qihang and Yang, Wenbing and Sun, Zihan and Hou, Yueran and Jia, Peilei and Pu, Songbai and Fu, Ruibo and Gao, Yingming and Li, Ya and Gao, Jun},
-  booktitle={ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
-  title={SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding}, 
+@inproceedings{bai2026synparaspeech,
+  title={SynParaSpeech: Automated Synthesis of Paralinguistic Datasets for Speech Generation and Understanding},
+  author={Bai, Bingsong and Lu, Qihang and Yang, Wenbing and Sun, Zihan and Hou, Yueran and Jia, Peilei and Pu, Songbai and Fu, Ruibo and Gao, Yingming and Li, Ya and others},
+  booktitle={ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={15527--15531},
   year={2026},
-  volume={},
-  number={},
-  pages={15527-15531},
-  keywords={Motion pictures;Event detection;Wireless sensor networks;Protocols;HTTP;Location awareness;Over-the-top media services;Telecommunications;Mobile communication;Artificial intelligence;paralinguistic;speech synthesis;speech understanding;dataset},
-  doi={10.1109/ICASSP55912.2026.11461682}}
+  organization={IEEE}
+}
 ```
 
 
